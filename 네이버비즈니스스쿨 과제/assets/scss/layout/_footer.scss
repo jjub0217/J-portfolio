@@ -1,0 +1,401 @@
+// /* footer */
+// .footer {
+//   padding-top: 4vw;
+//   background: #000;
+//   color: #fff;
+//   // border-radius: 3vw;
+
+//   .footer-inner {
+//     width: 100%;
+//     padding: 0 0.2vw 0.2vw 0.2vw;
+//     background-image: linear-gradient(27deg, #738aff, #000);
+//     border-radius: 4vw;
+
+
+//   }
+
+//   .inner {
+//     padding-top: 3vw;
+//     padding-bottom: 3vw;
+//     background-color: #000;
+//     background-image: linear-gradient(#7373ff, rgba(115, 115, 255, 0) 50%);
+//     border-radius: 4vw;
+//     display: flex;
+//     align-items: center;
+
+//     @include tablet {
+//       padding-top: 4vw;
+//       padding-bottom: 4vw;
+//     }
+
+//     @include mobile {
+//       flex-direction: column;
+//       padding: 8vw 10vw;
+//       gap: 4vw;
+//     }
+//   }
+
+//   .left {
+//     width: 40%;
+
+//     @include mobile {
+//       width: auto;
+//     }
+
+//     .menu-list {
+//       display: flex;
+//       gap: 4.3vw;
+
+
+
+//       .menu-item {
+//         &>a {
+//           display: inline-block;
+//           margin-bottom: 1vw;
+//           font-weight: 500;
+//           font-size: 1.6vw;
+//           cursor: auto;
+
+//           @include tablet {
+//             font-size: 1.8vw;
+//           }
+
+//           @include mobile {
+//             font-size: 3.2vw;
+//           }
+//         }
+//       }
+
+//       .sub-list {
+//         color: #b3b3b3;
+//         font-size: 1.3vw;
+
+//         @include tablet {
+//           font-size: 1.5vw;
+//         }
+
+//         @include mobile {
+//           font-size: 2.5vw;
+//         }
+
+//         .sub-item {
+//           letter-spacing: 0;
+//           padding: 0.4vw 0;
+//         }
+//       }
+//     }
+//   }
+
+//   .center {
+//     width: 20%;
+
+//     .link-getClixr2 {
+
+//       .border {
+//         width: 15.5vw;
+//         height: 15.5vw;
+//         padding: 0.4vw;
+
+//         @include tablet {
+//           width: 17vw;
+//           height: 17vw;
+//         }
+
+//         @include mobile {
+//           width: 19vw;
+//           height: 19vw;
+//         }
+//       }
+
+//       .circle {
+//         font-size: 2.4vw;
+
+//         @include tablet {
+//           font-size: 2.8vw;
+//         }
+
+//         @include mobile {
+//           font-size: 3vw;
+//         }
+//       }
+//     }
+//   }
+
+//   .right {
+//     width: 40%;
+//     display: flex;
+//     align-self: flex-end;
+//     padding-bottom: 1vw;
+//     letter-spacing: 0;
+
+//     @include mobile {
+//       width: auto;
+//       align-self: auto;
+//     }
+
+//     .copy {
+//       display: flex;
+//       flex-direction: column;
+//       margin-left: auto;
+
+//       @include mobile {
+//         align-items: center;
+//       }
+
+//       a {
+//         display: inline-block;
+//         font-size: 1.3vw;
+//         padding-bottom: 0.4vw;
+
+//         @include tablet {
+//           font-size: 1.5vw;
+//         }
+
+//         @include tablet {
+//           font-size: 3vw;
+//         }
+//       }
+
+//       .underPoint-green {
+//         color: #fff;
+
+//         @include tablet {
+//           font-size: 3vw;
+//         }
+//       }
+
+//       span {
+//         font-size: 1vw;
+//         color: #8c8c8c;
+
+//         @include tablet {
+//           font-size: 1.5vw;
+//         }
+
+//         @include tablet {
+//           // font-size: 2vw;
+//         }
+//       }
+//     }
+//   }
+
+//   .underPoint {
+//     display: inline-block;
+//     color: #fff;
+//     background: url("../images/64a6cdff000962bbfb4a9cb8_underline-green.svg");
+//     background-position: 50% 100%;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//   }
+
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+// // .wave-border {
+// //   width: 100%;
+// //   height: 96px;
+// //   transform: rotate(180deg);
+// //   position: absolute;
+// //   top: 0;
+
+// //   #bigWave {
+// //     transform: translateX(-1440px);
+// //     fill: #ff9daf;
+// //     animation: waves 12s linear infinite;
+
+// //     path {
+// //       d: path("M719.5 38C439.435 15.3187 412 -37 0 38V96.5H1440V38C1053.5 96.5 1003.5 61 719.5 38Z");
+// //     }
+
+
+// //     path#bluePath0 {
+// //       transform: translateX(-1440px);
+// //     }
+
+// //     path#bluePath1 {
+// //       transform: translateX(0px);
+
+// //     }
+
+// //     path#bluePath2 {
+// //       transform: translateX(1440px);
+
+// //     }
+// //   }
+
+// // }
+
+
+
+
+// // .global-footer {
+// //   position: relative;
+// //   padding: 172px 0 100px;
+
+// //   .bezier-mask {
+// //     clip-path: path(M 0 997 L 0 20.2822 C 228 22.0089 228 22.0089 456 26.3119 S 684 53.721 912 35.6768 L 912 997 Z);
+// //   }
+// // }
+
+
+// // .bezier-mask.global-footer-background-container,
+// // .bezier-mask.global-footer-background-container .bezier-mask-inner,
+// // .global-footer-background {
+// //   position: absolute;
+// //   top: 0;
+// //   right: 0;
+// //   bottom: 0;
+// //   left: 0
+// // }
+
+// // .bezier-mask.is-picture[data-v-6cdeafef] {
+// //   line-height: 0
+// // }
+
+// // .bezier-mask {
+// //   overflow: hidden;
+// //   will-change: clip-path
+// // }
+
+// // 모바일
+// // @media screen and (max-width: 768px) {
+
+// //   .footer {
+// //     background-color: #f2f2f2;
+
+// //     .inner1 {
+// //       padding: 25px 22px;
+// //       // min-width: 320px;
+// //       max-width: 1320px;
+// //       gap: 20px;
+// //       flex-wrap: wrap;
+
+// //       .footer-logo {
+// //         display: flex;
+// //         height: inherit;
+
+// //         a {
+// //           font-size: 15px;
+// //           line-height: 32px;
+// //           letter-spacing: -0.32px;
+// //         }
+// //       }
+
+// //       .policy {
+// //         font-size: 14px;
+// //       }
+
+// //       .related {
+// //         position: relative;
+// //         width: 100%;
+// //         height: inherit;
+// //         line-height: 32px;
+// //         padding-bottom: 5px;
+// //         margin: 0;
+// //         // border: none;
+// //         border-bottom: 1px solid #b8b8b8;
+
+// //         .title {
+// //           width: inherit;
+// //           line-height: 32px;
+// //           font-size: 12px;
+// //           text-align: left;
+
+// //           align-items: center;
+// //           justify-content: space-between;
+
+
+// //           &:after {
+// //             content: "";
+// //             display: block;
+// //             background: url("../images/sp_pc.png") no-repeat;
+// //             background-size: 328px 205px;
+// //             background-position: -122px -93px;
+// //             width: 10px;
+// //             height: 6px;
+// //           }
+// //         }
+
+// //         .related-list {
+// //           display: none;
+// //         }
+
+// //         &.on {
+// //           background: #fff;
+// //           border: none;
+
+// //           .title {
+// //             padding: 0 5px 0 10px;
+// //             font-size: 12px;
+
+// //             &:after {
+// //               transform: rotate(180deg);
+// //             }
+// //           }
+
+// //           .related-list {
+// //             display: block;
+// //             position: absolute;
+// //             width: inherit;
+// //             padding: 0 10px;
+// //             bottom: 10px;
+// //             transform: translateY(-27px);
+
+// //             background: #fff;
+// //             z-index: 1;
+// //             overflow-y: scroll;
+
+// //             .related-item {
+// //               font-size: 12px;
+// //               line-height: 42px;
+// //             }
+// //           }
+// //         }
+// //       }
+
+
+
+// //       .related-list {
+// //         // position: absolute;
+// //         // width: inherit;
+// //         // left: -1px;
+// //         // bottom: 0;
+// //         // transform: translateY(-27px);
+// //         // border: 1px solid #808789;
+// //         // border-bottom: 1px solid #b8b8b8;
+// //         // background: #fff;
+// //         // z-index: 1;
+// //         // height: 225px;
+// //         // overflow-y: scroll;
+// //         // // opacity: 0;
+// //         // display: none;
+
+// //         // .related-item {
+// //         //   .link-related {
+// //         //     display: block;
+// //         //     padding: 5px 0 5px 10px;
+// //         //     font-size: 12px;
+// //         //     text-decoration: none;
+// //         //     color: #686868;
+
+// //         //     &:hover {
+// //         //       background: #ececec;
+// //         //     }
+// //         //   }
+// //         // }
+// //       }
+
+// //     }
+// //   }
+// // }

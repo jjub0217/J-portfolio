@@ -1,0 +1,341 @@
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  top: 0px;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.header {
+  z-index: 21;
+}
+
+.contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+
+
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation-area {
+  flex: 1 1 0%;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.main-menu {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+
+.main-menu {
+
+  .title {
+    display: inline-block;
+    width: fit-content;
+    margin-right: 80px;
+
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.profile-area {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: text-top;
+  border: 0px;
+  border-radius: 3em;
+  box-sizing: border-box;
+}
+
+.button.text {
+  padding: 5px 8px 3px;
+  background: transparent;
+}
+
+.small {
+
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+}
+
+.icon {
+  display: inline-flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+// .header {
+//   position: fixed;
+//   top: 0px;
+//   left: 0;
+//   right: 0;
+//   z-index: 3;
+//   background-color: transparent;
+//   overflow: hidden;
+//   cursor: pointer;
+//   background-color: rgba(0, 0, 0, 0);
+//   background-image: linear-gradient(#000, rgba(0, 0, 0, .56) 48%, rgba(0, 0, 0, .23) 74%, rgba(0, 0, 0, .1) 85%, rgba(0, 0, 0, 0));
+//   padding: 1.3vw 0;
+
+//   .inner {
+//     display: flex;
+//     align-items: center;
+//     color: #fff;
+//   }
+
+//   .logo-wrap {
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   .logo {
+//     padding-right: 2vw;
+
+//     a {
+//       display: block;
+//       width: 3.7vw;
+
+//       @include tablet {
+//         width: 7vw;
+//         padding: 0.6vw 0;
+//       }
+
+//       @include mobile {
+//         width: 11vw;
+//       }
+//     }
+//   }
+// }
+
+// .gnb {
+
+//   @include tablet {
+//     display: none;
+//   }
+
+//   .nav-list {
+//     display: flex;
+//     // @include mobile {
+//     //   gap: 20px;
+//     // }
+
+//     .nav-item {
+//       color: #fff;
+//       padding: 2vw 2.25vw;
+//       // padding: 0 7em;
+//       // padding: 7.01em 7.06em;
+
+//       a {
+//         display: block;
+//         transition: 0.3s;
+//         font-size: 1.32vw;
+//         font-weight: 500;
+//         opacity: .65;
+//         transition: 0.5s;
+//         line-height: 1.2;
+
+//         &:hover {
+//           opacity: 1;
+//         }
+
+//       }
+
+
+//       .sub-list {
+//         padding-top: 14px;
+//         display: flex;
+//         flex-direction: column;
+//         gap: 20px;
+
+//         @include mobile {
+//           padding: 20px 0;
+//           gap: 20px;
+//         }
+
+//         .sub-item {
+//           font-size: 14px;
+//           position: relative;
+//           overflow: hidden;
+//           height: 14px;
+//           line-height: 14px;
+
+//           @include mobile {
+//             font-size: 16px;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+// }
+
+// .group-util {
+//   margin-left: auto;
+
+//   .util-list {
+//     display: flex;
+//     align-items: center;
+
+//     .btn {
+//       padding: 0.2vw 0.5vw;
+//       display: flex;
+//       align-items: flex-end;
+//       margin-right: 1vw;
+//       width: 3vw;
+//       height: 3vw;
+//       margin-right: 1.5vw;
+
+//       svg {
+//         width: 100%;
+//         height: 100%;
+//       }
+
+//       @include tablet {
+//         width: 3.5vw;
+//         height: 3.5vw;
+//         margin-right: 3vw;
+//       }
+
+//       @include mobile {
+//         width: 4vw;
+//         height: 4vw;
+//       }
+
+//       .cart-quantity {
+//         width: 1.2vw;
+//         height: 1.2vw;
+//         margin-left: -0.6vw;
+//         margin-bottom: -0.3vw;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         font-size: 0.7vw;
+//         font-weight: 700;
+//         color: #000;
+//         background-color: #fff;
+//         border-radius: 100%;
+
+//         @include tablet {
+//           width: 1.6vw;
+//           height: 1.6vw;
+//           margin-left: -0.9vw;
+//           margin-bottom: -0.3vw;
+//         }
+
+//         @include mobile {
+//           width: 2.3vw;
+//           height: 2.3vw;
+//           margin-left: -1.3vw;
+//           margin-bottom: -0.5vw;
+//         }
+//       }
+
+//     }
+
+
+
+//     .link-getClixr1 {
+//       font-size: 1.3vw;
+//       width: auto;
+//       height: auto;
+//       border: 0.14vw solid #73ffa2;
+
+//       @include tablet {
+//         display: none;
+//       }
+//     }
+
+//     .burgerBtn {
+//       display: none;
+
+//       @include tablet {
+//         display: flex;
+//         align-self: flex-end;
+//         transform: translateY(0%);
+//         width: 2.985vw;
+//         height: 1.7vw;
+//         cursor: pointer;
+
+//         @include mobile {
+//           align-self: auto;
+//         }
+//       }
+
+//       .bar {
+//         background-color: #fff;
+//         position: absolute;
+//         left: 0;
+//         width: 100%;
+//         height: 0.3vw;
+//         border-radius: 2vw;
+//         transition: 0.3s;
+
+//         &.positionTop {
+//           top: 0%;
+//         }
+
+//         &.positionBottom {
+//           top: 100%;
+//           transform: translateY(-100%);
+//         }
+//       }
+
+//     }
+//   }
+
+// }

@@ -1,0 +1,242 @@
+@charset "UTF-8";
+@media (max-width: 1263px) {
+  body {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 1200px) {
+  body {
+    transform: scale(0.85);
+  }
+}
+@media (max-width: 1100px) {
+  body {
+    transform: scale(0.75);
+  }
+}
+@media (max-width: 1000px) {
+  body {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 900px) {
+  body {
+    transform: scale(0.65);
+  }
+}
+@media (max-width: 850px) {
+  body {
+    transform: scale(1);
+  }
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2") format("woff2");
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 세팅 */
+body {
+  /* 기본적인 국문의 폰트패밀리 적용 */
+  font-family: "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, NotoSans, "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+  color: #222222;
+  letter-spacing: -0.025em;
+  background-color: rgb(25, 26, 31);
+  color: rgb(255, 255, 255);
+}
+
+fieldset {
+  border: 0;
+}
+
+.blind {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+#skip-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#skip-header a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  background: #ccc;
+}
+
+.css-1pl4geg.layout > .main-area > .header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  top: 0px;
+}
+
+.css-1j2l8kq.header.no-shadow {
+  box-shadow: none;
+}
+
+.css-1j2l8kq.header {
+  z-index: 21;
+}
+
+.css-1j2l8kq.header .contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.css-1j2l8kq.header.no-shadow {
+  box-shadow: none;
+}
+
+.css-1j2l8kq.header .contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.css-1j2l8kq.header .contents-wrapper .main .navigation-area {
+  flex: 1 1 0%;
+}
+
+.css-1j2l8kq.header .contents-wrapper .main .navigation-area .navigation-bar {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.css-fj5v7n.main-menu {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.css-fj5v7n.main-menu .title {
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 80px;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
+}
+
+.css-1j2l8kq.header .contents-wrapper .main .profile-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.css-alpr5k.button {
+  display: inline-block;
+  vertical-align: text-top;
+  border: 0px;
+  border-radius: 3em;
+  box-sizing: border-box;
+}
+
+.css-alpr5k.button.text {
+  padding: 5px 8px 3px;
+  background: transparent;
+}
+
+.css-alpr5k.button.text.small {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.css-1j2l8kq.header .contents-wrapper .main .profile-area > .icon {
+  width: 38px;
+  height: 38px;
+}
+
+.css-sezlg9.icon {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
