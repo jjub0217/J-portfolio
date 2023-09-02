@@ -28,9 +28,26 @@
   background: #ccc;
 }
 
-// .wrapper {
-//   // margin: 0 auto;
-//   overflow: hidden;
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  @include mobile {
+    padding: 0px 16px;
+    min-width: 320px;
+
+  }
+}
+
+@keyframes opacityAni {
+  from {
+    display: block;
+  }
+
+  to {
+    display: none;
+  }
+}
 
 // }/* All Device */
 

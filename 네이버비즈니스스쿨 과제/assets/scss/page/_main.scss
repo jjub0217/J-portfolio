@@ -1,13 +1,1006 @@
 // html body {}
 
-// .container {
-//   background: #fff;
-//   margin-top: 8.4vw;
+.container {
+  margin-top: 155px;
 
-//   @include tablet {
-//     margin-top: 14vw;
-//   }
-// }
+  @include mobile {
+    margin-top: 90px;
+  }
+
+  &>*+* {
+    margin-top: 92px;
+
+    @include mobile {
+      margin-top: 36px;
+    }
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-bottom: 32px;
+
+    @include mobile {
+      // padding: 0px 16px;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+
+
+
+.swiper-slide {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+
+  .link-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  .image-box {
+    position: relative;
+
+    .save-text {
+      display: none;
+    }
+
+    .dimmed {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation: opacityAni 5s forwards;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+    }
+
+    &.on {
+      .save-text {
+        animation: opacityAni 5s forwards;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        border-radius: 38px;
+        padding: 15px 24px;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(15px);
+      }
+
+      .dimmed {
+        display: block;
+      }
+    }
+
+
+
+
+
+  }
+
+  .text-box {
+    padding: 24px 16px;
+    background: rgb(38, 42, 53);
+    gap: 8px;
+
+    @include mobile {
+      padding: 16px 17px 16px 12px;
+    }
+
+    strong {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 48px;
+
+      @include mobile {
+        height: 40px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .bottom {
+      margin-top: auto;
+    }
+  }
+
+  .desc {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: rgb(177, 181, 194);
+    height: 60px;
+    @include ellipse(3);
+
+    @include mobile {
+      margin-top: 8px;
+    }
+  }
+
+  .short-desc {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgb(177, 181, 194);
+    display: flex;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      max-width: 128px;
+    }
+
+    &>*+* {
+      &::before {
+        content: " ・ ";
+
+      }
+    }
+  }
+
+  .bookmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    background-image: url("../images/sprite.svg");
+    background-position: 6.050955414% 99.9201915403%;
+
+    &.save {
+      background-position: 8.067940552% 99.9201915403%;
+    }
+  }
+
+  &.link-more {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    width: 384px;
+    height: 352px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+
+    p {
+      &::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: url("../images/ic_right_hor.png") no-repeat;
+        background-size: contain;
+        margin-bottom: 16px;
+      }
+    }
+
+    span {
+      color: rgb(113, 229, 215);
+    }
+  }
+}
+
+.tag {
+  &-list {
+    display: flex;
+    gap: 7px;
+
+    @include mobile {
+      margin-top: 8px;
+      gap: 6px;
+    }
+  }
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  border: 1px solid rgb(110, 114, 193);
+  border-radius: 4px;
+  color: rgb(126, 133, 255);
+  height: 22px;
+  padding: 0px 7px;
+
+  @include mobile {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 0px 5px;
+    height: 20px;
+  }
+}
+
+.content {
+  position: relative;
+
+  .prev {
+    display: none;
+
+    @include mobile {
+      display: none;
+    }
+
+    &.on {
+      display: block;
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      background: url("../images/ic_nav-next.png") 0px 0px / 48px 48px no-repeat;
+      width: 48px;
+      height: 48px;
+      transform: translateY(-50%) rotate(-180deg);
+      left: -24px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+
+  }
+
+  .next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background: url("../images/ic_nav-next.png") 0px 0px / 48px 48px no-repeat;
+    width: 48px;
+    height: 48px;
+    right: -24px;
+    transform: translateY(-50%);
+
+    @include mobile {
+      display: none;
+    }
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+
+
+  }
+
+
+}
+
+.section-personal {
+  width: 100%;
+
+  .title {
+    span {
+      color: rgb(113, 229, 215);
+    }
+
+  }
+
+  .function-area {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    div {
+      background: #f00;
+      border-radius: 8px;
+      padding: 40px;
+      width: 588px;
+      min-height: 276px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include mobile {
+        width: 100%;
+        min-height: 188px;
+        padding: 20px 16px 25px;
+        gap: 0;
+      }
+
+      &.left {
+        background: url("../images/bg_login_01.png") 50% 50% / 100% 100% no-repeat;
+
+        @include mobile {
+          background: url("../images/bg_login_01_mo.png") 50% 50% / cover no-repeat;
+        }
+      }
+
+      &.right {
+        background: url("../images/bg_login_02.png") 50% 50% / 100% 100% no-repeat;
+
+        @include mobile {
+          background: url("../images/bg_login_01_mo.png") 50% 50% / 100% 100% no-repeat;
+        }
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+
+        @include mobile {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 0;
+        }
+      }
+
+      .desc {
+        font-size: 16px;
+        line-height: 24px;
+        color: rgb(177, 181, 194);
+        font-weight: 400;
+
+        @include mobile {
+          margin-top: 4px;
+          font-size: 12px;
+          line-height: 18px;
+
+        }
+      }
+
+
+      a {
+        background: rgb(0, 0, 0);
+        border-radius: 6px;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: auto;
+        padding: 0px 30px;
+        max-width: 180px;
+        min-height: 48px;
+        font-size: 15px;
+        line-height: 48px;
+
+        @include mobile {
+          max-width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          min-height: 20px;
+          line-height: 20px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+.section-onlineEducation {
+  overflow: hidden;
+
+  .inner {
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+
+  .tab-area {
+    @include mobile {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .tab-list {
+    display: flex;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+
+  .tab-item {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        white-space: normal;
+        text-align: center;
+        color: rgb(177, 181, 194);
+
+        br {
+          display: none;
+        }
+      }
+
+      @include mobile {
+        width: 56px;
+        margin: 0 10px;
+
+        span {
+          min-width: 80px;
+          font-size: 12px;
+          line-height: 14px;
+          margin-bottom: 10px;
+
+          br {
+            display: block;
+          }
+        }
+      }
+
+      &[data-tab="#online1"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online1.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online2"] {
+
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online2.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online3"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online3.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online4"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online4.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online5"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online5.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online6"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online6.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+
+      }
+
+      &[data-tab="#online7"] {
+
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online7.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online8"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online8.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      &[data-tab="#online9"] {
+        &:before {
+          content: "";
+          display: block;
+          margin-bottom: 16px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: url("../images/online9.png") 50% 0px / cover;
+
+          @include mobile {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+
+    &.on {
+      border-bottom: 2px solid rgb(113, 229, 215);
+
+      a {
+        font-weight: 700;
+        color: rgb(113, 229, 215);
+      }
+    }
+  }
+
+  .content-area {
+    padding: 40px 10px 0px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include mobile {
+      padding: 0;
+      padding-top: 20px;
+    }
+  }
+
+  .content {
+    display: none;
+
+    &.on {
+      display: block;
+      position: relative;
+    }
+  }
+
+  .swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        .slide {
+          position: relative;
+          width: 258px;
+        }
+      }
+    }
+  }
+
+  .desc {
+    display: none;
+
+    @include mobile {
+      display: -webkit-box;
+
+    }
+  }
+
+
+}
+
+.section-thisWeek {}
+
+.section-lineUp {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  .title {
+    display: flex;
+    align-items: center;
+
+    .tooltip {
+      background-image: url("../images/sprite.svg");
+      background-position: 93.5106382979% 86.6987179487%;
+      width: 42px;
+      height: 43px;
+      position: relative;
+      cursor: pointer;
+
+    }
+
+    .tip {
+      display: none;
+
+      &.on {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: -100%;
+        z-index: 3;
+        transform: translateX(-34%);
+        background-image: url("../images/sprite.svg");
+        background-position: 0 96.5209634255%;
+        width: 404px;
+        height: 170px;
+      }
+
+
+    }
+  }
+
+  .text-box {
+    padding: 24px 16px 0;
+  }
+
+  .short-desc {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .more {
+    &-btn {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      z-index: 10;
+      padding: 16px 0px 24px;
+
+      &.active {
+        display: none;
+      }
+    }
+
+    &-area {
+      display: none;
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 16px;
+        max-height: 999em;
+        padding-bottom: 24px;
+      }
+    }
+
+    &-title {
+      color: rgb(177, 181, 194);
+    }
+
+    &-content {
+      margin-top: 4px;
+      min-height: 40px;
+      color: rgb(255, 255, 255);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+  }
+
+}
+
+.section-banner {
+
+  .image-box {
+    img {
+      height: 160px;
+      width: 100%;
+    }
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.section-newEducation {
+  .title {
+    span {
+      color: rgb(113, 229, 215);
+    }
+  }
+
+  .swiper-slide {
+    .short-desc {
+      margin-top: 24px;
+    }
+  }
+}
+
+.section-notice {
+  .title {
+    margin-bottom: 8.5px;
+  }
+
+  .notice-list {
+    display: flex;
+    gap: 24px;
+
+    @include mobile {
+      flex-direction: column;
+      // gap: 8px;
+    }
+  }
+
+  .notice-item {
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    padding: 22px 16px;
+    background: url("../images/bg_notice_pc.png") 50% 50% / cover no-repeat;
+
+    @include mobile {
+      padding: 16px;
+      height: 128px;
+
+      .tag-list {
+        margin-top: 0;
+      }
+
+      strong {
+        display: block;
+        min-height: 40px;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include mobile {
+        gap: 8px;
+      }
+    }
+  }
+
+  strong {
+    @include ellipse(2);
+    max-height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(177, 181, 194);
+  }
+
+  .link-more {
+    display: block;
+    max-width: 384px;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 15px;
+    padding: 15px 30px;
+    background: rgb(0, 0, 0);
+    border-radius: 6px;
+    text-align: center;
+
+
+    @include mobile {
+      min-width: 100%;
+      height: 48px;
+      font-size: 15px;
+      font-weight: normal;
+      padding: 8px;
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}
+
+.section-introduce {
+  background: rgb(0, 0, 0);
+
+  @include mobile {
+    margin-top: 70px;
+  }
+
+  .inner {
+    min-height: 320px;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/bg_banner-image.jpg");
+    background-size: cover;
+
+    @include mobile {
+      position: relative;
+      padding: 58px 16px;
+      min-height: 264px;
+      background: url("../images/bg_main_intro_mo.png") 50% 50% / cover no-repeat;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+      }
+    }
+
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 24px;
+    line-height: 32px;
+
+    @include mobile {
+      position: relative;
+      z-index: 1;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+
+    br {
+      &:nth-child(2) {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+      }
+
+    }
+
+  }
+
+  a {
+    display: block;
+    background: rgb(85, 93, 249);
+    border-radius: 6px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding: 0px 32px;
+    height: 64px;
+    min-width: 234px;
+    font-size: 18px;
+    line-height: 64px;
+    margin: 32px auto 0px;
+
+    @include mobile {
+      position: relative;
+      z-index: 1;
+      margin: 24px auto 0px;
+      padding: 0px 28px;
+      height: 40px;
+      min-width: 190px;
+      font-size: 14px;
+      line-height: 40px;
+    }
+  }
+}
 
 // .marquee-area {
 //   width: 100%;
