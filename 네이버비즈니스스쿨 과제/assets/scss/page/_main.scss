@@ -1,5 +1,6 @@
 // html body {}
 
+
 .container {
   margin-top: 155px;
 
@@ -11,7 +12,7 @@
     margin-top: 92px;
 
     @include mobile {
-      margin-top: 36px;
+      margin-top: 56px;
     }
   }
 
@@ -22,194 +23,282 @@
     margin-bottom: 32px;
 
     @include mobile {
-      // padding: 0px 16px;
       font-size: 20px;
       line-height: 28px;
-      margin-bottom: 25px;
+      margin-bottom: 16px;
     }
   }
 }
 
-
-
-
-.swiper-slide {
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-
-  .link-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
+.swiper {
+  &.pc {
+    @include mobile {
+      display: none;
+    }
   }
 
-  .image-box {
+  &.mo {
+    display: none;
+
+    @include mobile {
+      display: block;
+      overflow: initial;
+
+      .swiper-slide {
+        width: auto !important;
+
+        .image-box {
+          width: 242px;
+          height: 136px;
+        }
+
+      }
+
+
+    }
+  }
+
+  .swiper-slide {
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
 
-    .save-text {
-      display: none;
-    }
-
-    .dimmed {
-      display: none;
+    .link-slide {
       position: absolute;
-      left: 0;
       top: 0;
-      animation: opacityAni 5s forwards;
-      background-color: rgba(0, 0, 0, 0.5);
-      width: 100%;
-      height: 100%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
     }
 
-    &.on {
+
+    .image-box {
+      position: relative;
+
+
       .save-text {
-        animation: opacityAni 5s forwards;
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        white-space: nowrap;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        border-radius: 38px;
-        padding: 15px 24px;
-        max-width: 100%;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 700;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(15px);
+        display: none;
       }
 
       .dimmed {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: opacityAni 5s forwards;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+      }
+
+      &.on {
+        .save-text {
+          animation: opacityAni 5s forwards;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+          border-radius: 38px;
+          padding: 15px 24px;
+          max-width: 100%;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(15px);
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        .dimmed {
+          display: block;
+        }
+      }
+
+
+
+
+
+    }
+
+    .text-box {
+      padding: 24px 16px;
+      background: rgb(38, 42, 53);
+      gap: 8px;
+
+      @include mobile {
+        padding: 16px 17px 16px 12px;
+      }
+
+      strong {
         display: block;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 48px;
+
+        @include mobile {
+          height: 40px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .bottom {
+        margin-top: auto;
       }
     }
 
+    .desc {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      color: rgb(177, 181, 194);
+      height: 60px;
+      @include ellipse(3);
 
+      @include mobile {
+        margin-top: 8px;
+      }
+    }
 
+    .short-desc {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: rgb(177, 181, 194);
+      display: flex;
 
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        max-width: 128px;
+      }
 
+      &>*+* {
+        &::before {
+          content: " ・ ";
+
+        }
+      }
+    }
+
+    .bookmark {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      background-image: url("../images/sprite.svg");
+      background-position: 6.050955414% 99.9201915403%;
+
+      &.save {
+        background-position: 8.067940552% 99.9201915403%;
+      }
+    }
+
+    &.link-more {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      width: 384px;
+      height: 352px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding: 24px;
+
+      p {
+        &::before {
+          content: "";
+          display: block;
+          width: 32px;
+          height: 32px;
+          background: url("../images/ic_right_hor.png") no-repeat;
+          background-size: contain;
+          margin-bottom: 16px;
+        }
+      }
+
+      span {
+        color: rgb(113, 229, 215);
+      }
+    }
   }
 
-  .text-box {
-    padding: 24px 16px;
-    background: rgb(38, 42, 53);
-    gap: 8px;
+}
 
+.text-box-mo {
+  display: none;
+
+  &.on {
     @include mobile {
-      padding: 16px 17px 16px 12px;
+      display: block;
+
     }
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -24%);
+    width: 328px;
+    padding: 85px 12px 16px 12px;
+    background: rgb(38, 42, 53);
+    border-radius: 8px;
 
     strong {
       display: block;
-      font-size: 16px;
-      line-height: 24px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 20px;
       font-weight: 700;
       color: rgb(255, 255, 255);
       overflow: hidden;
       text-overflow: ellipsis;
-      min-height: 48px;
-
-      @include mobile {
-        height: 40px;
-        font-size: 14px;
-        line-height: 20px;
-      }
     }
 
-    .bottom {
-      margin-top: auto;
-    }
-  }
-
-  .desc {
-    margin-top: 16px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    color: rgb(177, 181, 194);
-    height: 60px;
-    @include ellipse(3);
-
-    @include mobile {
+    .desc {
       margin-top: 8px;
-    }
-  }
-
-  .short-desc {
-    margin-top: 8px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: rgb(177, 181, 194);
-    display: flex;
-
-    span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      display: inline-block;
-      max-width: 128px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 21px;
+      height: 60px;
+      @include ellipse(3);
+      color: rgb(177, 181, 194);
     }
 
-    &>*+* {
-      &::before {
-        content: " ・ ";
+    .short-desc {
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: rgb(177, 181, 194);
 
+
+      &>*+* {
+        &::before {
+          content: " ・ ";
+        }
       }
     }
   }
 
-  .bookmark {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 38px;
-    height: 38px;
-    background-image: url("../images/sprite.svg");
-    background-position: 6.050955414% 99.9201915403%;
-
-    &.save {
-      background-position: 8.067940552% 99.9201915403%;
-    }
-  }
-
-  &.link-more {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
-    width: 384px;
-    height: 352px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    padding: 24px;
-
-    p {
-      &::before {
-        content: "";
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: url("../images/ic_right_hor.png") no-repeat;
-        background-size: contain;
-        margin-bottom: 16px;
-      }
-    }
-
-    span {
-      color: rgb(113, 229, 215);
-    }
-  }
 }
 
 .tag {
@@ -302,6 +391,8 @@
   width: 100%;
 
   .title {
+    margin-bottom: 24px;
+
     span {
       color: rgb(113, 229, 215);
     }
@@ -408,13 +499,6 @@
 
 .section-onlineEducation {
   overflow: hidden;
-
-  .inner {
-    @include mobile {
-      padding: 0;
-    }
-  }
-
 
   .tab-area {
     @include mobile {
@@ -675,11 +759,20 @@
   }
 
   .swiper {
-    .swiper-wrapper {
-      .swiper-slide {
-        .slide {
+    @include mobile {
+      overflow: initial;
+    }
+
+    .swiper-slide {
+      @include mobile {
+        width: auto !important;
+      }
+
+      .slide {
+        @include mobile {
           position: relative;
           width: 258px;
+
         }
       }
     }
@@ -694,15 +787,17 @@
     }
   }
 
-
 }
 
-.section-thisWeek {}
 
 .section-lineUp {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+
+  @include mobile {
+    margin-top: 0;
+  }
 
   .title {
     display: flex;
@@ -738,8 +833,31 @@
     }
   }
 
+  .swiper {
+    @include mobile {
+      overflow: initial;
+    }
+
+    .swiper-slide {
+      @include mobile {
+        width: auto !important;
+      }
+
+      .slide {
+        @include mobile {
+          position: relative;
+          width: 312px;
+        }
+      }
+    }
+  }
+
   .text-box {
     padding: 24px 16px 0;
+
+    @include mobile {
+      padding: 16px 12px;
+    }
   }
 
   .short-desc {
@@ -754,6 +872,11 @@
       text-align: left;
       z-index: 10;
       padding: 16px 0px 24px;
+
+      @include mobile {
+        padding: 0;
+        padding-top: 17px;
+      }
 
       &.active {
         display: none;
@@ -803,6 +926,7 @@
 
   @include mobile {
     display: none;
+    margin: 0;
   }
 }
 
@@ -813,14 +937,14 @@
     }
   }
 
-  .swiper-slide {
-    .short-desc {
-      margin-top: 24px;
-    }
-  }
 }
 
 .section-notice {
+  @include mobile {
+    margin-top: 0;
+
+  }
+
   .title {
     margin-bottom: 8.5px;
   }

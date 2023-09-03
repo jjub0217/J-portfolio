@@ -12,9 +12,18 @@
     }
   )
 
+  $(window).trigger('click')
+
+  $(".burgerBtn").click(function(){
+    $(".backDimmed").toggleClass("isAct")
+    $(".header").toggleClass("dimmed")
+    $(".mo_gnb_inner").toggleClass("isAct")
+      $('body').toggleClass('scroll-hide');
+  })
   $('.header > .inner .nav-item').mousemove(function(e){
     $('.backdrop').addClass('on')
     $('.onlineEducation-menu').removeClass('on')
+    $(".search-area").removeClass("on")
   })
 
   $('.header > .inner .nav-item').mouseleave(function(e){
@@ -52,8 +61,8 @@
 
   const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
     slidesPerView:3,
-    // spaceBetween: 16,
-    slideToClickedSlide: false,
+    spaceBetween: 16,
+    clickable: false,
     navigation: {
       nextEl: ".section-onlineEducation .next",
       prevEl: ".section-onlineEducation .prev",
@@ -79,11 +88,39 @@
     const className = tabName.replace("#", ".")
     $(className).addClass('on').siblings().removeClass('on');
   })
+ function anchor(swipe) {
+    const centerIndex = swipe.realIndex
+    const section = swipe.el.parentNode.parentNode.className
+    switch(centerIndex){
+      case 0:
+        $(`.${section} .text-box-mo#${section}-1`).addClass("on").siblings().removeClass("on")
+        break;
+      case 1:
+        $(`.${section} .text-box-mo#${section}-2`).toggleClass("on").siblings().removeClass("on")
+        break;
+      case 2:
+        $(`.${section} .text-box-mo#${section}-3`).toggleClass("on").siblings().removeClass("on")
+        break;
+      case 3:
+        $(`.${section} .text-box-mo#${section}-4`).toggleClass("on").siblings().removeClass("on")
+        break;
+      default:
+       return
+  }
 
+  }
   const thisWeekSlide = new Swiper('.section-thisWeek .swiper',{
-    slidesPerView: 3,
-    spaceBetween: 16,
+    slidesPerView: 'auto',
+    centeredSlides: true,
     loop: true,
+    spaceBetween: 16,
+    initialSlide: 0,
+    clickable: false,
+    on:   {
+      transitionEnd: function(){
+        anchor(this)
+      }
+    },
     breakpoints: {
       850: {
         slidesPerView: 4,
@@ -94,10 +131,10 @@
 
   const lineUpSlide = new Swiper('.section-lineUp .swiper',{
     slidesPerView: 3,
-    spaceBetween: 24,
-    slideToClickedSlide: false,
-    breakpoints: {
-      850: {
+    spaceBetween: 16,
+    clickable: false,
+     breakpoints: {
+      851: {
         slidesPerView: 3,
         spaceBetween: 24,
       },
@@ -116,17 +153,28 @@
   $(".tooltip").click(function(){
     $(".tip").toggleClass('on')
   })
-  const newEducationSlide = new Swiper('.section-newEducation .swiper',{
-    slidesPerView: 3,
+  const newEducationSlidePc = new Swiper('.section-newEducation .swiper.pc',{
+    slidesPerView: 4,
     spaceBetween: 24,
-    loop: true,
-    breakpoints: {
-      850: {
-        slidesPerView: 4,
-        spaceBetween: 24,
-      },
-    }
+    clickable: false,
+  }) 
+
+
+  const newEducationSlideMo = new Swiper('.section-newEducation .swiper.mo',{
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      loop: true,
+      spaceBetween: 16,
+      initialSlide: 0,
+      clickable: false,
+      on:   {
+        transitionEnd: function(){
+         anchor(this)
+        }
+      } 
   })  
+
+ 
   $('.related').click(function (e){
     e.preventDefault()
     $(this).toggleClass('on')
@@ -142,7 +190,15 @@
   })
 
   $(".bookmark").click(function(){
-    $(this).addClass("save")
+    $(this).toggleClass("save")
     $(this).siblings(".image-box").addClass("on")
-  
+  })
+
+  $(".search-btn").click(function(){
+    $(".search-area").toggleClass("on")
+     
+  })
+
+  $(".close-btn").click(function(){
+     $(".search-area").removeClass("on")
   })
