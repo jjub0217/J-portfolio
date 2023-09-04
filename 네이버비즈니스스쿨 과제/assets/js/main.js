@@ -15,11 +15,14 @@
   $(window).trigger('click')
 
   $(".burgerBtn").click(function(){
+    $('body').toggleClass('scroll-hide');
     $(".backDimmed").toggleClass("isAct")
     $(".header").toggleClass("dimmed")
     $(".mo_gnb_inner").toggleClass("isAct")
-      $('body').toggleClass('scroll-hide');
+    $(".search-btn").toggleClass("dimmed")
+$(".burgerBtn").toggleClass("dimmed")
   })
+
   $('.header > .inner .nav-item').mousemove(function(e){
     $('.backdrop').addClass('on')
     $('.onlineEducation-menu').removeClass('on')
@@ -109,7 +112,11 @@
   }
 
   }
-  const thisWeekSlide = new Swiper('.section-thisWeek .swiper',{
+  const thisWeekSlidePc = new Swiper('.section-thisWeek .swiper.pc',{
+      slidesPerView: 4,
+      spaceBetween: 24,
+  })
+  const thisWeekSlideMo = new Swiper('.section-thisWeek .swiper.mo',{
     slidesPerView: 'auto',
     centeredSlides: true,
     loop: true,
@@ -121,12 +128,7 @@
         anchor(this)
       }
     },
-    breakpoints: {
-      850: {
-        slidesPerView: 4,
-        spaceBetween: 24,
-      },
-    }
+
   })
 
   const lineUpSlide = new Swiper('.section-lineUp .swiper',{

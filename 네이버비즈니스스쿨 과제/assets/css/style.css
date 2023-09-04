@@ -146,6 +146,7 @@ fieldset {
   .inner {
     padding: 0px 16px;
     min-width: 320px;
+    max-width: none;
   }
 }
 
@@ -170,19 +171,21 @@ fieldset {
 /* Extra Small Devices, Phones : ~ 480px */
 /* Custom, iPhone Retina : ~ 320px */
 .backDimmed {
-  display: none;
-}
-.backDimmed.isAct {
   display: block;
   position: fixed;
   left: 0;
-  top: 0;
+  top: 5vh;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.8);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   width: 100%;
   height: 100vh;
+  transform: translateX(100%);
+  transition: all 0.3s;
+}
+.backDimmed.isAct {
+  transform: none;
 }
 
 .header {
@@ -196,9 +199,7 @@ fieldset {
           backdrop-filter: blur(15px);
 }
 .header.dimmed {
-  background-color: transparent;
-  -webkit-backdrop-filter: 0;
-          backdrop-filter: 0;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .header .inner {
   height: 80px;
@@ -263,6 +264,9 @@ fieldset {
   background-image: url("../images/sprite.svg");
   background-position: 22.186836518% 99.9201915403%;
   margin-right: 8px;
+}
+.header .group-area .search-btn.dimmed {
+  background-position: 12.101910828% 99.9201915403%;
 }
 .header .group-area .profile-image {
   width: 32px;
@@ -381,6 +385,9 @@ fieldset {
   .header .group-area .burgerBtn {
     display: block;
   }
+  .header .group-area .burgerBtn.dimmed {
+    background-position: 10.08492569% 99.9201915403%;
+  }
 }
 
 .backdrop .inner {
@@ -466,11 +473,6 @@ fieldset {
   display: none;
   border-top: 1px solid rgb(38, 42, 53);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
-}
-@media screen and (max-width: 850px) {
-  .search-area {
-    min-width: 320px;
-  }
 }
 .search-area.on {
   display: block;
@@ -572,7 +574,7 @@ fieldset {
     width: 100%;
     height: calc(100vh - 60px);
     z-index: 1000;
-    padding: 11px 0px;
+    padding: 11px 0px 80px 0;
     transform: translateX(100%);
     transition: all 0.3s;
     overflow-y: auto;
@@ -580,26 +582,26 @@ fieldset {
   .mo_gnb_inner.isAct {
     transform: none;
   }
-  .mo_gnb_inner.isAct .nav-list {
+  .mo_gnb_inner .nav-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 16px;
     padding-right: 16px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item {
+  .mo_gnb_inner .nav-list .nav-item {
     font-size: 18px;
     line-height: 22px;
     font-weight: 500;
     color: rgb(255, 255, 255);
     width: 100%;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .hasSubMenu {
+  .mo_gnb_inner .nav-list .nav-item .hasSubMenu {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .hasSubMenu::after {
+  .mo_gnb_inner .nav-list .nav-item .hasSubMenu::after {
     content: "";
     display: block;
     background: url("../images/sprite.svg") no-repeat;
@@ -607,23 +609,23 @@ fieldset {
     width: 39px;
     height: 38px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .sub-list {
+  .mo_gnb_inner .nav-list .nav-item .sub-list {
     display: block;
     position: relative;
     top: 0;
     padding: 0;
     padding: 5px 0;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .sub-item {
+  .mo_gnb_inner .nav-list .nav-item .sub-item {
     font-size: 18px;
     margin-top: 13px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .sub-item a {
+  .mo_gnb_inner .nav-list .nav-item .sub-item a {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item .sub-item a::after {
+  .mo_gnb_inner .nav-list .nav-item .sub-item a::after {
     content: "";
     display: block;
     background: url("../images/sprite.svg") no-repeat;
@@ -632,7 +634,7 @@ fieldset {
     height: 38px;
     transform: rotate(-90deg);
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item:not(:nth-child(1)) .sub-item {
+  .mo_gnb_inner .nav-list .nav-item:not(:nth-child(1)) .sub-item {
     display: flex;
     align-items: center;
     margin-top: 2px;
@@ -644,24 +646,24 @@ fieldset {
     height: 40px;
     padding: 0px 16px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item:not(:nth-child(1)) .sub-item:first-child {
+  .mo_gnb_inner .nav-list .nav-item:not(:nth-child(1)) .sub-item:first-child {
     border-radius: 8px 8px 0px 0px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item:not(:nth-child(1)) .sub-item:last-child {
+  .mo_gnb_inner .nav-list .nav-item:not(:nth-child(1)) .sub-item:last-child {
     border-radius: 0px 0px 8px 8px;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item:not(:nth-child(1)) .sub-item a {
+  .mo_gnb_inner .nav-list .nav-item:not(:nth-child(1)) .sub-item a {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .mo_gnb_inner.isAct .nav-list .nav-item:not(:nth-child(1)) .sub-item a::after {
+  .mo_gnb_inner .nav-list .nav-item:not(:nth-child(1)) .sub-item a::after {
     display: none;
   }
-  .mo_gnb_inner.isAct .vertical {
+  .mo_gnb_inner .vertical {
     width: 100%;
   }
-  .mo_gnb_inner.isAct .vertical:after {
+  .mo_gnb_inner .vertical:after {
     content: "";
     display: block;
     height: 1px;
@@ -1011,7 +1013,6 @@ fieldset {
 @media screen and (max-width: 850px) {
   .swiper.mo {
     display: block;
-    overflow: initial;
   }
   .swiper.mo .swiper-slide {
     width: auto !important;
@@ -1279,7 +1280,7 @@ fieldset {
   display: block;
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 2;
   background: url("../images/ic_nav-next.png") 0px 0px/48px 48px no-repeat;
   width: 48px;
   height: 48px;
@@ -1298,7 +1299,7 @@ fieldset {
   display: block;
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 2;
   background: url("../images/ic_nav-next.png") 0px 0px/48px 48px no-repeat;
   width: 48px;
   height: 48px;
@@ -1645,11 +1646,6 @@ fieldset {
   position: relative;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .swiper {
-    overflow: initial;
-  }
-}
-@media screen and (max-width: 850px) {
   .section-onlineEducation .swiper .swiper-slide {
     width: auto !important;
   }
@@ -1705,11 +1701,6 @@ fieldset {
   background-position: 0 96.5209634255%;
   width: 404px;
   height: 170px;
-}
-@media screen and (max-width: 850px) {
-  .section-lineUp .swiper {
-    overflow: initial;
-  }
 }
 @media screen and (max-width: 850px) {
   .section-lineUp .swiper .swiper-slide {
