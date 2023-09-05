@@ -60,7 +60,9 @@
                 <span class="blind">프로필이미지</span>
               </div>
               <div class="greetings">
-                <p class="message">안녕하세요,<br><span>강주현님,</span></p>
+                <p class="message">안녕하세요,<br>
+                  <span class="user"><strong>강주현</strong>님,</span>
+                </p>
               </div>
             </div>
             <div class="hr"></div>
@@ -238,7 +240,7 @@
       <section class="section-personal">
         <div class="inner">
           <h2 class="title">
-            안녕하세요, <span>강주현</span>님. <br>
+            안녕하세요, <strong>강주현</strong>님. <br>
             네이버 비즈니스 스쿨에 오신 것을 환영합니다!
           </h2>
           <div class="function-area">
@@ -2425,10 +2427,11 @@
       <section class="section-banner">
         <h2 class="blind">배너영역</h2>
         <div class="inner">
-          <div class="image-box">
+          <div class="image-box pc">
             <img src="./assets/images/banner.png" alt="">
-            <div class="dimmed"></div>
-
+          </div>
+          <div class="image-box mo">
+            <img src="./assets/images/banner_mo.png" alt="">
           </div>
         </div>
       </section>
@@ -3068,10 +3071,18 @@
       </div>
     </footer>
     <div class="mo_gnb_inner">
-      <ul class="nav-list">
+      <ul class="nav-list top">
         <li class="nav-item">
           <a href="#" class="link-nav hasSubMenu">
-            <span>Teams</span>
+            <span class="login">
+              <span class="profile-image">
+                <span class="blind">프로필 이미지</span>
+              </span>
+              <span class="greetings">
+                <span class="message">안녕하세요,</span>
+                <span class="user"><strong>강주현</strong>님.</span>
+              </span>
+            </span>
           </a>
           <ul class="sub-list">
             <li class="sub-item">
@@ -3087,10 +3098,13 @@
             <li class="sub-item">
               <a href="">
                 <span>교육 포인트
-                  <span class="count">0p</span>
+                  <span class="count">0P</span>
                 </span>
               </a>
-              <p>0p</p>
+              <span class="point">
+                <span>0P</span>
+                <span>50,000P</span>
+              </span>
             </li>
             <li class="sub-item">
               <a href="">
@@ -3099,6 +3113,8 @@
             </li>
           </ul>
         </li>
+      </ul>
+      <ul class="nav-list middle">
         <li class="nav-item">
           <a href="#" class="link-nav hasSubMenu">
             <span>온라인 교육</span>
@@ -3195,15 +3211,13 @@
           </ul>
         </li>
       </ul>
-      <i class="vertical"></i>
-      <ul class="nav-list">
+      <ul class="nav-list bottom">
         <li class="nav-item">
           <a href="#" class="link-nav">
             <span>공지사항</span>
           </a>
         </li>
       </ul>
-      <i class="vertical"></i>
       <ul class="nav-list">
         <li class="nav-item">
           <a href="#" class="link-nav">
@@ -3213,8 +3227,11 @@
       </ul>
     </div>
     <div class="backDimmed"></div>
-
-
+    <div class="scrollTop">
+      <a href="#" aria-label="scroll-top">
+        <img src="./assets/images/scroll-top.svg" alt="">
+      </a>
+    </div>
   </div>
 </body>
 
