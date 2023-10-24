@@ -4,10 +4,9 @@
     curr = $(this).scrollTop()
       html = `현재스크롤값: ${curr}`
     if(curr >= 1){
-
       $('.onlineEducation-menu').addClass('on')
     }else{
-        $('.onlineEducation-menu').removeClass('on')
+      $('.onlineEducation-menu').removeClass('on')
       }
     }
   )
@@ -16,11 +15,15 @@
 
   $(".burgerBtn").click(function(){
     $('body').toggleClass('scroll-hide');
-    $(".backDimmed").toggleClass("isAct")
-    $(".header").toggleClass("dimmed")
     $(".mo_gnb_inner").toggleClass("isAct")
-    $(".search-btn").toggleClass("dimmed")
-$(".burgerBtn").toggleClass("dimmed")
+    $(".search-btn").toggleClass("mo_gnb-on")
+    $(".burgerBtn").toggleClass("on")
+    $(".header").toggleClass("mo_gnb-on")
+    if ($(".burgerBtn").attr('aria-expanded') === 'false') {
+      $('.burgerBtn').attr('aria-expanded', 'true' )
+    } else {
+      $('.burgerBtn').attr('aria-expanded', 'false' )
+    }
   })
 
     $('.mo_gnb_inner .top .nav-item').click(function(e){
@@ -38,29 +41,27 @@ $(".burgerBtn").toggleClass("dimmed")
       }
   })
 
-  $('.header > .inner .nav-item').mousemove(function(e){
-    $('.backdrop').addClass('on')
-    $('.onlineEducation-menu').removeClass('on')
-    $(".search-area").removeClass("on")
-  })
 
-  $('.header > .inner .nav-item').mouseleave(function(e){
+  //네이버비즈니스 gnb 벗어나는게 왜 범위가 좁을까?
+  $('.header > .inner .gnb').hover(function(e){
+    $('.sub-list').addClass('on');
+    $(".header").addClass("hov").height($('.sub-list').outerHeight(true)+$(".header .inner").height())
+  },function(e){
+    $('.sub-list').removeClass('on');
+    $(".header").css('height', 'auto')
     if($('.onlineEducation-menu').length){
-      $('.backdrop').removeClass('on')
-      $('.onlineEducation-menu').addClass('on')
+      $(".header").removeClass("hov")
     }
   })
   
-  $('.header > .backdrop').mousemove(function(e){
-    $('.backdrop').addClass('on')
-    $('.onlineEducation-menu').removeClass('on')
+
+  $(".search-btn").click(function(){
+    $('.header').addClass("search")
+    $(".search-area input").focus()
   })
 
-  $('.header > .backdrop').mouseleave(function(e){
-    if($('.onlineEducation-menu').length){
-      $('.backdrop').removeClass('on')
-      $('.onlineEducation-menu').addClass('on')
-    }
+  $(".close-btn").click(function(){
+    $('.header').removeClass("search")
   })
 
   const menuSlide = new Swiper('.onlineEducation-menu .swiper',{
@@ -211,16 +212,9 @@ $(".burgerBtn").toggleClass("dimmed")
     $(this).siblings(".image-box").addClass("on")
   })
 
-  $(".search-btn").click(function(){
-    $(".search-area").toggleClass("on")
-    $(".search-area input").focus()
-     
-  })
 
-  $(".close-btn").click(function(){
-     $(".search-area").removeClass("on")
-  })
 
+ 
   $(".scrollTop").click(function(){
     $('html, body').animate({scrollTop: 0}, 800);
     return false;
