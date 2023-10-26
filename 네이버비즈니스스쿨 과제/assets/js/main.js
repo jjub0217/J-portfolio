@@ -92,7 +92,7 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
  *  @onlineEducation섹션내용불러오는fetch함수
  * 
 */
-function onlineEducationList() {
+function onlineEducationList(tab) {
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
@@ -163,6 +163,10 @@ function onlineEducationList() {
         <p><span>비즈니스팁</span> 코스 교육<br>37개 전체보기</p>
       </div>
     </li>`
+
+    // sortData = data.filter(item => {
+    //   return item.skin.indexOf(tab) >= 0
+    // })
     data.forEach(education => {
       data1 = education.online1
       data2 = education.online2
