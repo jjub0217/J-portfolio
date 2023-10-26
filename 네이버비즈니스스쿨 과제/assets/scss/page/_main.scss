@@ -1,6 +1,3 @@
-// html body {}
-
-
 .container {
   margin-top: 155px;
 
@@ -42,7 +39,7 @@
 
     @include mobile {
       display: block;
-      // overflow: initial;
+
 
       .swiper-slide {
         width: auto !important;
@@ -76,22 +73,23 @@
 
 
     .image-box {
-      position: relative;
-
 
       .save-text {
         display: none;
       }
 
-      .dimmed {
-        display: none;
+      &::before {
+        content: "";
         position: absolute;
-        left: 0;
         top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         animation: opacityAni 5s forwards;
         background-color: rgba(0, 0, 0, 0.6);
         width: 100%;
         height: 100%;
+        opacity: 0;
       }
 
       &.on {
@@ -119,15 +117,10 @@
           }
         }
 
-        .dimmed {
-          display: block;
+        &::before {
+          opacity: 1;
         }
       }
-
-
-
-
-
     }
 
     .text-box {
@@ -804,6 +797,11 @@
 
   @include mobile {
     margin-top: 0;
+
+    .inner {
+      padding: 0px;
+      padding-left: 16px;
+    }
   }
 
   .title {
@@ -940,10 +938,15 @@
     }
 
     &.mo {
+      display: none;
       margin: 0 auto;
       width: 328px;
       border-radius: 8px;
       overflow: hidden;
+
+      @include mobile {
+        display: block;
+      }
 
       img {
         height: 80px;

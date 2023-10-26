@@ -76,7 +76,6 @@
         top: 100%;
         width: 100%;
         height: fit-content;
-        // background: #f00;
 
         &.on {
           display: block;
@@ -245,8 +244,6 @@
             }
           }
         }
-
-
       }
 
       &:hover+.floating-profile {
@@ -279,7 +276,7 @@
 }
 
 
-.onlineEducation-menu {
+.floating-menu {
   display: none;
   border-top: 1px solid rgb(38, 42, 53);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
@@ -306,40 +303,37 @@
     }
 
 
-    .swiper-wrapper {
-      white-space: nowrap;
-      font-size: 0;
-      color: rgb(177, 181, 194);
-
-      @include mobile {}
-    }
-
-
-    .swiper-slide {
-      display: inline-block;
-      width: auto;
-      padding: 18px 0px 14px;
-
-      &.on {
-        color: rgb(113, 229, 215);
+    .swiper {
+      &-wrapper {
+        white-space: nowrap;
+        font-size: 0;
+        color: rgb(177, 181, 194);
       }
 
-      &:nth-child(1) {
-        padding-left: 16px;
-      }
+      &-slide {
+        display: inline-block;
+        width: auto;
+        padding: 18px 0px 14px;
 
-      a {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 18px;
-
-        @include mobile {
-          font-size: 14px;
-          line-height: 20px;
+        &.on {
+          color: rgb(113, 229, 215);
         }
 
-      }
+        &:nth-child(1) {
+          padding-left: 16px;
+        }
 
+        a {
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 18px;
+
+          @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
     }
   }
 }
@@ -468,12 +462,102 @@
       backdrop-filter: blur(15px);
     }
 
-    .nav-list {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .nav {
+      &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-      .nav-item {
+        &:nth-child(1) {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          .nav-item {
+            &_title {
+              padding-bottom: 27px;
+            }
+
+            .sub {
+              &-list {
+                gap: 26px;
+                padding: 20px 16px 20px 0px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+              }
+
+              &-item {
+
+                &_title {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+
+                  &::after {
+                    content: "";
+                    display: block;
+                    background: url("../images/sprite.svg") no-repeat;
+                    background-position: 95.5921402018% 86.3527533919%;
+                    width: 39px;
+                    height: 38px;
+                    transform: rotate(-90deg);
+                  }
+                }
+
+                .count {
+                  color: rgb(113, 229, 215);
+                }
+              }
+
+            }
+
+
+          }
+        }
+
+        &:not(:nth-child(1)) {
+          padding: 20px 0;
+          gap: 12px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          .sub-item {
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+
+            background-color: rgb(25, 26, 31);
+            color: rgb(177, 181, 194);
+            height: 40px;
+            padding: 0px 16px;
+
+            &:first-child {
+              border-radius: 8px 8px 0px 0px;
+            }
+
+            &:last-child {
+              border-radius: 0px 0px 8px 8px;
+            }
+
+
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              &::after {
+                display: none;
+              }
+            }
+
+          }
+
+
+        }
+      }
+
+
+      &-item {
         font-size: 18px;
         line-height: 22px;
         font-weight: 500;
@@ -485,7 +569,7 @@
           padding-right: 16px;
         }
 
-        .hasSubMenu {
+        &_title {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -544,19 +628,22 @@
           }
         }
 
-        .sub-list {
-          display: none;
+        .sub {
+          &-list {
+            display: none;
 
-          &.on {
-            display: flex;
-            flex-direction: column;
-            padding: 5px 16px 0px 16px;
+            &.on {
+              display: flex;
+              flex-direction: column;
+              padding: 5px 16px 0px 16px;
+            }
           }
-        }
 
-        .sub-item {
-          font-size: 18px;
-          padding-left: 16px;
+          &-item {
+            font-size: 18px;
+            padding-left: 16px;
+          }
+
         }
 
         .point {
@@ -574,89 +661,6 @@
           padding-left: 8px;
           font-size: 11px;
         }
-
-      }
-
-      &:nth-child(1) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        &>.nav-item {
-          &>a {
-            padding-bottom: 27px;
-          }
-
-          .sub-list {
-            gap: 26px;
-            padding: 20px 16px 20px 0px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-          }
-
-          .sub-item {
-
-            a {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-
-
-              &::after {
-                content: "";
-                display: block;
-                background: url("../images/sprite.svg") no-repeat;
-                background-position: 95.5921402018% 86.3527533919%;
-                width: 39px;
-                height: 38px;
-                transform: rotate(-90deg);
-              }
-            }
-
-            .count {
-              color: rgb(113, 229, 215);
-            }
-          }
-        }
-      }
-
-      &:not(:nth-child(1)) {
-        padding: 20px 0;
-        gap: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        .sub-item {
-          display: flex;
-          align-items: center;
-          margin-top: 2px;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 24px;
-
-          background-color: rgb(25, 26, 31);
-          color: rgb(177, 181, 194);
-          height: 40px;
-          padding: 0px 16px;
-
-          &:first-child {
-            border-radius: 8px 8px 0px 0px;
-          }
-
-          &:last-child {
-            border-radius: 0px 0px 8px 8px;
-          }
-
-
-          a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            &::after {
-              display: none;
-            }
-          }
-
-        }
-
-
       }
     }
   }
