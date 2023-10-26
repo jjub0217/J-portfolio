@@ -65,7 +65,7 @@ $(window).on("load",function(){
  * 
 */
 /** 
- * @onlineEducation섹션내부의swiper기능
+ * @onlineEducation섹션내부의swiper기능(클릭커블펄스했는데?)
  * 
 */
 const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
@@ -92,91 +92,31 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
  *  @onlineEducation섹션내용불러오는fetch함수
  * 
 */
-function onlineEducationList(tab) {
+function onlineEducationList(tabId ="#online1") {
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
     data = json.onlineEducation
-
     let html1 = ``
-    let html1_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <div class="slide">
-        <p>
-          <span>네이버 AI</span> 코스 교육<br>
-          10개 전체보기
-        </p>
-      </div>
-    </li>`
-    let html2 = ``
-    let html2_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <div class="slide">
-        <p><span>스마트스토어</span> 코스 교육<br>79개 전체보기</p>
-      </div>
-    </li>`
-    let html3 = ``
-    let html3_2 = 
-    `<li class="swiper-slide link-more">
+    let html1_2 = ``
+
+    sortData = data.filter(item => {
+      // item의 id 가 tabId 랑 같으면 1, 안 같으면 0
+      return item.id.indexOf(tabId) >= 0
+    })
+    sortData.forEach(item => {
+      html1_2 = 
+      `<li class="swiper-slide link-more">
         <a href=""></a>
         <div class="slide">
-          <p><span>쇼핑라이브</span> 코스 교육<br>37개 전체보기</p>
+          <p>
+            <span>${item.course[0]}</span> ${item.course[1]}<br>
+            ${item.course[2]}
+          </p>
         </div>
       </li>`
-    let html4 = ``
-    let html4_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <div class="slide">
-        <p><span>스마트플레이스</span> 코스 교육<br>36개 전체보기</p>
-      </div>
-    </li>`
-    let html5 = ``
-    let html5_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <div class="slide">
-        <p><span>스마트스토어</span> 코스 교육<br>79개 전체보기</p>
-      </div>
-    </li>`
-    let html6 = ``
-    let html6_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <p><span>블로그/인플루언서</span> 코스 교육<br>31개 전체보기</p>
-    </li>`
-    let html7 = ``
-    let html7_2 = 
-    `<li class="swiper-slide link-more">
-      <a href=""></a>
-      <div class="slide">
-        <p><span>엑스퍼트/프리미엄콘텐츠</span> 코스 교육<br>20개 전체보기</p>
-      </div>
-    </li>`
-    let html8 = ``
-    let html8_2 = 
-    `<li class="swiper-slide link-more">
-      <div class="slide">
-        <a href="" class="link-slide"></a>
-        <p><span>비즈니스팁</span> 코스 교육<br>37개 전체보기</p>
-      </div>
-    </li>`
 
-    // sortData = data.filter(item => {
-    //   return item.skin.indexOf(tab) >= 0
-    // })
-    data.forEach(education => {
-      data1 = education.online1
-      data2 = education.online2
-      data3 = education.online3
-      data4 = education.online4
-      data5 = education.online5
-      data6 = education.online6
-      data7 = education.online7
-      data8 = education.online8
-          data1.forEach(element => {
+    item.contents.forEach(content => {
       html1+=
       `<li class="swiper-slide"> 
         <a href="" class="link-slide">
@@ -184,26 +124,26 @@ function onlineEducationList(tab) {
         </a>
         <div class="slide">
           <div class="image-box">
-            <img src=${element.imageUrl} alt="">
+            <img src=${content.imageUrl} alt="">
             <p class="save-text">
               나중에 볼 교육으로 저장 되었습니다.
             </p>
           </div>
           <div class="text-box">
-            <strong>${element.textStrong}</strong>
+            <strong>${content.textStrong}</strong>
               <div class="bottom">
                 <ul class="tag-list">`
-                  element.tags.forEach(tag => {
+                  content.tags.forEach(tag => {
                   html1 += 
                   `<li class="tag">${tag}</li>`
                   })
                   html1 += 
                 `</ul>
                 <p class="desc">
-                  ${element.desc}
+                  ${content.desc}
                 </p>
                 <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
+                  content.shortDesc.forEach(text => {
                   html1 += 
                   `<span>${text}</span>`
                   })
@@ -211,285 +151,12 @@ function onlineEducationList(tab) {
                 `</p>
               </div>
             </div>
+            <button class="bookmark" aria-label="북마크"></button>
           </div>
         </li>`
+      })
     })
-    data2.forEach(element => {
-      html2+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html2 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html2 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html2 += 
-                  `<span>${text}</span>`
-                  })
-                  html2 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data3.forEach(element => {
-      html3+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html3 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html3 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html3 += 
-                  `<span>${text}</span>`
-                  })
-                  html3 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data4.forEach(element => {
-      html4+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html4 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html4 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html4 += 
-                  `<span>${text}</span>`
-                  })
-                  html4 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data5.forEach(element => {
-      html5+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html5 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html5 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html5 += 
-                  `<span>${text}</span>`
-                  })
-                  html5 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data6.forEach(element => {
-      html6+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html6 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html6 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html6 += 
-                  `<span>${text}</span>`
-                  })
-                  html6 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data7.forEach(element => {
-      html7+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html7 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html7 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html7 += 
-                  `<span>${text}</span>`
-                  })
-                  html7 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    data8.forEach(element => {
-      html8+=
-        `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${element.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${element.textStrong}</strong>
-              <div class="bottom">
-                <ul class="tag-list">`
-                  element.tags.forEach(tag => {
-                  html8 += 
-                  `<li class="tag">${tag}</li>`
-                  })
-                  html8 += 
-                `</ul>
-                <p class="desc">
-                  ${element.desc}
-                </p>
-                <p class="short-desc">`
-                  element.shortDesc.forEach(text => {
-                  html8 += 
-                  `<span>${text}</span>`
-                  })
-                  html8 +=
-                `</p>
-              </div>
-            </div>
-          </div>
-        </li>`
-    })
-    })
-
-    $(".section-onlineEducation #online1 .swiper-wrapper").html(html1+html1_2);
-    $(".section-onlineEducation #online2 .swiper-wrapper").html(html2+html2_2);
-    $(".section-onlineEducation #online3 .swiper-wrapper").html(html3+html3_2);
-    $(".section-onlineEducation #online4 .swiper-wrapper").html(html4+html4_2);
-    $(".section-onlineEducation #online5 .swiper-wrapper").html(html5+html5_2);
-    $(".section-onlineEducation #online6 .swiper-wrapper").html(html6+html6_2);
-    $(".section-onlineEducation #online7 .swiper-wrapper").html(html7+html7_2);
-    $(".section-onlineEducation #online8 .swiper-wrapper").html(html8+html8_2);
+    $(".section-onlineEducation .swiper-wrapper").html(html1+html1_2);
   })
 }
 /** 
@@ -506,11 +173,8 @@ $(document).on("click", ".bookmark",(function(){
 */
 $('.section-onlineEducation .tab-item').click(function(e){
   e.preventDefault();
-  tabName = $(this).find('a').data('tab');
+  onlineEducationList($(this).data("tab"))
   $(this).addClass('on').siblings().removeClass('on');
-  $(tabName).addClass('on').siblings().removeClass('on');
-  const className = tabName.replace("#", ".")
-  $(className).addClass('on').siblings().removeClass('on');
 })
 
 
@@ -580,7 +244,6 @@ function thisWeekList() {
 
     let htmlPc = ``
     data.forEach(element => {
-      console.log(element);
       htmlPc += 
       `<li class="swiper-slide">
         <a href="" class="link-slide">
@@ -683,7 +346,6 @@ function lineUpList() {
 
     let html = ``
     data.forEach(element => {
-      console.log(element);
       html += 
       `<li class="swiper-slide">
         <a href="" class="link-slide">
@@ -786,7 +448,6 @@ function newEducationList() {
 
     let htmlPc = ``
     data.forEach(element => {
-      console.log(element);
       htmlPc += 
       `<li class="swiper-slide">
         <a href="" class="link-slide">
@@ -861,7 +522,6 @@ function noticeList() {
 
     let html = ``
     data.forEach(element => {
-      console.log(element);
       html += 
       `<li class="notice-item">
           <a href="">

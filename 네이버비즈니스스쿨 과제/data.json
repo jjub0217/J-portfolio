@@ -1,7 +1,13 @@
 {
   "onlineEducation": [
     {
-      "online1": [
+      "id": "#online1",
+      "course": [
+        "네이버 AI",
+        "코스 교육",
+        "10개 전체보기"
+      ],
+      "contents": [
         {
           "imageUrl": "./assets/images/ai-1.jpg",
           "textStrong": "CLOVA Studio 소개 및 신청 안내",
@@ -70,8 +76,16 @@
             "5개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online2",
+      "course": [
+        "스마트스토어",
+        "코스 교육",
+        "79개 전체보기"
       ],
-      "online2": [
+      "contents": [
         {
           "imageUrl": "./assets/images/store-1.png",
           "textStrong": "원쁠딜 활용하기",
@@ -142,8 +156,16 @@
             "1개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online3",
+      "course": [
+        "쇼핑라이브",
+        "코스 교육",
+        "37개 전체보기"
       ],
-      "online3": [
+      "contents": [
         {
           "imageUrl": "./assets/images/live-1.jpg",
           "textStrong": "라이브 퀄리티 확 높이는 아주 쉬운 기본 세팅 & 촬영팁",
@@ -214,8 +236,16 @@
             "1개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online4",
+      "course": [
+        "스마트플레이스",
+        "코스 교육",
+        "36개 전체보기"
       ],
-      "online4": [
+      "contents": [
         {
           "imageUrl": "./assets/images/ad-1.png",
           "textStrong": "브랜드검색광고 이해하기",
@@ -287,8 +317,16 @@
             "1개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online5",
+      "course": [
+        "스마트스토어",
+        "코스 교육",
+        "79개 전체보기"
       ],
-      "online5": [
+      "contents": [
         {
           "imageUrl": "./assets/images/place-1.jpg",
           "textStrong": "최적의 주방 설계",
@@ -359,8 +397,16 @@
             "7개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online6",
+      "course": [
+        "블로그/인플루언서",
+        "코스 교육",
+        "31개 전체보기"
       ],
-      "online6": [
+      "contents": [
         {
           "imageUrl": "./assets/images/blog-1.jpg",
           "textStrong": "방문자를 끈끈한 이웃으로! 블로그 운영 노하우",
@@ -426,8 +472,16 @@
             "3개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online7",
+      "course": [
+        "엑스퍼트/프리미엄콘텐츠",
+        "코스 교육",
+        "20개 전체보기"
       ],
-      "online7": [
+      "contents": [
         {
           "imageUrl": "./assets/images/expert-1.jpg",
           "textStrong": "프리미엄콘텐츠 채널 개설 꿀팁",
@@ -497,8 +551,16 @@
             "3개 강의"
           ]
         }
+      ]
+    },
+    {
+      "id": "#online8",
+      "course": [
+        "비즈니스팁",
+        "코스 교육",
+        "37개 전체보기"
       ],
-      "online8": [
+      "contents": [
         {
           "imageUrl": "./assets/images/business-1.png",
           "textStrong": "블로그로 수익 창출이 가능했던 나만의 브랜딩 스토리",

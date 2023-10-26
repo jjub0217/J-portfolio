@@ -198,6 +198,7 @@
       right: 0;
       width: 38px;
       height: 38px;
+      z-index: 1;
       background-image: url("../images/sprite.svg");
       background-position: 6.050955414% 99.9201915403%;
 
@@ -491,253 +492,276 @@
 
 
 .section-onlineEducation {
-  // overflow: hidden;
 
-  .tab-area {
-    overflow: scroll;
-    -ms-overflow-style: none; // IE에서 스크롤바 감춤
+  .tab {
+    &-area {
+      overflow: scroll;
+      -ms-overflow-style: none; // IE에서 스크롤바 감춤
 
-    &::-webkit-scrollbar {
-      display: none !important; // 윈도우 크롬 등
-    }
-
-    @include mobile {
-      display: flex;
-      // justify-content: center;
-    }
-  }
-
-  .tab-list {
-    display: flex;
-    overflow: scroll;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    -ms-overflow-style:none;
-    scrollbar-width:none;
-  }
-
-  .tab-item {
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 150px;
-
-      span {
-        font-size: 16px;
-        line-height: 24px;
-        white-space: normal;
-        text-align: center;
-        color: rgb(177, 181, 194);
-
-        br {
-          display: none;
-        }
+      &::-webkit-scrollbar {
+        display: none !important; // 윈도우 크롬 등
       }
 
       @include mobile {
-        width: 56px;
-        margin: 0 10px;
+        display: flex;
+      }
+    }
+
+    &-list {
+      display: flex;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+    }
+
+    &-item {
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px;
 
         span {
-          min-width: 80px;
-          font-size: 12px;
-          line-height: 14px;
-          margin-bottom: 10px;
+          font-size: 16px;
+          line-height: 24px;
+          white-space: normal;
+          text-align: center;
+          color: rgb(177, 181, 194);
 
           br {
-            display: block;
+            display: none;
+          }
+        }
+
+        @include mobile {
+          width: 56px;
+          margin: 0 10px;
+
+          span {
+            min-width: 80px;
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 10px;
+
+            br {
+              display: block;
+            }
           }
         }
       }
 
       &[data-tab="#online1"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online1.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online1.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
       }
 
       &[data-tab="#online2"] {
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online2.png") 50% 0px / cover;
 
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online2.png") 50% 0px / cover;
-
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
       }
 
       &[data-tab="#online3"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online3.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online3.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
       }
 
       &[data-tab="#online4"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online4.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online4.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
+
       }
 
       &[data-tab="#online5"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online5.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online5.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
+
       }
 
       &[data-tab="#online6"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online6.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online6.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
 
       }
 
       &[data-tab="#online7"] {
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online7.png") 50% 0px / cover;
 
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online7.png") 50% 0px / cover;
-
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
+
       }
 
       &[data-tab="#online8"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online8.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online8.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
         }
+
       }
 
       &[data-tab="#online9"] {
-        &:before {
-          content: "";
-          display: block;
-          margin-bottom: 16px;
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: url("../images/online9.png") 50% 0px / cover;
+        a {
+          &:before {
+            content: "";
+            display: block;
+            margin-bottom: 16px;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../images/online9.png") 50% 0px / cover;
 
-          @include mobile {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 6px;
+            @include mobile {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 6px;
+            }
           }
+        }
+
+      }
+
+      &.on {
+        border-bottom: 2px solid rgb(113, 229, 215);
+
+        a {
+          font-weight: 700;
+          color: rgb(113, 229, 215);
         }
       }
     }
 
-    &.on {
-      border-bottom: 2px solid rgb(113, 229, 215);
-
-      a {
-        font-weight: 700;
-        color: rgb(113, 229, 215);
-      }
-    }
   }
+
 
   .content-area {
     padding: 40px 10px 0px 0px;
@@ -759,9 +783,6 @@
   }
 
   .swiper {
-    @include mobile {
-      // overflow: initial;
-    }
 
     .swiper-slide {
       @include mobile {
@@ -772,7 +793,6 @@
         @include mobile {
           position: relative;
           width: 258px;
-
         }
       }
     }
@@ -783,7 +803,6 @@
 
     @include mobile {
       display: -webkit-box;
-
     }
   }
 

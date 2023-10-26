@@ -1208,6 +1208,7 @@ fieldset {
   right: 0;
   width: 38px;
   height: 38px;
+  z-index: 1;
   background-image: url("../images/sprite.svg");
   background-position: 6.050955414% 99.9201915403%;
 }
@@ -1526,7 +1527,7 @@ fieldset {
     display: block;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online1"]:before {
+.section-onlineEducation .tab-item[data-tab="#online1"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1537,13 +1538,13 @@ fieldset {
   background: url("../images/online1.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online1"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online1"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online2"]:before {
+.section-onlineEducation .tab-item[data-tab="#online2"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1554,13 +1555,13 @@ fieldset {
   background: url("../images/online2.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online2"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online2"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online3"]:before {
+.section-onlineEducation .tab-item[data-tab="#online3"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1571,13 +1572,13 @@ fieldset {
   background: url("../images/online3.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online3"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online3"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online4"]:before {
+.section-onlineEducation .tab-item[data-tab="#online4"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1588,13 +1589,13 @@ fieldset {
   background: url("../images/online4.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online4"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online4"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online5"]:before {
+.section-onlineEducation .tab-item[data-tab="#online5"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1605,13 +1606,13 @@ fieldset {
   background: url("../images/online5.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online5"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online5"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online6"]:before {
+.section-onlineEducation .tab-item[data-tab="#online6"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1622,13 +1623,13 @@ fieldset {
   background: url("../images/online6.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online6"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online6"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online7"]:before {
+.section-onlineEducation .tab-item[data-tab="#online7"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1639,13 +1640,13 @@ fieldset {
   background: url("../images/online7.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online7"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online7"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online8"]:before {
+.section-onlineEducation .tab-item[data-tab="#online8"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1656,13 +1657,13 @@ fieldset {
   background: url("../images/online8.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online8"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online8"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item a[data-tab="#online9"]:before {
+.section-onlineEducation .tab-item[data-tab="#online9"] a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1673,7 +1674,7 @@ fieldset {
   background: url("../images/online9.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item a[data-tab="#online9"]:before {
+  .section-onlineEducation .tab-item[data-tab="#online9"] a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;
