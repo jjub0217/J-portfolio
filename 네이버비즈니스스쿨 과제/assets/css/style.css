@@ -114,6 +114,48 @@ fieldset {
   position: absolute;
 }
 
+.error {
+  visibility: hidden;
+}
+.error.display {
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  visibility: hidden;
+}
+.loader.display {
+  visibility: visible;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader div {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  animation-fill-mode: both;
+  display: inline-block;
+}
+.loader div:nth-child(1) {
+  animation: loader-sync 0.6s -0.14s infinite ease-in-out;
+}
+.loader div:nth-child(2) {
+  animation: loader-sync 0.6s -0.07s infinite ease-in-out;
+}
+.loader div:nth-child(3) {
+  animation: loader-sync 0.6s 0s infinite ease-in-out;
+}
+
 .scroll-hide {
   overflow: hidden;
 }
@@ -159,6 +201,17 @@ fieldset {
   cursor: pointer;
 }
 
+@keyframes loader-sync {
+  33% {
+    transform: translateY(10px);
+  }
+  66% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @keyframes opacityAni {
   from {
     display: block;
@@ -1478,6 +1531,7 @@ fieldset {
 .section-onlineEducation .tab-area {
   overflow: scroll;
   -ms-overflow-style: none;
+  justify-content: center;
 }
 .section-onlineEducation .tab-area::-webkit-scrollbar {
   display: none !important;
@@ -1733,10 +1787,6 @@ fieldset {
   .section-lineUp {
     margin-top: 0;
   }
-  .section-lineUp .inner {
-    padding: 0px;
-    padding-left: 16px;
-  }
 }
 .section-lineUp .title {
   display: flex;
@@ -1793,7 +1843,18 @@ fieldset {
   width: 100%;
   text-align: left;
   z-index: 10;
-  padding: 16px 0px 24px;
+  padding: 16px 0px 0px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.section-lineUp .more-btn::before {
+  content: "";
+  display: block;
+  background-image: url("../images/sprite.svg");
+  background-position: 73% 92.3%;
+  width: 12.7px;
+  height: 13.5px;
 }
 @media screen and (max-width: 850px) {
   .section-lineUp .more-btn {
@@ -1813,7 +1874,6 @@ fieldset {
   gap: 16px;
   margin-top: 16px;
   max-height: 999em;
-  padding-bottom: 24px;
 }
 .section-lineUp .more-title {
   color: rgb(177, 181, 194);

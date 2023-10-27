@@ -7,6 +7,59 @@
   position: absolute;
 }
 
+.error {
+  visibility: hidden;
+
+  &.display {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.loader {
+  visibility: hidden;
+
+  &.display {
+    visibility: visible;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+  }
+
+  div:nth-child(1) {
+    -webkit-animation: loader-sync 0.6s -0.14s infinite ease-in-out;
+    animation: loader-sync 0.6s -0.14s infinite ease-in-out;
+  }
+
+  div:nth-child(2) {
+    -webkit-animation: loader-sync 0.6s -0.07s infinite ease-in-out;
+    animation: loader-sync 0.6s -0.07s infinite ease-in-out;
+  }
+
+  div:nth-child(3) {
+    -webkit-animation: loader-sync 0.6s 0s infinite ease-in-out;
+    animation: loader-sync 0.6s 0s infinite ease-in-out;
+  }
+
+
+}
 
 .scroll-hide {
   overflow: hidden;
@@ -46,7 +99,6 @@
   }
 }
 
-// 전체 화면 스크롤 올리면 왜 움직이는걸까?
 .scrollTop {
   position: fixed;
   right: 12px;
@@ -55,6 +107,22 @@
   cursor: pointer;
 }
 
+@keyframes loader-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 
 @keyframes opacityAni {
   from {

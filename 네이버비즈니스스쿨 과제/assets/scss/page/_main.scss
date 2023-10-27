@@ -497,6 +497,7 @@
     &-area {
       overflow: scroll;
       -ms-overflow-style: none; // IE에서 스크롤바 감춤
+      justify-content: center;
 
       &::-webkit-scrollbar {
         display: none !important; // 윈도우 크롬 등
@@ -817,10 +818,10 @@
   @include mobile {
     margin-top: 0;
 
-    .inner {
-      padding: 0px;
-      padding-left: 16px;
-    }
+    // .inner {
+    //   padding: 0px;
+    //   padding-left: 16px;
+    // }
   }
 
   .title {
@@ -895,7 +896,19 @@
       width: 100%;
       text-align: left;
       z-index: 10;
-      padding: 16px 0px 24px;
+      padding: 16px 0px 0px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url("../images/sprite.svg");
+        background-position: 73% 92.3%;
+        width: 12.7px;
+        height: 13.5px;
+      }
 
       @include mobile {
         padding: 0;
@@ -916,7 +929,7 @@
         gap: 16px;
         margin-top: 16px;
         max-height: 999em;
-        padding-bottom: 24px;
+        // padding-bottom: 24px;
       }
     }
 

@@ -2,11 +2,8 @@
   "onlineEducation": [
     {
       "id": "#online1",
-      "course": [
-        "네이버 AI",
-        "코스 교육",
-        "10개 전체보기"
-      ],
+      "course": "네이버 AI",
+      "total": "10",
       "contents": [
         {
           "imageUrl": "./assets/images/ai-1.jpg",
@@ -80,11 +77,8 @@
     },
     {
       "id": "#online2",
-      "course": [
-        "스마트스토어",
-        "코스 교육",
-        "79개 전체보기"
-      ],
+      "course": "스마트스토어",
+      "total": "79",
       "contents": [
         {
           "imageUrl": "./assets/images/store-1.png",
@@ -160,11 +154,8 @@
     },
     {
       "id": "#online3",
-      "course": [
-        "쇼핑라이브",
-        "코스 교육",
-        "37개 전체보기"
-      ],
+      "course": "쇼핑라이브",
+      "total": "37",
       "contents": [
         {
           "imageUrl": "./assets/images/live-1.jpg",
@@ -240,11 +231,8 @@
     },
     {
       "id": "#online4",
-      "course": [
-        "스마트플레이스",
-        "코스 교육",
-        "36개 전체보기"
-      ],
+      "course": "스마트플레이스",
+      "total": "36",
       "contents": [
         {
           "imageUrl": "./assets/images/ad-1.png",
@@ -321,11 +309,8 @@
     },
     {
       "id": "#online5",
-      "course": [
-        "스마트스토어",
-        "코스 교육",
-        "79개 전체보기"
-      ],
+      "course": "스마트스토어",
+      "total": "79",
       "contents": [
         {
           "imageUrl": "./assets/images/place-1.jpg",
@@ -401,11 +386,8 @@
     },
     {
       "id": "#online6",
-      "course": [
-        "블로그/인플루언서",
-        "코스 교육",
-        "31개 전체보기"
-      ],
+      "course": "블로그/인플루언서",
+      "total": "31",
       "contents": [
         {
           "imageUrl": "./assets/images/blog-1.jpg",
@@ -476,11 +458,8 @@
     },
     {
       "id": "#online7",
-      "course": [
-        "엑스퍼트/프리미엄콘텐츠",
-        "코스 교육",
-        "20개 전체보기"
-      ],
+      "course": "엑스퍼트/프리미엄콘텐츠",
+      "total": "20",
       "contents": [
         {
           "imageUrl": "./assets/images/expert-1.jpg",
@@ -555,11 +534,8 @@
     },
     {
       "id": "#online8",
-      "course": [
-        "비즈니스팁",
-        "코스 교육",
-        "37개 전체보기"
-      ],
+      "course": "비즈니스팁",
+      "total": "37",
       "contents": [
         {
           "imageUrl": "./assets/images/business-1.png",
@@ -641,11 +617,9 @@
         "사업자"
       ],
       "desc": "브랜드검색광고 이해하기 후속 강의입니다. 브랜드검색광고의 특징과 유의할점을 알았다면, 이제 광고시스템에서 직접 등록/실습해보세요!",
-      "shortDesc": [
-        "네이버 프로 이현정",
-        "총 29분",
-        "5개 강의"
-      ]
+      "manager": "네이버 프로 이현정",
+      "running": "총 29분",
+      "total": "5"
     },
     {
       "imageUrl": "./assets/images/thisweek-2.png",
@@ -655,11 +629,9 @@
         "사업자"
       ],
       "desc": "자체 제작 상품을 판매할 계획이신가요?",
-      "shortDesc": [
-        "비즈스쿨전문강사 홍성재",
-        "총 37분",
-        "4개 강의"
-      ]
+      "manager": "비즈스쿨전문강사 홍성재",
+      "running": "총 37분",
+      "total": "4"
     },
     {
       "imageUrl": "./assets/images/thisweek-3.jpg",
@@ -668,11 +640,9 @@
         "창작자"
       ],
       "desc": "실제 데이터를 기반으로 한 프리미엄콘텐츠 채널 운영 노하우를 상세하게 알려드립니다.",
-      "shortDesc": [
-        "네이버 프로 제이",
-        "총 18분",
-        "3개 강의"
-      ]
+      "manager": "네이버 프로 제이",
+      "running": "총 18분",
+      "total": "3개 강의"
     },
     {
       "imageUrl": "./assets/images/thisweek-4.png",
@@ -681,22 +651,18 @@
         "실습"
       ],
       "desc": "사진촬영 꿀팁 대방출! 제품 별 촬영 연출법과 노하우를 아낌없이 전합니다.",
-      "shortDesc": [
-        "네이버프로 이현정",
-        "총 46분",
-        "8개 강의"
-      ]
+      "manager": "네이버프로 이현정",
+      "running": "총 46분",
+      "total": "8개 강의"
     }
   ],
   "lineUp": [
     {
       "imageUrl": "./assets/images/lineUp-1.png",
       "textStrong": "매출을 높이는 소비자 데이터 분석과 전략",
-      "shortDesc": [
-        "네이버 프로 이혜련",
-        "총 40분",
-        "6개 강의"
-      ],
+      "manager": "네이버 프로 이혜련",
+      "running": "총 40분",
+      "total": "6개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -715,11 +681,9 @@
     {
       "imageUrl": "./assets/images/lineUp-2.jpg",
       "textStrong": "라이프로그를 빛내줄 슛뚜의 스마트폰 사진 노하우",
-      "shortDesc": [
-        "크리에이터 슛뚜",
-        "총 59분",
-        "12개 강의"
-      ],
+      "manager": "크리에이터 슛뚜",
+      "running": "총 59분",
+      "total": "12개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -738,11 +702,9 @@
     {
       "imageUrl": "./assets/images/lineUp-3.jpg",
       "textStrong": "'우리 가게 매니저' 스마트플레이스 활용법",
-      "shortDesc": [
-        "네이버 프로 김윤",
-        "총 58분",
-        "20개 강의"
-      ],
+      "manager": "네이버 프로 김윤",
+      "running": "총 58분",
+      "total": "20개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -761,11 +723,9 @@
     {
       "imageUrl": "./assets/images/lineUp-4.png",
       "textStrong": "검색이 잘 되는 상품 등록 방법 (feat. 적합도를 높이는 상품 등록 노하우)",
-      "shortDesc": [
-        "네이버 프로 서지현",
-        "총 66분",
-        "8개 강의"
-      ],
+      "manager": "네이버 프로 서지현",
+      "running": "총 66분",
+      "total": "8개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -784,11 +744,9 @@
     {
       "imageUrl": "./assets/images/lineUp-5.jpg",
       "textStrong": "잘 되는 매장의 플레이스 리뷰 관리 전략",
-      "shortDesc": [
-        "비즈스쿨전문강사 김주리",
-        "총 61분",
-        "17개 강의"
-      ],
+      "manager": "비즈스쿨전문강사 김주리",
+      "running": "총 61분",
+      "total": "17개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -807,11 +765,9 @@
     {
       "imageUrl": "./assets/images/lineUp-6.jpg",
       "textStrong": "내 식당, 네이버에 알리고 매출 올리기(예약/주문 포함)",
-      "shortDesc": [
-        "네이버 프로 김윤",
-        "총 82분",
-        "27개 강의"
-      ],
+      "manager": "네이버 프로 김윤",
+      "running": "총 82분",
+      "total": "27개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -830,11 +786,9 @@
     {
       "imageUrl": "./assets/images/lineUp-7.jpg",
       "textStrong": "네이버 플레이스 리뷰 완전정복",
-      "shortDesc": [
-        "네이버 프로 김혜주",
-        "총 63분",
-        "13개 강의"
-      ],
+      "manager": "네이버 프로 김혜주",
+      "running": "총 63분",
+      "total": "13개 강의",
       "paragraph": [
         {
           "title": "교육대상",
@@ -860,11 +814,9 @@
         "창작자"
       ],
       "desc": "CLOVA Studio의 익스플로러는 사용자가 다양한 도구를 활용하여 작업물을 만들고 CLOVA Studio에서 제공하는 샘플이나 다른 사용자들이 전체 공개 상태로 저장한 작업물을 확인하며, 저장한 작업물을 보관할 수 있는 공간입니다.  익스플로러의 주요 개념과 함께 실제 활용 예시를 통해 좀 더 쉽게 익스플로러를 알아볼 수 있습니다.",
-      "shortDesc": [
-        "네이버 프로 이선경",
-        "총 18분",
-        "4개 강의"
-      ]
+      "manager": "네이버 프로 이선경",
+      "running": "총 18분",
+      "total": "4개 강의"
     },
     {
       "imageUrl": "./assets/images/new-2.png",
@@ -875,11 +827,9 @@
         "포인트"
       ],
       "desc": "쇼핑몰을 운영 중이라면 진행 가능한 쇼핑검색광고 쇼핑몰 상품형 등록하기",
-      "shortDesc": [
-        "네이버 프로 서지현",
-        "총 28분",
-        "6개 강의"
-      ]
+      "manager": "네이버 프로 서지현",
+      "running": "총 28분",
+      "total": "6개 강의"
     },
     {
       "imageUrl": "./assets/images/new-3.png",
@@ -889,11 +839,9 @@
         "창작자"
       ],
       "desc": "카탈로그 제품의 소유권을 가진 제조사라면 진행 가능한 쇼핑검색광고 제품 카탈로그형!",
-      "shortDesc": [
-        "네이버 프로 서지현",
-        "총 26분",
-        "6개 강의"
-      ]
+      "manager": "네이버 프로 서지현",
+      "running": "총 26분",
+      "total": "6개 강의"
     },
     {
       "imageUrl": "./assets/images/new-4.png",
@@ -903,11 +851,9 @@
         "사업자"
       ],
       "desc": "네이버 검색 결과에 내 브랜드를 홍보하는 쇼핑검색광고 쇼핑 브랜드형!",
-      "shortDesc": [
-        "네이버 프로 서지현",
-        "총 27분",
-        "6개 강의"
-      ]
+      "manager": "네이버 프로 서지현",
+      "running": "총 27분",
+      "total": "6개 강의"
     }
   ],
   "notice": [

@@ -5,6 +5,45 @@
 */
 // $(window).trigger('click')
 
+/** 
+ *  @로더표시
+ * 
+*/
+function displayLoading(){
+  console.log('로딩중');
+  $(".loader").addClass("display")
+  setTimeout(()=> {
+    $(".loader").removeClass("display")
+  },2000)
+}
+
+/** 
+ *  @로더표시해제
+ * 
+*/
+function hideLoading(){
+  console.log('로딩 끝');
+  $(".loader").removeClass("display")
+}
+
+/** 
+ *  @애러표시
+ * 
+*/
+function displayError(error){
+  console.log(error);
+  console.log('에러발생');
+  $(".error").addClass("display")
+}
+
+/** 
+ *  @애러표시해제
+ * 
+*/
+function hideError(){
+  console.log('에러 초기화');
+  $(".error").removeClass("display")
+}
 
 /** 
  *  @floating메뉴내부의swiper기능
@@ -88,11 +127,17 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
     },
   }
 })
+
+
+
 /** 
  *  @onlineEducation섹션내용불러오는fetch함수
  * 
 */
-function onlineEducationList(tabId ="#online1") {
+ function onlineEducationList(tabId ="#online1") {
+
+  displayLoading()
+  hideError()
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
@@ -105,32 +150,21 @@ function onlineEducationList(tabId ="#online1") {
       return item.id.indexOf(tabId) >= 0
     })
     sortData.forEach(item => {
-      html1_2 = 
-      `<li class="swiper-slide link-more">
-        <a href=""></a>
-        <div class="slide">
-          <p>
-            <span>${item.course[0]}</span> ${item.course[1]}<br>
-            ${item.course[2]}
-          </p>
-        </div>
-      </li>`
-
-    item.contents.forEach(content => {
-      html1+=
-      `<li class="swiper-slide"> 
-        <a href="" class="link-slide">
-          <span class="blind">링크</span>
-        </a>
-        <div class="slide">
-          <div class="image-box">
-            <img src=${content.imageUrl} alt="">
-            <p class="save-text">
-              나중에 볼 교육으로 저장 되었습니다.
-            </p>
-          </div>
-          <div class="text-box">
-            <strong>${content.textStrong}</strong>
+      item.contents.forEach(content => {
+        html1+=
+        `<li class="swiper-slide"> 
+          <a href="" class="link-slide">
+            <span class="blind">링크</span>
+          </a>
+          <div class="slide">
+            <div class="image-box">
+              <img src=${content.imageUrl} alt="">
+              <p class="save-text">
+                나중에 볼 교육으로 저장 되었습니다.
+              </p>
+            </div>
+            <div class="text-box">
+              <strong>${content.textStrong}</strong>
               <div class="bottom">
                 <ul class="tag-list">`
                   content.tags.forEach(tag => {
@@ -155,8 +189,22 @@ function onlineEducationList(tabId ="#online1") {
           </div>
         </li>`
       })
+      html1_2 = 
+      `<li class="swiper-slide link-more">
+        <a href=""></a>
+        <div class="slide">
+          <p>
+            <span>${item.course}</span> 코스교육<br>
+            ${item.total}개 전체보기
+          </p>
+        </div>
+      </li>`
     })
     $(".section-onlineEducation .swiper-wrapper").html(html1+html1_2);
+    hideLoading()
+  })
+  .catch(error => {
+    displayError(error)
   })
 }
 /** 
@@ -237,12 +285,16 @@ function anchor(swipe) {
  * 
 */
 function thisWeekList() {
+
+  displayLoading()
+  hideError()
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
     data = json.thisWeek
 
     let htmlPc = ``
+    let htmlMo = ``
     data.forEach(element => {
       htmlPc += 
       `<li class="swiper-slide">
@@ -268,16 +320,13 @@ function thisWeekList() {
                 })
                 htmlPc += 
               `</ul>
-              <p class="desc">
-              ${element.desc}
+              <p class="desc">${element.desc}</p>
+              <p class="short-desc">
+                <span>${element.manager}</span>
+                <span>${element.running}</span>
+                <span>${element.total}개 강의</span>
               </p>
-              <p class="short-desc">`
-                element.shortDesc.forEach(text => {
-                  htmlPc += 
-                  `<span>${text}</span>`
-                })
-                htmlPc +=
-              `</p>
+              </p>
             </div>
           </div>
           <button class="bookmark" aria-label="북마크"></button>
@@ -289,6 +338,7 @@ function thisWeekList() {
     //   htmlMo +=   
     //   `<li class="swiper-slide">
     //     <a href="" class="link-slide">
+    //       <span class="blind">링크</span>
     //     </a>
     //     <div class="image-box">
     //       <img src=${element.imageUrl} alt="">
@@ -300,7 +350,11 @@ function thisWeekList() {
     //   </li>`
     // })
     $(".section-thisWeek .pc .swiper-wrapper").html(htmlPc);
+    hideLoading()
     // $(".section-thisWeek .mo .swiper-wrapper").html(htmlMo);
+  })
+   .catch(error => {
+    displayError(error)
   })
 }
 
@@ -339,6 +393,9 @@ const lineUpSlide = new Swiper('.section-lineUp .swiper',{
  * 
 */
 function lineUpList() {
+
+  displayLoading()
+  hideError()
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
@@ -360,13 +417,11 @@ function lineUpList() {
           </div>
           <div class="text-box">
             <strong>${element.textStrong}</strong>
-            <p class="short-desc">`
-              element.shortDesc.forEach(text => {
-                html += 
-                `<span>${text}</span>`
-              })
-              html +=
-            `</p>
+            <p class="short-desc">
+              <span>${element.manager}</span>
+              <span>${element.running}</span>
+              <span>${element.total}개 강의</span>
+            </p>
             <button class="more-btn">더보기</button>
             <div class="more-area">`
               element.paragraph.forEach(content => {
@@ -386,6 +441,10 @@ function lineUpList() {
       </li>`
     })
     $(".section-lineUp .swiper-wrapper").html(html);
+    hideLoading()
+  })
+  .catch(error => {
+    displayError(error)
   })
 }
 /** 
@@ -441,6 +500,9 @@ const newEducationSlideMo = new Swiper('.section-newEducation .swiper.mo',{
  * 
 */
 function newEducationList() {
+
+  displayLoading()
+  hideError()
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
@@ -475,13 +537,11 @@ function newEducationList() {
               <p class="desc">
               ${element.desc}
               </p>
-              <p class="short-desc">`
-                element.shortDesc.forEach(text => {
-                  htmlPc += 
-                  `<span>${text}</span>`
-                })
-                htmlPc +=
-              `</p>
+              <p class="short-desc">
+                <span>${element.manager}</span>
+                <span>${element.running}</span>
+                <span>${element.total}개 강의</span>
+              </p>
             </div>
           </div>
           <button class="bookmark" aria-label="북마크"></button>
@@ -493,6 +553,7 @@ function newEducationList() {
     //   htmlMo +=   
     //   `<li class="swiper-slide">
     //     <a href="" class="link-slide">
+    //      <span class="blind">링크</span>
     //     </a>
     //     <div class="image-box">
     //       <img src=${element.imageUrl} alt="">
@@ -504,7 +565,11 @@ function newEducationList() {
     //   </li>`
     // })
     $(".section-newEducation .pc .swiper-wrapper").html(htmlPc);
+    hideLoading()
     // $(".section-thisWeek .mo .swiper-wrapper").html(htmlMo);
+  })
+  .catch(error => {
+    displayError(error)
   })
 }
 
@@ -515,6 +580,9 @@ function newEducationList() {
  * 
 */
 function noticeList() {
+
+  displayLoading()
+  hideError()
   fetch('./data.json')
   .then(res => res.json())
   .then(json => {
@@ -531,7 +599,7 @@ function noticeList() {
                 `<li class="tag">${tag}
                 </li>`
                 })
-               html +=
+              html +=
               `</ul>
             <strong>${element.textStrong}</strong>
             <p class="date">${element.date}</p>
@@ -539,6 +607,10 @@ function noticeList() {
         </li>`
     })
     $(".section-notice .notice-list").html(html);
+    hideLoading()
+  })
+  .catch(error => {
+    displayError(error)
   })
 }
 
