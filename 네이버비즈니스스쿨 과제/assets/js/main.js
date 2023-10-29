@@ -65,8 +65,7 @@ const menuSlide = new Swiper('.floating-menu .swiper',{
  * 
 */
 $(window).scroll(function(){
-  curr = $(this).scrollTop()
-    html = `현재스크롤값: ${curr}`
+  let curr = $(this).scrollTop()
   if(curr >= 1){
     $('.floating-menu').addClass('on')
   }else{
