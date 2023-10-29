@@ -1,0 +1,77 @@
+// 1264 안에서 잘 나오면 오케이
+// 전역으로 적용시킨것들은 1264 이상으로 다 적용시키는 것이다. 
+
+// [1201] ~ 1263
+$desktop: 1263px;
+
+@mixin desktop {
+
+  // 900 이하를 꾸미는거다. 
+  @media screen and (max-width: $desktop ) {
+    @content;
+  }
+}
+
+
+// ------------------------
+// [1101] ~ 1200
+$largeDevice: 1200px;
+
+@mixin largeDevice {
+
+  // 900 이하를 꾸미는거다. 
+  @media screen and (max-width: $largeDevice ) {
+    @content;
+  }
+}
+
+
+// ------------------------
+// [1001] ~ 1100
+$mediumLargeTablet: 1100px;
+
+@mixin mediumLargeTablet {
+
+  // 900 이하를 꾸미는거다. 
+  @media screen and (max-width: $mediumLargeTablet ) {
+    @content;
+  }
+}
+
+
+// ------------------------
+// [901] ~ 900
+$mediumDevice: 1000px;
+
+@mixin mediumDevice {
+
+  // 900 이하를 꾸미는거다. 
+  @media screen and (max-width: $mediumDevice ) {
+    @content;
+  }
+}
+
+
+// ------------------------
+// [851] ~ 900
+$smallDevice: 900px;
+
+@mixin smallDevice {
+
+  // 900 이하를 꾸미는거다. 
+  @media screen and (max-width: $smallDevice ) {
+    @content;
+  }
+}
+
+// ------------------------
+// [480] ~ 850
+$mobile: 850px;
+
+@mixin mobile {
+
+  // 850 이하를 꾸미는거다. 
+  @media screen and (max-width: $mobile ) {
+    @content;
+  }
+}

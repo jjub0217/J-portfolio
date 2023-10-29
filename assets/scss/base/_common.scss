@@ -1,0 +1,170 @@
+.blind {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.error {
+  visibility: hidden;
+
+  &.display {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.loader {
+  visibility: hidden;
+
+  &.display {
+    visibility: visible;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+  }
+
+  div:nth-child(1) {
+    -webkit-animation: loader-sync 0.6s -0.14s infinite ease-in-out;
+    animation: loader-sync 0.6s -0.14s infinite ease-in-out;
+  }
+
+  div:nth-child(2) {
+    -webkit-animation: loader-sync 0.6s -0.07s infinite ease-in-out;
+    animation: loader-sync 0.6s -0.07s infinite ease-in-out;
+  }
+
+  div:nth-child(3) {
+    -webkit-animation: loader-sync 0.6s 0s infinite ease-in-out;
+    animation: loader-sync 0.6s 0s infinite ease-in-out;
+  }
+
+
+}
+
+.scroll-hide {
+  overflow: hidden;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  @include mobile {
+    padding: 0px 16px;
+    min-width: 320px;
+    max-width: none;
+
+  }
+}
+
+#skip-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  height: 100px;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    background: #ccc;
+  }
+}
+
+.scrollTop {
+  position: fixed;
+  right: 12px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+@keyframes loader-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes opacityAni {
+  from {
+    display: block;
+  }
+
+  to {
+    display: none;
+  }
+}
+
+// }/* All Device */
+
+/* Custom, iPhone Retina : 320px ~ */
+@media only screen and (min-width : 320px) {}
+
+/* Extra Small Devices, Phones : 480px ~ */
+@media only screen and (min-width : 480px) {}
+
+/* Small Devices, Tablets : 768px ~ */
+@media only screen and (min-width : 768px) {}
+
+/* Medium Devices, Desktops : 992px ~ */
+@media only screen and (min-width : 992px) {}
+
+/* Large Devices, Wide Screens : 1200px ~ */
+@media only screen and (min-width : 1200px) {}
+
+/*==========  Non-Mobile First Method  ==========*/
+/* All Device */
+
+/* Large Devices, Wide Screens : ~ 1200px */
+@media only screen and (max-width : 1200px) {}
+
+/* Medium Devices, Desktops : ~ 992px */
+@media only screen and (max-width : 992px) {}
+
+/* Small Devices, Tablets : ~ 768px */
+@media only screen and (max-width : 768px) {}
+
+/* Extra Small Devices, Phones : ~ 480px */
+@media only screen and (max-width : 480px) {}
+
+/* Custom, iPhone Retina : ~ 320px */
+@media only screen and (max-width : 320px) {}
