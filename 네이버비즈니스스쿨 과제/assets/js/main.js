@@ -60,6 +60,7 @@ const menuSlide = new Swiper('.floating-menu .swiper',{
   }
 })
 
+
 /** 
  *  @스크롤위치에따른floating메뉴나타내기
  * 
@@ -110,6 +111,7 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
   slidesPerView:3,
   spaceBetween: 16,
   clickable: false,
+    // cssMode: true,
   navigation: {
     nextEl: ".section-onlineEducation .next",
     prevEl: ".section-onlineEducation .prev",
