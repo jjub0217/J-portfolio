@@ -340,7 +340,12 @@
   }
 
   .bottom-footer.mo {
-    margin-top: 47px;
+    display: none;
+
+    @include mobile {
+      display: block;
+      margin-top: 47px;
+    }
 
     .link-list {
       display: flex;

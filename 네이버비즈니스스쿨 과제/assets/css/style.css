@@ -1059,7 +1059,13 @@ fieldset {
   height: 14px;
 }
 .footer .bottom-footer.mo {
-  margin-top: 47px;
+  display: none;
+}
+@media screen and (max-width: 850px) {
+  .footer .bottom-footer.mo {
+    display: block;
+    margin-top: 47px;
+  }
 }
 .footer .bottom-footer.mo .link-list {
   display: flex;
@@ -1543,7 +1549,6 @@ fieldset {
 }
 .section-onlineEducation .tab-list {
   display: flex;
-  overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
