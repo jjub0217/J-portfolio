@@ -11,9 +11,9 @@
 */
 function displayLoading(){
   console.log('로딩중');
-  $(".loader").addClass("display")
+  $(".indicator").addClass("display")
   setTimeout(()=> {
-    $(".loader").removeClass("display")
+    $(".indicator").removeClass("display")
   },2000)
 }
 
@@ -23,7 +23,7 @@ function displayLoading(){
 */
 function hideLoading(){
   console.log('로딩 끝');
-  $(".loader").removeClass("display")
+  $(".indicator").removeClass("display")
 }
 
 /** 
