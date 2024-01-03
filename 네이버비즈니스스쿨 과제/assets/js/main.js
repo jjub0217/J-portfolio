@@ -111,7 +111,6 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
   slidesPerView:3,
   spaceBetween: 16,
   clickable: false,
-    // cssMode: true,
   navigation: {
     nextEl: ".section-onlineEducation .next",
     prevEl: ".section-onlineEducation .prev",
@@ -135,7 +134,7 @@ const onlineEducationSlide = new Swiper('.section-onlineEducation .swiper',{
  *  @onlineEducation섹션내용불러오는fetch함수
  * 
 */
- function onlineEducationList(tabId ="#online1") {
+function onlineEducationList(tabId ="#online1") {
 
   displayLoading()
   hideError()

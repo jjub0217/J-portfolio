@@ -787,6 +787,7 @@
     .swiper-slide {
       @include mobile {
         width: auto !important;
+        margin-right: 16px;
       }
 
       .slide {
