@@ -1739,7 +1739,7 @@ fieldset {
     margin-bottom: 6px;
   }
 }
-.section-onlineEducation .tab-item[data-tab="#online9"] a:before {
+.section-onlineEducation .tab-item#all a:before {
   content: "";
   display: block;
   margin-bottom: 16px;
@@ -1750,7 +1750,7 @@ fieldset {
   background: url("../images/online9.png") 50% 0px/cover;
 }
 @media screen and (max-width: 850px) {
-  .section-onlineEducation .tab-item[data-tab="#online9"] a:before {
+  .section-onlineEducation .tab-item#all a:before {
     width: 56px;
     height: 56px;
     margin-bottom: 6px;

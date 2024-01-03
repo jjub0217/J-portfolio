@@ -221,7 +221,9 @@ $(document).on("click", ".bookmark",(function(){
  * 
 */
 $('.section-onlineEducation .tab-item').click(function(e){
-  e.preventDefault();
+  if(e.target.parentNode.id !== "all"){
+    e.preventDefault();
+  }
   onlineEducationList($(this).data("tab"))
   $(this).addClass('on').siblings().removeClass('on');
 })
