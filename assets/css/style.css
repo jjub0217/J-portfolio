@@ -1700,6 +1700,9 @@ fieldset {
     margin-bottom: 6px;
   }
 }
+.section-onlineEducation .tab-item[data-tab="#online7"] a span br {
+  display: block;
+}
 .section-onlineEducation .tab-item[data-tab="#online8"] a:before {
   content: "";
   display: block;
