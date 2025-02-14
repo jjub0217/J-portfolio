@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 세팅 */
+body {
+  /* 기본적인 국문의 폰트패밀리 적용 */
+  font-family: "Roobert-Medium", -apple-system, BlinkMacSystemFont, NotoSans,
+    "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+
+  // @include desktop {
+  //   // transform: scale(0.9);
+  //   zoom: 0.9;
+  // }
+
+  // @include largeDevice {
+  //   // transform: scale(0.85);
+  //   zoom: 0.9;
+  // }
+
+  // @include mediumLargeTablet {
+  //   // transform: scale(0.75);
+  //   zoom: 0.75;
+  // }
+
+  // @include mediumDevice {
+  //   // transform: scale(0.7);
+  //   zoom: 0.7;
+  // }
+
+  // @include smallDevice {
+  //   // transform: scale(0.65);
+  //   zoom: 0.65;
+  // }
+
+  // @include mobile {
+  //   // transform: scale(1);
+  //   zoom: 1;
+  // }
+}
+
+fieldset {
+  border: 0;
+}
