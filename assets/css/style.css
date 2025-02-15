@@ -471,12 +471,12 @@ fieldset {
   opacity: 0;
 }
 .section_visual .desc {
+  position: relative;
   max-width: 640px;
   font-size: 20px;
   font-weight: 400;
   font-family: "Roobert-Regular", sans-serif;
   line-height: 1.6;
-  position: relative;
 }
 @media screen and (max-width: 600px) {
   .section_visual .desc {
