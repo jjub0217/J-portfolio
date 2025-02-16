@@ -147,7 +147,7 @@ ScrollTrigger.matchMedia({
         end: "top 50%",
         onEnter: () => goalBox.classList.add("is_active"),
         onLeaveBack: () => goalBox.classList.remove("is_active"),
-        markers: true,
+        markers: false,
       },
     });
 
@@ -160,7 +160,7 @@ ScrollTrigger.matchMedia({
         start: "top 80%",
         end: "bottom 50%",
         scrub: true,
-        markers: true,
+        markers: false,
       },
       y: "0%",
     });
