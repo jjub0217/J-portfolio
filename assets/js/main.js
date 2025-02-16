@@ -72,7 +72,7 @@ const contentWrap = gsap.timeline({
     scrub: 1,
     start: "0% 80%",
     end: "0% 0%",
-    markers: false,
+    // markers: false,
   },
 });
 contentWrap.to(".section_visual", { opacity: 0 });
@@ -91,7 +91,7 @@ ScrollTrigger.matchMedia({
           end: "top 50%",
           onEnter: () => goalBox.classList.add("is_active"),
           onLeaveBack: () => goalBox.classList.remove("is_active"),
-          markers: false,
+          // markers: false,
         },
       });
 
@@ -104,7 +104,7 @@ ScrollTrigger.matchMedia({
           start: "top 50%",
           end: "bottom 50%",
           scrub: true,
-          markers: false,
+          // markers: false,
         },
         y: "0%",
       });
@@ -118,7 +118,7 @@ ScrollTrigger.matchMedia({
           trigger: workBox,
           start: "top 100%",
           end: "bottom 100%",
-          markers: false,
+          // markers: false,
           scrub: true,
         },
         y: "0%",
@@ -128,7 +128,7 @@ ScrollTrigger.matchMedia({
           trigger: workBox,
           start: "top 100%",
           end: "bottom 100%",
-          markers: false,
+          // markers: false,
           scrub: true,
         },
         width: "100%",
@@ -147,7 +147,7 @@ ScrollTrigger.matchMedia({
         end: "top 50%",
         onEnter: () => goalBox.classList.add("is_active"),
         onLeaveBack: () => goalBox.classList.remove("is_active"),
-        markers: false,
+        // markers: false,
       },
     });
 
@@ -160,7 +160,7 @@ ScrollTrigger.matchMedia({
         start: "top 80%",
         end: "bottom 50%",
         scrub: true,
-        markers: false,
+        // markers: false,
       },
       y: "0%",
     });
@@ -181,7 +181,7 @@ gsap.to(panels, {
     trigger: topPanel,
     start: "0% 70%",
     end: "100% 0%",
-    markers: false,
+    // markers: false,
     scrub: 1,
   },
 });
@@ -204,7 +204,7 @@ function createScrollTrigger(triggerElement, timeline) {
   ScrollTrigger.create({
     trigger: triggerElement,
     start: "top 70%",
-    markers: false,
+    // markers: false,
     onEnter: () => timeline.play(),
   });
 }
@@ -217,7 +217,7 @@ document.querySelectorAll("[lines]").forEach((element) => {
     duration: 0.75,
     ease: "power1",
     stagger: { amount: 0.5 },
-    markers: false,
+    // markers: false,
   });
   createScrollTrigger(element, tl);
 });
