@@ -128,7 +128,7 @@ ScrollTrigger.matchMedia({
           trigger: workBox,
           start: "top 100%",
           end: "bottom 100%",
-          markers: FontFaceSetLoadEvent,
+          markers: false,
           scrub: true,
         },
         width: "100%",
