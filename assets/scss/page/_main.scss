@@ -691,6 +691,10 @@
 
 .section_log {
   padding-top: 320px;
+  .inner {
+    margin: 0;
+    padding: 0 80px;
+  }
 
   .headline {
     font-size: 48px;
