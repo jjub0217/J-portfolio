@@ -231,7 +231,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const video = entry.target;
       video.src = video.dataset.src;
-      video.poster = video.dataset.poster; // 이 부분!
+      video.poster = video.dataset.poster; 
       observer.unobserve(video);
     }
   });
