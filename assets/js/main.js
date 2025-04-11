@@ -224,60 +224,16 @@ document.querySelectorAll("[lines]").forEach((element) => {
 
 gsap.set(".text-split", { opacity: 1 });
 
-//네이버비즈니스 gnb 벗어나는게 왜 범위가 좁을까?
-// $('.header > .inner .gnb').hover(function(e){
-//   $('.sub-list').addClass('on');
-//   $(".header").addClass("hov").height($('.sub-list').outerHeight(true)+$(".header .inner").height())
-// },function(e){
-//   $('.sub-list').removeClass('on');
-//   $(".header").css('height', 'auto')
-//   if($('.onlineEducation-menu').length){
-//     $(".header").removeClass("hov")
-//   }
-// })
+const videos = document.querySelectorAll("video[data-src]");
 
-/**
- *  @모바일버전버거버튼클릭기능
- *
- */
-// $(".burgerBtn").click(function(){
-//   $('body').toggleClass('scroll-hide');
-//   $(".mo_gnb_inner").toggleClass("isAct")
-//   $(".search-btn").toggleClass("mo_gnb-on")
-//   $(".burgerBtn").toggleClass("on")
-//   $(".header").toggleClass("mo_gnb-on")
-//   if ($(".burgerBtn").attr('aria-expanded') === 'false') {
-//     $('.burgerBtn').attr('aria-expanded', 'true' )
-//   } else {
-//     $('.burgerBtn').attr('aria-expanded', 'false' )
-//   }
-// })
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      video.src = video.dataset.src;
+      observer.unobserve(video);
+    }
+  });
+});
 
-// /**
-//  *  @모바일버전gnb에서top영역서브리스트나타나는기능
-//  *
-// */
-// $('.mo_gnb_inner .top .nav-item').click(function(e){
-//   $(this).find('.sub-list').toggleClass('on');
-//   $(this).find(".nav-item_title").toggleClass("on")
-// })
-
-// /**
-//  *  @모바일버전gnb에서middle영역서브리스트나타나는기능
-//  *
-// */
-// $('.mo_gnb_inner .middle .nav-item').click(function(e){
-//   $(this).find('.sub-list').toggleClass('on')
-//   $(this).siblings().find('.sub-list').removeClass('on')
-//   $(this).find(".nav-item_title").toggleClass("on")
-//   $(this).siblings().find(".nav-item_title").removeClass("on")
-// })
-
-// /**
-//  *  @스크롤탑기능
-//  *
-// */
-// $(".scrollTop").click(function(){
-//   $('html, body').animate({scrollTop: 0}, 800);
-//   return false;
-// })
+videos.forEach((video) => observer.observe(video));
