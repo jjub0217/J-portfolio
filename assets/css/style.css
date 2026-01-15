@@ -77,7 +77,8 @@ ul {
 /* 세팅 */
 body {
   /* 기본적인 국문의 폰트패밀리 적용 */
-  font-family: "Roobert-Medium", -apple-system, BlinkMacSystemFont, NotoSans, "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+  font-family: "Roobert-Medium", -apple-system, BlinkMacSystemFont, NotoSans,
+    "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
   background-color: #000;
   color: #fff;
 }
@@ -161,7 +162,9 @@ fieldset {
 /* Extra Small Devices, Phones : ~ 480px */
 /* Custom, iPhone Retina : ~ 320px */
 @keyframes loader-sync {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     box-shadow: 0px 0px;
     height: 4em;
   }
@@ -319,7 +322,8 @@ fieldset {
   background-image: linear-gradient(#d2ff85, #d2ff85);
   background-repeat: no-repeat;
   background-size: 100% 0%;
-  transition: color 0.4s cubic-bezier(0.36, 0.3, 0, 1), background-size 0.6s cubic-bezier(0.36, 0.3, 0, 1);
+  transition: color 0.4s cubic-bezier(0.36, 0.3, 0, 1),
+    background-size 0.6s cubic-bezier(0.36, 0.3, 0, 1);
 }
 .footer .link_mail:after {
   display: block;
@@ -332,11 +336,13 @@ fieldset {
   transition: 0.5s ease;
   content: "";
 }
-.footer .link_mail:hover, .footer .link_mail:focus {
+.footer .link_mail:hover,
+.footer .link_mail:focus {
   background-position: 0% 100%;
   background-size: 100% 100%;
 }
-.footer .link_mail:hover::after, .footer .link_mail:focus::after {
+.footer .link_mail:hover::after,
+.footer .link_mail:focus::after {
   display: block;
   transform: translateX(10px);
 }
@@ -383,7 +389,7 @@ fieldset {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .job {
@@ -407,7 +413,7 @@ fieldset {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0;
 }
 .section_visual .inner {
@@ -517,9 +523,11 @@ fieldset {
   background-image: linear-gradient(#b0a3ff, #b0a3ff);
   background-repeat: no-repeat;
   background-size: 0% 100%;
-  transition: color 0.4s cubic-bezier(0.36, 0.3, 0, 1), background-size 0.6s cubic-bezier(0.36, 0.3, 0, 1);
+  transition: color 0.4s cubic-bezier(0.36, 0.3, 0, 1),
+    background-size 0.6s cubic-bezier(0.36, 0.3, 0, 1);
 }
-.section_visual .mail_link:hover, .section_visual .mail_link:focus {
+.section_visual .mail_link:hover,
+.section_visual .mail_link:focus {
   background-position: 0% 100%;
   background-size: 100% 100%;
 }
@@ -652,7 +660,7 @@ fieldset {
 }
 .section_work .works_box:nth-child(2) .work_link:nth-child(1) img {
   -o-object-position: 44.5% 0px;
-     object-position: 44.5% 0px;
+  object-position: 44.5% 0px;
 }
 .section_work .works_box:nth-child(4) .work_link:nth-child(2) {
   flex: 1.5;
@@ -841,8 +849,20 @@ fieldset {
 }
 .section_capabilities .inner {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
-          mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 10%,
+    rgb(0, 0, 0) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 10%,
+    rgb(0, 0, 0) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .section_capabilities .headline {
   color: rgb(92, 92, 92);
@@ -887,7 +907,7 @@ fieldset {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .section_goals {
@@ -1057,7 +1077,8 @@ fieldset {
   font-size: 55px;
   font-weight: 400;
   line-height: 1;
-  white-space: pre;
+  white-space: normal;
+  display: block;
 }
 @media screen and (max-width: 990px) {
   .section_goals .title_box .goal_title {
@@ -1277,7 +1298,7 @@ fieldset {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .works_thumbnail .panel:before {
   content: "";

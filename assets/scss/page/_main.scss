@@ -656,7 +656,8 @@
       font-size: 55px;
       font-weight: 400;
       line-height: 1;
-      white-space: pre;
+      white-space: normal;
+      display: block;
       @include tablet {
         font-size: 40px;
       }

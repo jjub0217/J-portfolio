@@ -1,60 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="프론트엔드 개발자, React, TypeScript, 포트폴리오"
+    />
+    <meta name="author" content="강주현" />
+    <meta property="og:site_name" content="강주현의 포트폴리오" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta
+      property="og:title"
+      content="React/TypeScript 기반 프론트엔드 개발자 포트폴리오 | 강주현"
+    />
+    <meta
+      name="description"
+      content="React, TypeScript, Zustand를 활용한 프론트엔드 개발 경험을 갖춘 강주현의 포트폴리오입니다."
+    />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:image:alt" content="포트폴리오 미리보기 이미지" />
+    <meta property="og:url" content="https://jjub0217.github.io/J-portfolio/" />
+    <title>Joohyun's Portfolio</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "강주현의 포트폴리오",
+        "url": "https://jjub0217.github.io/J-portfolio/",
+        "author": {
+          "@type": "Person",
+          "name": "강주현"
+        }
+      }
+    </script>
+    <link rel="canonical" href="https://jjub0217.github.io/J-portfolio/" />
+    <link
+      rel="icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+      sizes="16x16"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="프론트엔드 개발자, 웹 퍼블리셔, 포트폴리오, 인터랙티브 디자인">
-  <meta name="author" content="강주현">
-  <meta property="og:site_name" content="강주현의 포트폴리오">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:title" content="프론트엔드 실무 경험이 있는 웹퍼블리셔 포트폴리오 | 강주현">
-  <meta name="description" content="프론트엔드 실무와 퍼블리싱 경험을 갖춘 강주현의 포트폴리오입니다.">
-  <meta property="og:type" content="portfolio">
-  <meta property="og:image:alt" content="포트폴리오 미리보기 이미지">
-  <meta property="og:url" content="https://jjub0217.github.io/J-portfolio/">
-  <title>Joohyun's Portfolio</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "강주현의 포트폴리오",
-    "url": "https://jjub0217.github.io/J-portfolio/",
-    "author": {
-      "@type": "Person",
-      "name": "강주현"
-    },
-  }
-  </script>
-  <link rel="canonical" href="https://jjub0217.github.io/J-portfolio/">
-  <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" sizes="16x16">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/split.min.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+  </head>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="./assets/js/split.min.js" defer></script>
-  <script src="./assets/js/main.js" defer></script>
-
-</head>
-
-<body>
-  <div id="skip-header">
-    <a href="#main">본문내용</a>
-  </div>
-  <div class="wrapper">
-    <header class="header" id="header">
-      <div class="inner">
-        <a href="" class="logo">
+  <body>
+    <div id="skip-header">
+      <a href="#main">본문내용</a>
+    </div>
+    <div class="wrapper">
+      <header class="header" id="header">
+        <div class="inner">
+          <a href="" class="logo">
             <span class="blind">로고</span>
             Desveloper
-              <svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg"
-                xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" viewBox="0 0 736 736"
-                enable-background="new 0 0 736 736" xml:space="preserve">
-                <path d="M239.191620,693.069580
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="https://www.w3.org/2000/svg"
+              xmlns:xlink="https://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="100%"
+              viewBox="0 0 736 736"
+              enable-background="new 0 0 736 736"
+              xml:space="preserve"
+            >
+              <path
+                d="M239.191620,693.069580
                 C218.239182,682.811340 198.135727,671.785706 179.596298,658.226929
                 C160.782822,644.467773 143.643753,628.810242 128.058029,611.392273
                 C115.852295,597.751770 104.417564,583.527832 94.448929,568.238037
@@ -97,8 +131,11 @@
                 C473.003448,714.632080 450.980652,719.574829 428.401886,722.610046
                 C402.476349,726.095093 376.441345,725.158875 350.667297,723.767029
                 C329.035400,722.598816 307.520081,717.371460 286.513153,710.927063
-                C270.448303,705.998718 254.915848,699.873596 239.191620,693.069580 z" fill="#fff"/>
-                <path d="
+                C270.448303,705.998718 254.915848,699.873596 239.191620,693.069580 z"
+                fill="#fff"
+              />
+              <path
+                d="
                 M292.039917,119.601501
                 C267.330200,128.438095 244.754227,140.583405 223.612885,155.505966
                 C203.387894,169.781708 185.418472,186.645935 169.793335,205.642548
@@ -159,8 +196,11 @@
                 C442.531189,108.643448 427.134033,105.659538 411.670868,104.716362
                 C396.004303,103.760788 380.194366,103.932793 364.441376,104.697380
                 C339.631104,105.901566 315.739990,111.403587 292.039917,119.601501
-                z" fill="#fff"/>
-                <path d="M396.662537,390.999939
+                z"
+                fill="#fff"
+              />
+              <path
+                d="M396.662537,390.999939
                 C396.663513,349.336670 396.668518,308.173462 396.662598,267.010223
                 C396.661407,258.769501 391.903259,254.557297 383.824829,253.189011
                 C368.818359,250.647324 355.365997,243.539734 350.544586,228.750534
@@ -194,877 +234,1529 @@
                 C368.620697,466.622986 372.377991,466.630768 376.041473,464.148499
                 C387.087311,456.664185 394.663116,447.398590 395.739777,433.389008
                 C396.813263,419.420959 396.551514,405.465912 396.662537,390.999939
-                z" fill="#fff"/>
-              </svg>
-        </a>
-        <nav class="gnb">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#about" class="nav-item_title">
-                <span>About me</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#work" class="nav-item_title">
-                <span>Work</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#capabilities" class="nav-item_title">
-                <span>Capabilities</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#goals" class="nav-item_title">
-                <span>Goals</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#log" class="nav-item_title">
-                <span>Dev log</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header_actions">
-          <a href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다." target="_blank" class="link_mail">✦ Contact into me</a>
-          <button class="btn_burger" type="button" aria-expanded="false"
-          aria-controls="nav">✦  MENU
-          </button>
-        </div>
-      </div>
-    </header>
-    <main class="container" id="main">
-      <section class="section_visual">
-        <div class="inner">
-          <h1 class="headline" data-tooltip="직관적 구현 사용자 중심 웹 경험">Implementing Intuitive <br> User-Centered <br> Web Experiences
-          </h1>
-          <div class="desc_wrap">
-            <p class="desc" data-tooltip="명확성과 SEO를 위해 정확한 HTML 구조와 의미론적 마크업으로 웹 접근성을 보장하겠습니다.">I will ensure web accessibility with a precise HTML structure and semantic markup for clarity and SEO.</p>
-            <a href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다." class="mail_link">Let me working with you</a>
-          </div>
-        </div>
-        <video data-src="https://framerusercontent.com/assets/rFdCZriM6x6btVRZViNaME7HxM.mp4" loop muted playsinline autoplay data-poster="./assets/images/img_visual_item1.png"></video>
-      </section>
-      <div class="content_wrap">
-        <section class="section_introduce">
-          <div class="inner">
-            <h2 class="headline">
-              <span class="icon">✦ </span>
-              Let me introduce myself:
-            </h2>
-            <p class="desc text_split" lines="">“저는 어릴 때부터 강한 호기심과 도전 정신을 바탕으로 성장해 왔습니다. 새로운 기술을 접하면 "어떻게 구현된 거지?"라는 궁금증과 동시에 "나도 할 수 있어!"라는 열정으로 끊임없이 탐구하고 도전합니다.”
-            </p>
-            <div class="profile_box">
-              <div class="thumb_box">
-                <img src="./assets/images/img_avatar.gif" alt="" loading="lazy">
-              </div>
-              <div class="text_box">
-                <p>Kang Joohyun</p>
-                <p class="job">Web Publisher</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section_work" id="work">
-          <div class="inner">
-            <h2 class="headline" data-tooltip="실제 서비스를 분석하고 구현하며 쌓아온 프로젝트들">
-              <span class="icon">✦</span> Projects built by analyzing and implementing real services.</h2>
-            <div class="works_area">
-              <div class="works_box">
-                <a href="https://jjub0217.github.io/m__andar/" class="work_link" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video  preload="none" data-poster="./assets/images/img_work_item3.png" data-src="./assets/images/img_work_item3.mp4"  playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Andar
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>React,</span>
-                      <span>gsap,</span>
-                      <span>Swiper,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
+                z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+          <nav class="gnb">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#about" class="nav-item_title">
+                  <span>About me</span>
                 </a>
-                <a href="https://jjub0217.github.io/beautiful.github.io/" class="work_link is_active" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item2.png" data-src="./assets/images/img_work_item2.mp4" playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Chanel
-                        </span>
-                        <span class="cate">(Renewal)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>Jquery,</span>
-                      <span>Swiper,</span>
-                      <span>ES6,</span>
-                      <span>Scss,</span>
-                      <span>SplitType</span>
-                    </p>
-                  </div>
+              </li>
+              <li class="nav-item">
+                <a href="#work" class="nav-item_title">
+                  <span>Work</span>
                 </a>
-              </div>
-              <div class="works_box">
-                <a href="https://jjub0217.github.io/wavve_github.io/" class="work_link" target="_blank">
-                  <div class="thumb_box">
-                    <img src="./assets/images/img_work_item1.png" alt="">
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Wavve</span>
-                        <span class="cate">(Renewal)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>Swiper,</span>
-                      <span>Vanilla JavaScript,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                </div>
+              </li>
+              <li class="nav-item">
+                <a href="#capabilities" class="nav-item_title">
+                  <span>Capabilities</span>
                 </a>
-                <a href="https://jjub0217.github.io/clixr_github.io/" class="work_link is_active" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item4.jpg" data-src="./assets/images/img_work_item4.mp4"  playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Clixr
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>gsap,</span>
-                      <span>Jquery,</span>
-                      <span>Swiper,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
+              </li>
+              <li class="nav-item">
+                <a href="#goals" class="nav-item_title">
+                  <span>Goals</span>
                 </a>
-                <a href="https://jjub0217.github.io/audio-pro_github.io/" class="work_link" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item5.png" data-src="./assets/images/img_work_item5.mp4" playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Audio pro
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>gsap,</span>
-                      <span>Swiper,</span>
-                      <span>lenis,</span>
-                      <span>Jquery,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
+              </li>
+              <li class="nav-item">
+                <a href="#log" class="nav-item_title">
+                  <span>Dev log</span>
                 </a>
-              </div>
-              <div class="works_box">
-                <a href="https://jjub0217.github.io/naver-business_github.io/" class="work_link is_active is_scale" target="_blank">
-                  <div class="thumb_box">
-                    <img src="./assets/images/img_work_item6.jpg" alt="">
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">naver business school
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>gsap,</span>
-                      <span>Swiper,</span>
-                      <span>Vanilla JavaScript,</span>
-                      <span>json fetch,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="works_box">
-                <a href="https://jjub0217.github.io/music-tree.github.io/" class="work_link is_active" target="_blank">
-                  <div class="thumb_box">
-                    <img src="./assets/images/img_work_item7.jpg" alt="">
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Music tree
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>Vanilla JavaScript,</span>
-                      <span>aos,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
-                </a>
-                <a href="https://jjub0217.github.io/samsung-card_github.io/" class="work_link" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item8-1.jpg" data-src="./assets/images/img_work_item8.mp4"  playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">samsung card
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>gsap,</span>
-                      <span>Vanilla JavaScript,</span>
-                      <span>Swiper,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="works_box">
-                <a href="https://jjub0217.github.io/naver-career_github.io/" class="work_link" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video autoplay playsinline loop muted data-poster="./assets/images/img_work_item9.png">
-                    <source type="video/mp4" preload="none" data-src="https://recruit.pstatic.net/cdn-vod/naver/Joker.mp4" >
-                  </video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Naver career
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>Swiper,</span>
-                      <span>Jquery,</span>
-                      <span>ES6,</span>
-                      <span>json fetch,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
-                </a>
-                <a href="https://jjub0217.github.io/woori-bank_github.io/" class="work_link is_active" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item10.png" data-src="./assets/images/img_work_item10.mp4" playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Woori bank
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Swiper,</span>
-                      <span>Jquery,</span>
-                      <span>ES6,</span>
-                      <span>Scss</span>
-                    </p>
-                  </div>
-                </a>
-                <a href="https://jjub0217.github.io/seoul-city-hall_github.io/" class="work_link" target="_blank">
-                  <div class="thumb_box thumb_video">
-                    <video preload="none" data-poster="./assets/images/img_work_item11.png" data-src="./assets/images/img_work_item11.mp4" playsinline autoplay muted loop></video>
-                  </div>
-                  <div class="text_box">
-                    <div class="title_box">
-                      <svg id="Layer_1" class="ico_arrow" data-name="Layer 1" height="20" viewBox="0 0 72 45" fill="#fff">
-                        <rect y="18" width="54" height="9"></rect>
-                        <rect x="63" y="18" width="9" height="9"></rect>
-                        <rect x="54" y="27" width="9" height="9"></rect>
-                        <rect x="54" y="9" width="9" height="9"></rect>
-                        <rect x="45" width="9" height="9"></rect>
-                        <rect x="45" y="36" width="9" height="9"></rect>
-                      </svg>
-                      <h3 class="title">
-                        <span class="title_text">Seoul city
-                        </span>
-                        <span class="cate">(Clone cording)</span>
-                      </h3>
-                    </div>
-                    <p class="desc">
-                      <span>Response,</span>
-                      <span>Jquery,</span>
-                      <span>Swiper,</span>
-                      <span>ES6,</span>
-                      <span>Scss,</span>
-                      <span>SplitType</span>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section_capabilities" id="capabilities">
-          <div class="inner">
-            <h2 class="headline" data-tooltip="직무 관련 경험 및 역량">Job related experience and competence</h2>
-            <div class="marauee_area">
-              <ul class="capabilities_list">
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_html5_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_CSS3_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_sass_logo.png" alt="" loading="lazy">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_github_logo.png" alt="" loading="lazy">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_js_logo.png" alt="" loading="lazy">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_jquery_logo.png" alt="" loading="lazy">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_react_logo.png" alt="" loading="lazy">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_figma_logo.png" alt="" loading="lazy">
-                </li>
-              </ul>
-              <ul class="capabilities_list">
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_html5_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_CSS3_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_sass_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_github_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_js_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_jquery_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_react_logo.png" alt="">
-                </li>
-                <li class="capabilities_item">
-                  <img src="./assets/images/img_figma_logo.png" alt="">
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="section_goals" id="goals">
-          <div class="inner">
-            <h2 class="headline" data-tooltip="끊임없이 성장하는 웹 퍼블리셔로서 성장, 탁월함, 그리고 성공을 이루기 위한 다섯 가지 핵심 목표">
-              Five Key Goals to Achieve Growth, Excellence, and Success as a Continuously Growing <br>
-              <span class="text">
-                Web Publisher.
-              </span>
-            </h2>
-            <div class="goals_area">
-              <div class="text_box">
-                <div class="goal_box">
-                  <div class="progressbar_area">
-                    <div class="number">
-                      <span class="number_text">01</span>
-                    </div>
-                    <div class="progressbar_box" aria-hidden="true">
-                      <div class="progressbar">
-                        <div class="bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="title_box">
-                    <h3 class="goal_title">웹 접근성과 문서 구조의 중요성</h3>
-                    <p class="desc">웹 접근성을 준수하여 모든 사용자가 콘텐츠에 쉽게 접근할 수 있도록 구현하겠습니다. <br>
-                    정확한 HTML 구조와 시맨틱 마크업을 통해 정보 전달의 명확성과 검색 엔진 최적화를 동시에 달성하도록 노력하겠습니다.</p>
-                  </div>
-                </div>
-                <div class="goal_box">
-                  <div class="progressbar_area">
-                    <div class="number">
-                      <span class="number_text">02</span>
-                    </div>
-                    <div class="progressbar_box" aria-hidden="true">
-                      <div class="progressbar">
-                        <div class="bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="title_box">
-                    <h3 class="goal_title">다양한 기기에서의 일관된 
-사용자 경험 제공</h3>
-                    <p class="desc">반응형 웹 디자인을 활용해 다양한 환경에서 최적화된 디자인을 구현하여 기기 간의 사용자 경험 차이를 최소화하겠습니다. <br>
-                    이를 통해 사용자에게 일관되고 편리한 웹 환경을 경험할 수 있도록 노력하겠습니다.</p>
-                  </div>
-                </div>
-                <div class="goal_box">
-                  <div class="progressbar_area">
-                    <div class="number">
-                      <span class="number_text">03</span>
-                    </div>
-                    <div class="progressbar_box" aria-hidden="true">
-                      <div class="progressbar">
-                        <div class="bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="title_box">
-                    <h3 class="goal_title">사용자 중심의 웹 경험 구현</h3>
-                    <p class="desc">웹사이트를 제작할 때 사용자 경험을 최우선으로 고려하며, 직관적인 디자인을 구현하는것에 집중하겠습니다. <br>
-                    사용자가 정보를 쉽고 편리하게 탐색할 수 있도록 설계하는 데 중점을 두겠습니다.</p>
-                  </div>
-                </div>
-                <div class="goal_box">
-                  <div class="progressbar_area">
-                    <div class="number">
-                      <span class="number_text">04</span>
-                    </div>
-                    <div class="progressbar_box" aria-hidden="true">
-                      <div class="progressbar">
-                        <div class="bar"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="title_box">
-                    <h3 class="goal_title">최신 웹 트렌드와 기술 연구</h3>
-                    <p class="desc">새로운 디자인 패턴과 개발 도구를 지속적으로 탐구하여, 트렌드에 발맞추어, CSS Grid와 JavaScript ES6+, 그리고 React를 활용해 효율적인 클린코드를 작성하겠습니다.</p>
-                  </div>
-                </div>
-                <div class="goal_box">
-                  <div class="progressbar_area">
-                    <div class="number">
-                      <span class="number_text">05</span>
-                    </div>
-                  </div>
-                  <div class="title_box">
-                    <h3 class="goal_title">팀원들과의 원활한 소통과 협업</h3>
-                    <p class="desc">
-                      프로젝트의 성공은 커뮤니케이션 능력을 바탕으로 한 팀워크라고 생각합니다.<br>
-                      디자이너, 개발자, 기획자와의 소통을 통해 프로젝트 목표와 요구사항을 명확히 파악하고, 협업을 통해 최상의 결과물을 도출하겠습니다.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="thumb_box">
-                <video data-src="./assets/images/background_gg.mp4" playsinline muted loop autoplay  preload="none" data-poster="./assets/images/img_visual_item2.png"></video>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section_log" id="log">
-          <div class="inner">
-            <h2 class="headline">
-              <span class="icon">✦ </span>
-                Developer log
-            </h2>
-          </div>
-          <ul class="log_list">
-            <li class="log_item">
-              <a href="https://velog.io/@jjub0217/%EC%9D%B4%EB%AF%B8%EC%A7%80-%ED%81%AC%EA%B8%B0%EB%A5%BC-%EC%9B%B9-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%8B%9C%ED%82%A4%EB%A0%A4%EB%A9%B4" class="log_link" target="_blank">
-                <div class="log_box">
-                  <div class="thumb_area">
-                    <div class="thumb_box">
-                      <img src="./assets/images/img_log_item1.png" alt="" loading="lazy">
-                    </div>
-                    <div class="title_box">
-                      <h3 class="title">이미지 크기를 웹 최적화 시키려면?</h3>
-                    </div>
-                  </div>
-                  <div class="desc_box">
-                    <span class="icon_arrow">
-                      <svg width="20" height="21" fill="none" id="svg296394470_205"><path d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z" fill="#fff"></path>
-                      </svg>
-                    </span>
-                    <p class="hashtag_box">
-                      <span class="hashtag">이미지최적화,</span>
-                      <span class="hashtag">SEO,</span>
-                      <span class="hashtag">웹접근성,</span>
-                      <span class="hashtag">Web accessibility</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="log_item">
-              <a href="https://velog.io/@jjub0217/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1%EC%9D%B4-%EB%8C%80%EC%B2%B4-%EB%AD%90%EC%8B%9C%EA%B0%84%EB%8D%B0" class="log_link" target="_blank">
-                <div class="log_box">
-                  <div class="thumb_area">
-                    <div class="thumb_box">
-                      <img src="./assets/images/img_log_item2.png" alt="" loading="lazy">
-                    </div>
-                    <div class="title_box">
-                      <h3 class="title">웹접근성이 대체 뭐시간데...</h3>
-                    </div>
-                  </div>
-                  <div class="desc_box">
-                    <span class="icon_arrow">
-                      <svg width="20" height="21" fill="none" id="svg296394470_205"><path d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z" fill="#fff"></path></svg>
-                    </span>
-                    <p class="hashtag_box">
-                      <span class="hashtag">Semantic markup,</span>
-                      <span class="hashtag">HTML5,</span>
-                      <span class="hashtag">웹접근성,</span>
-                      <span class="hashtag">Web accessibility</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="log_item">
-              <a href="https://velog.io/@jjub0217/Swiperjs-%EC%82%AC%EC%9A%A9%EB%B2%95" class="log_link" target="_blank">
-                <div class="log_box">
-                  <div class="thumb_area">
-                    <div class="thumb_box">
-                      <img src="./assets/images/img_log_item3.png" alt="" loading="lazy">
-                    </div>
-                    <div class="title_box">
-                      <h3 class="title">Swiperjs 사용법</h3>
-                    </div>
-                  </div>
-                  <div class="desc_box">
-                    <span class="icon_arrow">
-                      <svg width="20" height="21" fill="none" id="svg296394470_205"><path d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z" fill="#fff"></path></svg>
-                    </span>
-                    <p class="hashtag_box">
-                      <span class="hashtag">swiper,</span>
-                      <span class="hashtag">javascript</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="log_item">
-              <a href="https://velog.io/@jjub0217/React-%EC%9D%98-State" class="log_link" target="_blank">
-                <div class="log_box">
-                  <div class="thumb_area">
-                    <div class="thumb_box">
-                      <img src="./assets/images/img_log_item4.jpeg" alt="" loading="lazy">
-                    </div>
-                    <div class="title_box">
-                      <h3 class="title">React 의 State</h3>
-                    </div>
-                  </div>
-                  <div class="desc_box">
-                    <span class="icon_arrow">
-                      <svg width="20" height="21" fill="none" id="svg296394470_205"><path d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z" fill="#fff"></path></svg>
-                    </span>
-                    <p class="hashtag_box">
-                      <span class="hashtag">React,</span>
-                      <span class="hashtag">Component,</span>
-                      <span class="hashtag">State,</span>
-                      <span class="hashtag">Functional component,</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="log_item">
-              <a href="https://github.com/jjub0217/Dev-Log/blob/master/JAVA_Script/FDS_17/%EB%B0%B0%EC%97%B4.md" class="log_link" target="_blank">
-                <div class="log_box">
-                  <div class="thumb_area">
-                    <div class="thumb_box">
-                      <img src="./assets/images/img_log_item5.jpg" alt="" loading="lazy">
-                    </div>
-                    <div class="title_box">
-                      <h3 class="title">배열</h3>
-                    </div>
-                  </div>
-                  <div class="desc_box">
-                    <span class="icon_arrow">
-                      <svg width="20" height="21" fill="none" id="svg296394470_205"><path d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z" fill="#fff"></path></svg>
-                    </span>
-                    <p class="hashtag_box">
-                      <span class="hashtag">Javascript,</span>
-                      <span class="hashtag">Array</span>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <div class="works_thumbnail">
-          <div class="panel">
-            <img src="./assets/images/img_work_item1-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item2-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item3-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item4-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item5.png" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item6.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item7.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item8-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item9.png" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item10-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item11.png" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item1-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item2-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item3-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item4-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item5.png" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item6.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item7.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item8-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item9.png" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item10-1.jpg" alt="" loading="lazy">
-          </div>
-          <div class="panel">
-            <img src="./assets/images/img_work_item11.png" alt="" loading="lazy">
+              </li>
+            </ul>
+          </nav>
+          <div class="header_actions">
+            <a
+              href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
+              target="_blank"
+              class="link_mail"
+              >✦ Contact into me</a
+            >
+            <button
+              class="btn_burger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="nav"
+            >
+              ✦ MENU
+            </button>
           </div>
         </div>
-        <section class="section_about" id="about">
+      </header>
+      <main class="container" id="main">
+        <section class="section_visual">
           <div class="inner">
-            <h2 class="headline" data-tooltip="저는 이런 웹퍼블리셔입니다.">I'm a web publisher like this.</h2>
-            <h3 class="title" data-tooltip="사용자 경험, 웹 접근성, 원활한 협업을 목표로 하는 웹 퍼블리셔입니다.">
-              It is a
-              <span class="text">web publisher</span>
-              that aims for user experience, web accessibility, and smooth collaboration.
-            </h3>
-            <div class="content_box">
-              <div class="thumb_area">
+            <h1 class="headline" data-tooltip="직관적 구현 사용자 중심 웹 경험">
+              Implementing Intuitive <br />
+              User-Centered <br />
+              Web Experiences
+            </h1>
+            <div class="desc_wrap">
+              <p
+                class="desc"
+                data-tooltip="명확성과 SEO를 위해 정확한 HTML 구조와 반응형 웹 디자인으로 최적의 사용자 경험을 보장하겠습니다."
+              >
+                I will ensure optimal user experience with a precise HTML
+                structure and responsive web design for clarity and SEO.
+              </p>
+              <a
+                href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
+                class="mail_link"
+                >Let me working with you</a
+              >
+            </div>
+          </div>
+          <video
+            data-src="https://framerusercontent.com/assets/rFdCZriM6x6btVRZViNaME7HxM.mp4"
+            loop
+            muted
+            playsinline
+            autoplay
+            data-poster="./assets/images/img_visual_item1.png"
+          ></video>
+        </section>
+        <div class="content_wrap">
+          <section class="section_introduce">
+            <div class="inner">
+              <h2 class="headline">
+                <span class="icon">✦ </span>
+                Let me introduce myself:
+              </h2>
+              <p class="desc text_split" lines="">
+                “화면을 구현하는 것에서 끝나지 않고, 사용자가 실제로 편하게 쓸
+                수 있는지를 고민합니다. 에러 상황에서도 사용자가 당황하지
+                않도록, 작은 디테일까지 신경 쓰는 프론트엔드 개발자입니다.”
+              </p>
+              <div class="profile_box">
                 <div class="thumb_box">
-                  <img src="./assets/images/img_profile_2.jpg" alt="" class="gray_img" loading="lazy">
-                  <img src="./assets/images/img_profile_1.jpg" alt="" class="color_img" loading="lazy">
+                  <img
+                    src="./assets/images/img_avatar.gif"
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
-                <div class="desc_box">
-                  <p class="text name">Kang Joohyun</p>
-                  <p class="text job">web Publisher</p>
-                  <p class="text character">Passion, challenge, effort, meticulousness</p>
+                <div class="text_box">
+                  <p>Kang Joohyun</p>
+                  <p class="job">Frontend Developer</p>
                 </div>
-              </div>
-              <div class="text_area">
-                웹 퍼블리싱과 프론트엔드 개발에 대한 깊은 관심을 가지고 있으며, 특히 웹 표준과 웹 접근성을 준수하는 탄탄한 마크업을 중요하게 생각합니다. 단순히 디자인을 구현하는 것에서 그치는 것이 아니라, 사용자의 경험을 고려한 인터랙티브한 요소를 추가하여 더욱 완성도 높은 결과물을 만들어내고자 합니다.
-                <br>
-                <br>
-                제가 가장 중요하게 생각하는 것은 협업과 소통입니다. 프로젝트 진행 시 기획자, 디자이너, 개발자와 원활한 소통을 통해 의도를 정확히 파악하고, 이를 효과적으로 구현하는 것이 웹 퍼블리셔로서의 역할이라고 생각합니다. 또한, GitHub을 활용한 버전 관리와 효율적인 일정 조율을 통해 팀원들과의 협업을 원활하게 이끌어 나갈 수 있습니다.
-                <br>
-                <br>
-                앞으로도 기본기를 탄탄히 다지면서, 최신 기술을 학습하고, 사용자 중심의 웹을 개발하는 퍼블리셔가 되기 위해 끊임없이 노력하겠습니다.
               </div>
             </div>
+          </section>
+          <section class="section_work" id="work">
+            <div class="inner">
+              <h2
+                class="headline"
+                data-tooltip="실제 서비스를 분석하고 구현하며 쌓아온 프로젝트들"
+              >
+                <span class="icon">✦</span> Projects built by analyzing and
+                implementing real services.
+              </h2>
+              <div class="works_area">
+                <div class="works_box">
+                  <a
+                    href="https://cuddle-market-fe.vercel.app/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item12.png"
+                        data-src="./assets/images/img_work_item12-1.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Cuddle Market </span>
+                          <span class="cate">(Solo Project)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>React,</span>
+                        <span>TypeScript,</span>
+                        <span>Zustand,</span>
+                        <span>React Query,</span>
+                        <span>WebSocket,</span>
+                        <span>SSE,</span>
+                        <span>Axios,</span>
+                        <span>React Hook Form,</span>
+                        <span>Framer Motion,</span>
+                        <span>Tailwind,</span>
+                        <span>Responsive</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/m__andar/"
+                    class="work_link is_active"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item13.png"
+                        data-src="./assets/images/img_work_item13.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Study Hub </span>
+                          <span class="cate">(Team Project)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>React,</span>
+                        <span>TypeScript,</span>
+                        <span>React Query,</span>
+                        <span>WebSocket</span>
+                        <span>SSE,</span>
+                        <span>Axios,</span>
+                        <span>MSW,</span>
+                        <span>Tailwind,</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="works_box">
+                  <a
+                    href="https://jjub0217.github.io/m__andar/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item3.png"
+                        data-src="./assets/images/img_work_item3.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Andar </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>React,</span>
+                        <span>ES6,</span>
+                        <span>Swiper,</span>
+                        <span>Scss</span>
+                        <span>gsap,</span>
+                        <span>Response,</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/beautiful.github.io/"
+                    class="work_link is_active"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item2.png"
+                        data-src="./assets/images/img_work_item2.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Chanel </span>
+                          <span class="cate">(Renewal)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>Jquery,</span>
+                        <span>Swiper,</span>
+                        <span>ES6,</span>
+                        <span>Scss,</span>
+                        <span>SplitType</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="works_box">
+                  <a
+                    href="https://jjub0217.github.io/wavve_github.io/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box">
+                      <img src="./assets/images/img_work_item1.png" alt="" />
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Wavve</span>
+                          <span class="cate">(Renewal)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>Swiper,</span>
+                        <span>Vanilla JavaScript,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/clixr_github.io/"
+                    class="work_link is_active"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item4.jpg"
+                        data-src="./assets/images/img_work_item4.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Clixr </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>gsap,</span>
+                        <span>Jquery,</span>
+                        <span>Swiper,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/audio-pro_github.io/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item5.png"
+                        data-src="./assets/images/img_work_item5.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Audio pro </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>gsap,</span>
+                        <span>Swiper,</span>
+                        <span>lenis,</span>
+                        <span>Jquery,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="works_box">
+                  <a
+                    href="https://jjub0217.github.io/naver-business_github.io/"
+                    class="work_link is_active is_scale"
+                    target="_blank"
+                  >
+                    <div class="thumb_box">
+                      <img src="./assets/images/img_work_item6.jpg" alt="" />
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">naver business school </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>gsap,</span>
+                        <span>Swiper,</span>
+                        <span>Vanilla JavaScript,</span>
+                        <span>json fetch,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="works_box">
+                  <a
+                    href="https://jjub0217.github.io/music-tree.github.io/"
+                    class="work_link is_active"
+                    target="_blank"
+                  >
+                    <div class="thumb_box">
+                      <img src="./assets/images/img_work_item7.jpg" alt="" />
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Music tree </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>Vanilla JavaScript,</span>
+                        <span>aos,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/samsung-card_github.io/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item8-1.jpg"
+                        data-src="./assets/images/img_work_item8.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">samsung card </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>gsap,</span>
+                        <span>Vanilla JavaScript,</span>
+                        <span>Swiper,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="works_box">
+                  <a
+                    href="https://jjub0217.github.io/naver-career_github.io/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item9.png"
+                        data-src="https://recruit.pstatic.net/cdn-vod/naver/Joker.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Naver career </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>Swiper,</span>
+                        <span>Jquery,</span>
+                        <span>ES6,</span>
+                        <span>json fetch,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/woori-bank_github.io/"
+                    class="work_link is_active"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item10.png"
+                        data-src="./assets/images/img_work_item10.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Woori bank </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Swiper,</span>
+                        <span>Jquery,</span>
+                        <span>ES6,</span>
+                        <span>Scss</span>
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://jjub0217.github.io/seoul-city-hall_github.io/"
+                    class="work_link"
+                    target="_blank"
+                  >
+                    <div class="thumb_box thumb_video">
+                      <video
+                        preload="none"
+                        data-poster="./assets/images/img_work_item11.png"
+                        data-src="./assets/images/img_work_item11.mp4"
+                        playsinline
+                        autoplay
+                        muted
+                        loop
+                      ></video>
+                    </div>
+                    <div class="text_box">
+                      <div class="title_box">
+                        <svg
+                          id="Layer_1"
+                          class="ico_arrow"
+                          data-name="Layer 1"
+                          height="20"
+                          viewBox="0 0 72 45"
+                          fill="#fff"
+                        >
+                          <rect y="18" width="54" height="9"></rect>
+                          <rect x="63" y="18" width="9" height="9"></rect>
+                          <rect x="54" y="27" width="9" height="9"></rect>
+                          <rect x="54" y="9" width="9" height="9"></rect>
+                          <rect x="45" width="9" height="9"></rect>
+                          <rect x="45" y="36" width="9" height="9"></rect>
+                        </svg>
+                        <h3 class="title">
+                          <span class="title_text">Seoul city </span>
+                          <span class="cate">(Clone cording)</span>
+                        </h3>
+                      </div>
+                      <p class="desc">
+                        <span>Response,</span>
+                        <span>Jquery,</span>
+                        <span>Swiper,</span>
+                        <span>ES6,</span>
+                        <span>Scss,</span>
+                        <span>SplitType</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section_capabilities" id="capabilities">
+            <div class="inner">
+              <h2 class="headline" data-tooltip="직무 관련 경험 및 역량">
+                Job related experience and competence
+              </h2>
+              <div class="marauee_area">
+                <ul class="capabilities_list">
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_react_logo.png"
+                      alt="react"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_ts_logo.png"
+                      alt="typescript"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_js_logo.png"
+                      alt="javascript"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_zustand_logo.png"
+                      alt="zustand"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_tailwind_logo.png"
+                      alt="tailwind"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_html5_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_CSS3_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_sass_logo.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_github_logo.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </li>
+
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_figma_logo.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </li>
+                </ul>
+                <ul class="capabilities_list">
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_react_logo.png"
+                      alt="react"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_ts_logo.png"
+                      alt="typescript"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_js_logo.png"
+                      alt="javascript"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_zustand_logo.png"
+                      alt="zustand"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img
+                      src="./assets/images/img_tailwind_logo.png"
+                      alt="tailwind"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_html5_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_CSS3_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_sass_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_github_logo.png" alt="" />
+                  </li>
+                  <li class="capabilities_item">
+                    <img src="./assets/images/img_figma_logo.png" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="section_goals" id="goals">
+            <div class="inner">
+              <h2
+                class="headline"
+                data-tooltip="끊임없이 성장하는 프론트엔드 개발자로서로서 성장, 탁월함, 그리고 성공을 이루기 위한 다섯 가지 핵심 목표"
+              >
+                Five Key Goals to Achieve Growth, Excellence, and Success as a
+                Continuously Growing <br />
+                <span class="text"> Frontend Developer. </span>
+              </h2>
+              <div class="goals_area">
+                <div class="text_box">
+                  <div class="goal_box">
+                    <div class="progressbar_area">
+                      <div class="number">
+                        <span class="number_text">01</span>
+                      </div>
+                      <div class="progressbar_box" aria-hidden="true">
+                        <div class="progressbar">
+                          <div class="bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title_box">
+                      <h3 class="goal_title">사용자 중심의 웹 경험 구현</h3>
+                      <p class="desc">
+                        웹사이트를 제작할 때 사용자 경험을 최우선으로 고려하며,
+                        직관적인 디자인을 구현하는것에 집중하겠습니다. <br />
+                        사용자가 정보를 쉽고 편리하게 탐색할 수 있도록 설계하는
+                        데 중점을 두겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goal_box">
+                    <div class="progressbar_area">
+                      <div class="number">
+                        <span class="number_text">02</span>
+                      </div>
+                      <div class="progressbar_box" aria-hidden="true">
+                        <div class="progressbar">
+                          <div class="bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title_box">
+                      <h3 class="goal_title">반응형 웹과 모바일 최적화</h3>
+                      <p class="desc">
+                        모바일 반응형 웹 디자인을 활용해 다양한 디바이스에서
+                        최적화된 화면을 구현하여 기기 간 사용자 경험 차이를
+                        최소화하겠습니다. <br />모바일 앱과 연동된 웹 환경에서도
+                        일관된 서비스를 제공하겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goal_box">
+                    <div class="progressbar_area">
+                      <div class="number">
+                        <span class="number_text">03</span>
+                      </div>
+                      <div class="progressbar_box" aria-hidden="true">
+                        <div class="progressbar">
+                          <div class="bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title_box">
+                      <h3 class="goal_title">일관된 코드 품질 추구</h3>
+                      <p class="desc">
+                        TypeScript와 상태관리(Zustand)를 활용하여 타입 안전하고
+                        예측 가능한 코드를 작성하겠습니다. <br />
+                        디자인 시스템 구축을 통해 일관된 UI 컴포넌트를 설계하고
+                        재사용성을 높이겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goal_box">
+                    <div class="progressbar_area">
+                      <div class="number">
+                        <span class="number_text">04</span>
+                      </div>
+                      <div class="progressbar_box" aria-hidden="true">
+                        <div class="progressbar">
+                          <div class="bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title_box">
+                      <h3 class="goal_title">
+                        기술에 대한 호기심과 지속적인 성장
+                      </h3>
+                      <p class="desc">
+                        새로운 기술에 대한 호기심을 바탕으로 지속적으로 학습하고
+                        성장하겠습니다. <br />
+                        최고보다 최선의 가치를 추구하며, 기술이 만들어가는
+                        새로운 가치를 위해 끊임없이 도전하겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goal_box">
+                    <div class="progressbar_area">
+                      <div class="number">
+                        <span class="number_text">05</span>
+                      </div>
+                    </div>
+                    <div class="title_box">
+                      <h3 class="goal_title">팀원들과의 원활한 소통과 협업</h3>
+                      <p class="desc">
+                        프로젝트의 성공은 커뮤니케이션 능력을 바탕으로 한
+                        팀워크라고 생각합니다.<br />
+                        코드 리뷰 문화를 통해 더 나은 코드 품질을 추구하고,
+                        디자이너/기획자와의 긴밀한 협업을 통해 최상의 결과물을
+                        도출하겠습니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="thumb_box">
+                  <video
+                    data-src="./assets/images/background_gg.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="none"
+                    data-poster="./assets/images/img_visual_item2.png"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section_log" id="log">
+            <div class="inner">
+              <h2 class="headline">
+                <span class="icon">✦ </span>
+                Developer log
+              </h2>
+            </div>
+            <ul class="log_list">
+              <li class="log_item">
+                <a
+                  href="https://velog.io/@jjub0217/%EC%9D%B4%EB%AF%B8%EC%A7%80-%ED%81%AC%EA%B8%B0%EB%A5%BC-%EC%9B%B9-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%8B%9C%ED%82%A4%EB%A0%A4%EB%A9%B4"
+                  class="log_link"
+                  target="_blank"
+                >
+                  <div class="log_box">
+                    <div class="thumb_area">
+                      <div class="thumb_box">
+                        <img
+                          src="./assets/images/img_log_item1.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="title_box">
+                        <h3 class="title">이미지 크기를 웹 최적화 시키려면?</h3>
+                      </div>
+                    </div>
+                    <div class="desc_box">
+                      <span class="icon_arrow">
+                        <svg
+                          width="20"
+                          height="21"
+                          fill="none"
+                          id="svg296394470_205"
+                        >
+                          <path
+                            d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p class="hashtag_box">
+                        <span class="hashtag">이미지최적화,</span>
+                        <span class="hashtag">SEO,</span>
+                        <span class="hashtag">웹접근성,</span>
+                        <span class="hashtag">Web accessibility</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="log_item">
+                <a
+                  href="https://velog.io/@jjub0217/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1%EC%9D%B4-%EB%8C%80%EC%B2%B4-%EB%AD%90%EC%8B%9C%EA%B0%84%EB%8D%B0"
+                  class="log_link"
+                  target="_blank"
+                >
+                  <div class="log_box">
+                    <div class="thumb_area">
+                      <div class="thumb_box">
+                        <img
+                          src="./assets/images/img_log_item2.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="title_box">
+                        <h3 class="title">웹접근성이 대체 뭐시간데...</h3>
+                      </div>
+                    </div>
+                    <div class="desc_box">
+                      <span class="icon_arrow">
+                        <svg
+                          width="20"
+                          height="21"
+                          fill="none"
+                          id="svg296394470_205"
+                        >
+                          <path
+                            d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p class="hashtag_box">
+                        <span class="hashtag">Semantic markup,</span>
+                        <span class="hashtag">HTML5,</span>
+                        <span class="hashtag">웹접근성,</span>
+                        <span class="hashtag">Web accessibility</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="log_item">
+                <a
+                  href="https://velog.io/@jjub0217/Swiperjs-%EC%82%AC%EC%9A%A9%EB%B2%95"
+                  class="log_link"
+                  target="_blank"
+                >
+                  <div class="log_box">
+                    <div class="thumb_area">
+                      <div class="thumb_box">
+                        <img
+                          src="./assets/images/img_log_item3.png"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="title_box">
+                        <h3 class="title">Swiperjs 사용법</h3>
+                      </div>
+                    </div>
+                    <div class="desc_box">
+                      <span class="icon_arrow">
+                        <svg
+                          width="20"
+                          height="21"
+                          fill="none"
+                          id="svg296394470_205"
+                        >
+                          <path
+                            d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p class="hashtag_box">
+                        <span class="hashtag">swiper,</span>
+                        <span class="hashtag">javascript</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="log_item">
+                <a
+                  href="https://velog.io/@jjub0217/React-%EC%9D%98-State"
+                  class="log_link"
+                  target="_blank"
+                >
+                  <div class="log_box">
+                    <div class="thumb_area">
+                      <div class="thumb_box">
+                        <img
+                          src="./assets/images/img_log_item4.jpeg"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="title_box">
+                        <h3 class="title">React 의 State</h3>
+                      </div>
+                    </div>
+                    <div class="desc_box">
+                      <span class="icon_arrow">
+                        <svg
+                          width="20"
+                          height="21"
+                          fill="none"
+                          id="svg296394470_205"
+                        >
+                          <path
+                            d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p class="hashtag_box">
+                        <span class="hashtag">React,</span>
+                        <span class="hashtag">Component,</span>
+                        <span class="hashtag">State,</span>
+                        <span class="hashtag">Functional component,</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="log_item">
+                <a
+                  href="https://github.com/jjub0217/Dev-Log/blob/master/JAVA_Script/FDS_17/%EB%B0%B0%EC%97%B4.md"
+                  class="log_link"
+                  target="_blank"
+                >
+                  <div class="log_box">
+                    <div class="thumb_area">
+                      <div class="thumb_box">
+                        <img
+                          src="./assets/images/img_log_item5.jpg"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="title_box">
+                        <h3 class="title">배열</h3>
+                      </div>
+                    </div>
+                    <div class="desc_box">
+                      <span class="icon_arrow">
+                        <svg
+                          width="20"
+                          height="21"
+                          fill="none"
+                          id="svg296394470_205"
+                        >
+                          <path
+                            d="M17.669 16.824V4.826L2.166 20.328.503 18.665 16.006 3.163l-12.028.03-.03-2.288h15.978v15.919h-2.257Z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p class="hashtag_box">
+                        <span class="hashtag">Javascript,</span>
+                        <span class="hashtag">Array</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <div class="works_thumbnail">
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item1-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item2-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item3-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item4-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item5.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item6.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item7.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item8-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item9.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item10-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item11.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item1-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item2-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item3-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item4-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item5.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item6.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item7.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item8-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item9.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item10-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="panel">
+              <img
+                src="./assets/images/img_work_item11.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
           </div>
-        </section>
-      </div>
-    </main>
-  <footer class="footer">
-    <div class="inner">
-      <div class="heading_area">
-        <h2 class="headline">Let me working with you.</h2>
-        <a href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다." class="link_mail" target="_blank">
-          <span class="contact_text">mail to me</span>
-        </a>
-      </div>
-        <div class="content-box">
-          <div class="text-box">
-            <p class="title">Profile</p>
-            <p class="paragraph">
-              <span class="cate">Name</span>
-              <span class="content">강주현</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Mail</span>
-              <span class="content">devel.jjub@gmail.com</span>
-            </p>
+          <section class="section_about" id="about">
+            <div class="inner">
+              <h2
+                class="headline"
+                data-tooltip="저는 이런 프론트엔드 개발자 입니다."
+              >
+                I'm a frontend developer like this.
+              </h2>
+              <h3
+                class="title"
+                data-tooltip="사용자 경험, 반응형 웹, 원활한 협업을 목표로 하는 프론트엔드 개발자입니다."
+              >
+                It is a
+                <span class="text">frontend developer</span>
+                that aims for user experience, responsive web, and smooth
+                collaboration.
+              </h3>
+              <div class="content_box">
+                <div class="thumb_area">
+                  <div class="thumb_box">
+                    <img
+                      src="./assets/images/img_profile_2.jpg"
+                      alt=""
+                      class="gray_img"
+                      loading="lazy"
+                    />
+                    <img
+                      src="./assets/images/img_profile_1.jpg"
+                      alt=""
+                      class="color_img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="desc_box">
+                    <p class="text name">Kang Joohyun</p>
+                    <p class="text job">Frontend Developer</p>
+                    <p class="text character">
+                      Passion, challenge, effort, meticulousness
+                    </p>
+                  </div>
+                </div>
+                <div class="text_area">
+                  복잡한 문제들이 하나씩 정리되어 완성된 결과물로 만들어질 때 큰
+                  성취감을 느낍니다. 여행 계획을 세울 때 이동 경로와 일정,
+                  예상치 못한 변수까지 고려해 전체 흐름을 설계하는 과정을
+                  좋아하며, 이런 성향이 코드 구조를 체계적으로 설계하고 정리하는
+                  작업에서도 자연스럽게 드러납니다.
+                  <br />
+                  <br />
+                  설명서를 보며 가구를 조립하거나 공간을 새롭게 꾸미는 일에도
+                  흥미를 느낍니다. 정해진 순서와 규칙을 따라가며 하나의 결과물을
+                  완성해가는 과정이 좋고, 그래서인지 컴포넌트를 설계하고 화면을
+                  구성하는 작업에서도 비슷한 즐거움을 느낍니다. 기준과 원칙이
+                  명확할수록 더 집중하게 되고, 완성도에 대한 욕심도 커지는
+                  편입니다.
+                  <br />
+                  <br />
+                  문제를 마주했을 때는 해결 방법부터 찾기보다는 왜 이런 문제가
+                  발생했는지를 먼저 정리하려고 합니다. 원인을 이해해야 같은
+                  문제가 반복되지 않는다고 생각하며, 웹 접근성과 성능 개선에도
+                  이러한 관점으로 접근하고 있습니다. Semantic Markup과
+                  Lighthouse 분석을 통해 더 많은 사용자가 불편 없이 이용할 수
+                  있는 화면을 만드는 데 관심을 가지고 있습니다.
+                  <br />
+                  <br />
+                  주로 구글캘린더와 노션을 활용해 일정과 작업 흐름을 관리하며,
+                  정리된 기준과 기록을 통해 협업 과정에서도 혼선을 줄이려고
+                  합니다.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="inner">
+          <div class="heading_area">
+            <h2 class="headline">Let me working with you.</h2>
+            <a
+              href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
+              class="link_mail"
+              target="_blank"
+            >
+              <span class="contact_text">mail to me</span>
+            </a>
           </div>
-          <div class="text-box">
-            <p class="title">Career</p>
-            <p class="paragraph">
-              <span class="cate">Web Publisher</span>
-              <span class="content">2024 04 - 2024 06</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Frontend</span>
-              <span class="content">2021 11 - 2023 02</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Online MD</span>
-              <span class="content"> ~ 2020 02</span>
-            </p>
-          </div>
-          <div class="text-box">
-            <p class="title">Education</p>
-            <p class="paragraph">
-              <span class="cate">Publisher Allround Friend </span>
-              <span class="content">2023 06 - 2023 11</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Frontend Boot Camp</span>
-              <span class="content">2021 05 - 2021 10</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Frontend Boot Camp</span>
-              <span class="content">2020 07 - 2020 12</span>
-            </p>
-            <p class="paragraph">
-              <span class="cate">Frontend Boot Camp</span>
-              <span class="content">2020 03 - 2020 06</span>
-            </p>
+          <div class="content-box">
+            <div class="text-box">
+              <p class="title">Profile</p>
+              <p class="paragraph">
+                <span class="cate">Name</span>
+                <span class="content">강주현</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Mail</span>
+                <span class="content">devel.jjub@gmail.com</span>
+              </p>
+            </div>
+            <div class="text-box">
+              <p class="title">Career</p>
+              <p class="paragraph">
+                <span class="cate">Web Publisher</span>
+                <span class="content">2024 04 - 2024 06</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Frontend</span>
+                <span class="content">2021 11 - 2023 03</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Online MD</span>
+                <span class="content">2016 03 - 2020 02</span>
+              </p>
+            </div>
+            <div class="text-box">
+              <p class="title">Education</p>
+              <p class="paragraph">
+                <span class="cate">Web Fullstack online Bootcamp</span>
+                <span class="content">2025 04 - 2025 10</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Allround Friends IT Program</span>
+                <span class="content">2023 06 - 2023 12</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Frontend Boot Camp</span>
+                <span class="content">2021 05 - 2021 10</span>
+              </p>
+            </div>
           </div>
         </div>
-    </div>
-    <div class="footer_logo_area">
-      <span class="footer_logo" aria-hidden="true">
-        <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px"
-          y="0px" width="100%" viewBox="0 0 736 736" enable-background="new 0 0 736 736" xml:space="preserve">
-          <path fill="#fff" opacity="1.000000" stroke="none" d="M239.191620,693.069580 
+        <div class="footer_logo_area">
+          <span class="footer_logo" aria-hidden="true">
+            <svg
+              version="1.1"
+              xmlns="https://www.w3.org/2000/svg"
+              xmlns:xlink="https://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="100%"
+              viewBox="0 0 736 736"
+              enable-background="new 0 0 736 736"
+              xml:space="preserve"
+            >
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M239.191620,693.069580 
           C218.239182,682.811340 198.135727,671.785706 179.596298,658.226929 
           C160.782822,644.467773 143.643753,628.810242 128.058029,611.392273 
           C115.852295,597.751770 104.417564,583.527832 94.448929,568.238037 
@@ -1108,8 +1800,13 @@
           C402.476349,726.095093 376.441345,725.158875 350.667297,723.767029 
           C329.035400,722.598816 307.520081,717.371460 286.513153,710.927063 
           C270.448303,705.998718 254.915848,699.873596 239.191620,693.069580 
-          z" />
-          <path fill="#fff" opacity="1.000000" stroke="none" d="M292.039917,119.601501 
+          z"
+              />
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M292.039917,119.601501 
           C267.330200,128.438095 244.754227,140.583405 223.612885,155.505966 
           C203.387894,169.781708 185.418472,186.645935 169.793335,205.642548 
           C154.955154,223.682358 142.333817,243.367432 132.814529,264.967407 
@@ -1169,8 +1866,13 @@
           C442.531189,108.643448 427.134033,105.659538 411.670868,104.716362 
           C396.004303,103.760788 380.194366,103.932793 364.441376,104.697380 
           C339.631104,105.901566 315.739990,111.403587 292.039917,119.601501 
-        z" />
-          <path fill="#fff" opacity="1.000000" stroke="none" d="M396.662537,390.999939 
+        z"
+              />
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M396.662537,390.999939 
           C396.663513,349.336670 396.668518,308.173462 396.662598,267.010223 
           C396.661407,258.769501 391.903259,254.557297 383.824829,253.189011 
           C368.818359,250.647324 355.365997,243.539734 350.544586,228.750534 
@@ -1204,15 +1906,20 @@
           C368.620697,466.622986 372.377991,466.630768 376.041473,464.148499 
           C387.087311,456.664185 394.663116,447.398590 395.739777,433.389008 
           C396.813263,419.420959 396.551514,405.465912 396.662537,390.999939 
-        z" />
-        </svg>
-      </span>
-      <span class="text">
-        <img src="./assets/images/img_footer_logo.png" alt="" aria-hidden="true" loading="lazy">
-      </span>
+        z"
+              />
+            </svg>
+          </span>
+          <span class="text">
+            <img
+              src="./assets/images/img_footer_logo.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
+          </span>
+        </div>
+      </footer>
     </div>
-  </footer>
-  </div>
-</body>
-
+  </body>
 </html>
