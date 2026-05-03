@@ -362,6 +362,8 @@ async function initPretextObstacle() {
     (entries) => {
       const wasActive = isAvoidActive;
       isAvoidActive = entries[0].isIntersecting;
+      // 공 가시성 토글 — about 섹션 visible 시만 보임
+      ball.classList.toggle("is-visible", isAvoidActive);
       if (!wasActive && isAvoidActive) draw();
     },
     { threshold: 0.01 }

@@ -28,7 +28,7 @@
   user-select: text;
 }
 
-/* 페이지 전역 공 — 어느 섹션에서든 드래그 가능 */
+/* 페이지 전역 공 — section_about 안에서만 보임 (드래그 가능) */
 .global-ball {
   position: fixed;
   border-radius: 50%;
@@ -45,6 +45,15 @@
     0 0 120px 40px rgba(176, 163, 255, 0.08);
   user-select: none;
   touch-action: none;
+  /* 기본 숨김 — about 섹션 visible 시만 보임 */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.global-ball.is-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .global-ball:active {
