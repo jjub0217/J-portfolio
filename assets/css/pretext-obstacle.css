@@ -1,0 +1,103 @@
+/* ========================================
+   Pretext Obstacle — 텍스트 회피 효과
+   ======================================== */
+
+/* 원본 텍스트 숨김 (시각적으로만, SEO/스크린리더는 정상 인식) */
+.pretext-source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Pretext가 그릴 무대 — 절대 위치 자식들의 기준 */
+.pretext-stage {
+  position: relative;
+  width: 100%;
+}
+
+/* JS가 동적으로 박는 한 줄 */
+.pretext-line {
+  position: absolute;
+  white-space: pre;
+  user-select: text;
+}
+
+/* 페이지 전역 공 — 어느 섹션에서든 드래그 가능 */
+.global-ball {
+  position: fixed;
+  border-radius: 50%;
+  z-index: 5;
+  cursor: grab;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(176, 163, 255, 0.45),
+    rgba(176, 163, 255, 0.18) 55%,
+    transparent 75%
+  );
+  box-shadow:
+    0 0 60px 15px rgba(176, 163, 255, 0.18),
+    0 0 120px 40px rgba(176, 163, 255, 0.08);
+  user-select: none;
+  touch-action: none;
+}
+
+.global-ball:active {
+  cursor: grabbing;
+}
+
+/* takeover된 .title은 시각적으로 비워둠 (Pretext가 그림) */
+.section_about .title.is-pretext-takeover {
+  visibility: hidden;
+}
+.section_about .title.is-pretext-takeover .pretext-source,
+.section_about .title.is-pretext-takeover .pretext-stage {
+  visibility: visible;
+}
+
+/* takeover된 .text_area도 동일 */
+.section_about .text_area.is-pretext-takeover {
+  /* text_area는 컨테이너만 유지, 내부 직접 텍스트는 visually-hidden */
+}
+
+/* .title의 stage 폰트는 원본 .title 스타일을 그대로 상속 */
+.section_about .title .pretext-stage .pretext-line {
+  color: rgb(255, 255, 255);
+}
+.section_about .title .pretext-stage .pretext-line .text-accent {
+  color: #b0a3ff;
+}
+
+/* .text_area의 stage 폰트 */
+.section_about .text_area .pretext-stage .pretext-line {
+  color: rgb(255, 255, 255);
+}
+
+/* 모바일에서는 회피 비활성화 (좁은 화면에 슬롯 너무 좁아서 깨짐 방지) */
+@media screen and (max-width: 768px) {
+  .global-ball {
+    display: none;
+  }
+  .section_about .title.is-pretext-takeover,
+  .section_about .text_area.is-pretext-takeover {
+    visibility: visible;
+  }
+  .section_about .title .pretext-source,
+  .section_about .text_area .pretext-source {
+    /* 모바일은 원본 텍스트 그대로 보이게 (clip 해제) */
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    white-space: normal;
+  }
+  .section_about .title .pretext-stage,
+  .section_about .text_area .pretext-stage {
+    display: none;
+  }
+}
