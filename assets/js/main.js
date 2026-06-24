@@ -112,7 +112,6 @@ ScrollTrigger.matchMedia({
 
     worksBoxes.forEach((workBox) => {
       const activeWork = workBox.querySelector(".work_link.is_active");
-      const scaleWork = workBox.querySelector(".work_link.is_scale");
       gsap.to(activeWork, {
         scrollTrigger: {
           trigger: workBox,
@@ -122,16 +121,6 @@ ScrollTrigger.matchMedia({
           scrub: true,
         },
         y: "0%",
-      });
-      gsap.to(scaleWork, {
-        scrollTrigger: {
-          trigger: workBox,
-          start: "top 100%",
-          end: "bottom 100%",
-          // markers: false,
-          scrub: true,
-        },
-        width: "100%",
       });
     });
 
@@ -186,7 +175,7 @@ gsap.to(panels, {
   },
 });
 
-let typeSplit = new SplitType(".text_split", {
+new SplitType(".text_split", {
   types: "words, chars, lines",
   tagName: "span",
 });
@@ -222,8 +211,6 @@ document.querySelectorAll("[lines]").forEach((element) => {
   createScrollTrigger(element, tl);
 });
 
-gsap.set(".text-split", { opacity: 1 });
-
 const videos = document.querySelectorAll("video[data-src]");
 
 const observer = new IntersectionObserver((entries) => {
@@ -238,3 +225,28 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 videos.forEach((video) => observer.observe(video));
+
+// 모바일 햄버거 메뉴 — 풀스크린 오버레이 토글
+const burgerBtn = document.querySelector(".btn_burger");
+const gnbNav = document.querySelector(".gnb");
+if (burgerBtn && gnbNav) {
+  const setMenu = (open) => {
+    document.body.classList.toggle("is-menu-open", open);
+    burgerBtn.setAttribute("aria-expanded", String(open));
+    burgerBtn.textContent = open ? "✕ CLOSE" : "✦ MENU";
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burgerBtn.addEventListener("click", () => {
+    setMenu(!document.body.classList.contains("is-menu-open"));
+  });
+  // 메뉴 항목 클릭 시 닫힘 (앵커 이동)
+  gnbNav.querySelectorAll(".nav-item_title").forEach((link) => {
+    link.addEventListener("click", () => setMenu(false));
+  });
+  // ESC로 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("is-menu-open")) {
+      setMenu(false);
+    }
+  });
+}

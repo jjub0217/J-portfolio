@@ -54,10 +54,43 @@
 .global-ball.is-visible {
   opacity: 1;
   pointer-events: auto;
+  /* 은은한 부유 — 제자리에서 천천히 떠다녀 "만질 수 있는 요소"임을 알림 */
+  animation: ball-float 6s ease-in-out infinite;
 }
 
 .global-ball:active {
   cursor: grabbing;
+  /* 드래그 중엔 부유 정지 (transform이 드래그 위치를 흔들지 않게) */
+  animation-play-state: paused;
+}
+
+/* 제자리에서 작은 원을 그리듯 미세하게 떠다님 (진폭 ~14px) */
+@keyframes ball-float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  20% {
+    transform: translate(10px, -8px);
+  }
+  40% {
+    transform: translate(-6px, -14px);
+  }
+  60% {
+    transform: translate(-12px, 4px);
+  }
+  80% {
+    transform: translate(6px, 12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* 움직임 최소화를 선호하는 사용자는 부유 비활성화 (접근성) */
+@media (prefers-reduced-motion: reduce) {
+  .global-ball.is-visible {
+    animation: none;
+  }
 }
 
 /* takeover된 .title은 시각적으로 비워둠 (Pretext가 그림) */

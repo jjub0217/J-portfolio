@@ -13,6 +13,10 @@ import {
   layout,
 } from "https://esm.sh/@chenglou/pretext";
 
+// 공 크기 — init()과 setStageHeight()가 공유 (동기화 위해 한 곳에)
+const BALL_RADIUS = 80;
+const BALL_VERTICAL_GAP = 4;
+
 // ────────────────────────────────────────
 // 알고리즘 헬퍼
 // ────────────────────────────────────────
@@ -141,6 +145,7 @@ class PretextZone {
       accentWords: options.accentWords || null,
       paragraphSeparator: options.paragraphSeparator || null,
       paragraphGapMultiplier: options.paragraphGapMultiplier || 1.6,
+      reserveBallHeight: options.reserveBallHeight || false,
     };
 
     // br을 \n으로 변환해서 텍스트 추출 (단락 구분 보존)
@@ -229,8 +234,18 @@ class PretextZone {
         (this.options.paragraphGapMultiplier - 1);
     }
 
-    this.stageEl.style.minHeight = `${Math.ceil(totalHeight)}px`;
-    this.stageHeight = totalHeight;
+    // 공이 텍스트를 가리면 그 줄들이 좌우로 갈라지거나 아래로 밀려 더 많은
+    // 세로 공간이 필요. 공 지름만큼 여유를 미리 확보해 잘림을 막음
+    // (reserveBallHeight를 켠 zone만 — 짧은 title엔 불필요).
+    const ballClearance = this.options.reserveBallHeight
+      ? BALL_RADIUS * 2 + BALL_VERTICAL_GAP * 2
+      : 0;
+
+    // 박스 높이 = 자연 높이 + 공 여유. content_box를 flex-start(상단 정렬)로
+    // 두므로 이 여유가 정렬을 망치지 않고(여백은 박스 아래로 감), 공이 어디
+    // 있든 늘어난 줄이 박스 안에 다 들어가 잘림·넘침이 없음.
+    this.stageEl.style.minHeight = `${Math.ceil(totalHeight + ballClearance)}px`;
+    this.stageHeight = totalHeight + ballClearance;
   }
 
   draw(globalBall) {
@@ -336,6 +351,7 @@ async function initPretextObstacle() {
     new PretextZone(".section_about .text_area", {
       paragraphSeparator: "\n\n",
       paragraphGapMultiplier: 1.6,
+      reserveBallHeight: true,
     }),
   ].filter((z) => z.targetEl);
 
@@ -350,7 +366,7 @@ async function initPretextObstacle() {
   ball.className = "global-ball";
   ball.id = "global-ball";
 
-  const radius = 80;
+  const radius = BALL_RADIUS;
   ball.style.width = `${radius * 2}px`;
   ball.style.height = `${radius * 2}px`;
   ball.style.left = `${window.innerWidth / 2 - radius}px`;
@@ -366,7 +382,9 @@ async function initPretextObstacle() {
       ball.classList.toggle("is-visible", isAvoidActive);
       if (!wasActive && isAvoidActive) draw();
     },
-    { threshold: 0.01 }
+    // 판정 영역을 화면 세로 중앙선으로 좁힘 — about이 화면 중앙을 점유할 때만
+    // 공이 보이고, footer가 올라와 about이 중앙에서 벗어나면 자동으로 숨김.
+    { threshold: 0, rootMargin: "-50% 0px -50% 0px" }
   );
   observer.observe(sectionAbout);
 
