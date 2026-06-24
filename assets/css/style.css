@@ -4,7 +4,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 @font-face {
@@ -206,6 +206,20 @@ fieldset {
   height: 26px;
   width: 26px;
 }
+.header .logo .logo_text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+/* 로고 텍스트는 흰색 통일 — 합성어 의도는 아래 부제로 전달 */
+/* 합성어 의도를 알리는 보조 부제 */
+.header .logo .logo_sub {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  font-family: "Roobert-Regular", sans-serif;
+}
 .header .gnb {
   height: 100%;
   background-color: rgba(41, 41, 41, 0.45);
@@ -264,8 +278,10 @@ fieldset {
   transition: all 0.3s;
   color: #ffffff;
 }
-.header .gnb .nav-item_title:hover {
-  opacity: 1;
+@media (hover: hover) {
+  .header .gnb .nav-item_title:hover {
+    opacity: 1;
+  }
 }
 .header .link_mail,
 .header .btn_burger {
@@ -279,6 +295,31 @@ fieldset {
   font-size: 14px;
   transition: all 0.3s;
   color: rgb(255, 255, 255);
+}
+/* 햄버거 아이콘 (3줄 → 열면 X) */
+.header .btn_burger {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  background-color: transparent;
+}
+.header .btn_burger .burger_line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+body.is-menu-open .header .btn_burger .burger_line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+body.is-menu-open .header .btn_burger .burger_line:nth-child(2) {
+  opacity: 0;
+}
+body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 @media screen and (min-width: 850px) {
   .header .link_mail:hover,
@@ -301,7 +342,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .header .header_actions .btn_burger {
-    display: block;
+    display: flex;
   }
 }
 
@@ -374,15 +415,19 @@ fieldset {
   transition: 0.5s ease;
   content: "";
 }
-.footer .link_mail:hover,
-.footer .link_mail:focus {
-  background-position: 0% 100%;
-  background-size: 100% 100%;
+@media (hover: hover) {
+  .footer .link_mail:hover,
+  .footer .link_mail:focus-visible {
+    background-position: 0% 100%;
+    background-size: 100% 100%;
+  }
 }
-.footer .link_mail:hover::after,
-.footer .link_mail:focus::after {
-  display: block;
-  transform: translateX(10px);
+@media (hover: hover) {
+  .footer .link_mail:hover::after,
+  .footer .link_mail:focus-visible::after {
+    display: block;
+    transform: translateX(10px);
+  }
 }
 .footer .content-box {
   display: flex;
@@ -521,9 +566,11 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_visual .headline:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_visual .headline:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_visual .desc_wrap {
   display: flex;
@@ -561,9 +608,11 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_visual .desc:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_visual .desc:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_visual .mail_link {
   display: block;
@@ -584,10 +633,12 @@ fieldset {
     color 0.4s cubic-bezier(0.36, 0.3, 0, 1),
     background-size 0.6s cubic-bezier(0.36, 0.3, 0, 1);
 }
-.section_visual .mail_link:hover,
-.section_visual .mail_link:focus {
-  background-position: 0% 100%;
-  background-size: 100% 100%;
+@media (hover: hover) {
+  .section_visual .mail_link:hover,
+  .section_visual .mail_link:focus-visible {
+    background-position: 0% 100%;
+    background-size: 100% 100%;
+  }
 }
 @media screen and (max-width: 600px) {
   .section_visual .mail_link {
@@ -619,7 +670,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .section_introduce .desc {
-    font-size: 40px;
+    font-size: 25px;
   }
 }
 .section_introduce .profile_box {
@@ -666,6 +717,11 @@ fieldset {
   position: relative;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 990px) {
+  .section_work .headline {
+    font-size: 24px;
+  }
+}
 .section_work .headline .icon {
   color: #d2ff85;
 }
@@ -684,9 +740,11 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_work .headline:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_work .headline:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_work .works_area {
   padding-top: 16px;
@@ -817,7 +875,7 @@ fieldset {
   .section_work .text_box .title {
     flex-direction: row;
     align-items: flex-end;
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 .section_work .text_box .title .title_text {
@@ -843,7 +901,7 @@ fieldset {
 }
 @media screen and (max-width: 850px) {
   .section_work .text_box .title .cate {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .section_work .text_box .desc {
@@ -868,6 +926,7 @@ fieldset {
 @media screen and (max-width: 990px) {
   .section_work .text_box .desc {
     opacity: 1;
+    font-size: 16px;
   }
 }
 
@@ -917,13 +976,16 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_capabilities .headline:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_capabilities .headline:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_capabilities .marauee_area {
   display: flex;
-  animation: marquee 25s linear infinite;
+  width: max-content;
+  animation: marquee 70s linear infinite;
   gap: 120px;
 }
 .section_capabilities .capabilities_list {
@@ -944,7 +1006,7 @@ fieldset {
 @media screen and (max-width: 600px) {
   /* 모바일: 로고 작게 + 간격 좁게 + 속도 빠르게 */
   .section_capabilities .marauee_area {
-    animation-duration: 10s;
+    animation-duration: 30s;
     gap: 70px;
   }
   .section_capabilities .capabilities_list {
@@ -981,7 +1043,7 @@ fieldset {
 }
 @media screen and (max-width: 600px) {
   .section_goals .headline {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 .section_goals .headline .text {
@@ -1002,14 +1064,21 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_goals .headline:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_goals .headline:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_goals .goals_area {
   display: flex;
   align-items: center;
   padding-top: 120px;
+}
+@media screen and (max-width: 990px) {
+  .section_goals .goals_area {
+    padding-top: 24px;
+  }
 }
 .section_goals .text_box {
   display: flex;
@@ -1061,8 +1130,15 @@ fieldset {
   height: 350px;
 }
 @media screen and (max-width: 990px) {
+  /* 고정 높이 대신 goal_box(=desc) 높이에 맞춰 늘어나게(stretch) →
+     desc 아래 공백 제거 + 세로선이 desc 끝~다음 번호까지 자연 연결 */
   .section_goals .progressbar_area {
-    height: 300px;
+    height: auto;
+  }
+  /* progressbar(height:50vh)가 box의 min-height:auto를 밀어올려 공백을
+     만들므로 min-height:0으로 풀어 box가 desc 높이에 맞게 줄어들게 함 */
+  .section_goals .progressbar_box {
+    min-height: 0;
   }
 }
 .section_goals .progressbar_box {
@@ -1110,7 +1186,7 @@ fieldset {
 @media screen and (max-width: 990px) {
   .section_goals .title_box {
     width: 100%;
-    height: 300px;
+    height: auto;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1134,7 +1210,7 @@ fieldset {
 @media screen and (max-width: 600px) {
   .section_goals .title_box .goal_title {
     white-space: normal;
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 .section_goals .title_box .desc {
@@ -1144,7 +1220,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .section_goals .title_box .desc {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .section_goals .thumb_box {
@@ -1177,7 +1253,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .section_log .inner {
-    padding: 0 40px;
+    padding: 0 30px;
   }
 }
 .section_log .log_headline_link {
@@ -1193,9 +1269,16 @@ fieldset {
   gap: 6px;
   transition: color 0.3s;
 }
-.section_log .log_headline_link:hover .headline,
-.section_log .log_headline_link:focus .headline {
-  color: #b0a3ff;
+@media screen and (max-width: 990px) {
+  .section_log .headline {
+    font-size: 24px;
+  }
+}
+@media (hover: hover) {
+  .section_log .log_headline_link:hover .headline,
+  .section_log .log_headline_link:focus-visible .headline {
+    color: #b0a3ff;
+  }
 }
 .section_log .headline .icon {
   background-image: linear-gradient(#b0a3ff, #b0a3ff),
@@ -1208,9 +1291,11 @@ fieldset {
   color: transparent;
   transition: background-size 1s cubic-bezier(0.36, 0.3, 0, 1);
 }
-.section_log .log_headline_link:hover .icon,
-.section_log .log_headline_link:focus .icon {
-  background-size: 100% 100%, 100% 100%;
+@media (hover: hover) {
+  .section_log .log_headline_link:hover .icon,
+  .section_log .log_headline_link:focus-visible .icon {
+    background-size: 100% 100%, 100% 100%;
+  }
 }
 .section_log .headline .log_text {
   background-image:
@@ -1225,11 +1310,13 @@ fieldset {
   color: transparent;
   transition: background-size 1s cubic-bezier(0.36, 0.3, 0, 1);
 }
-.section_log .log_headline_link:hover .log_text,
-.section_log .log_headline_link:focus .log_text {
-  background-size:
-    100% 100%,
-    100% 100%;
+@media (hover: hover) {
+  .section_log .log_headline_link:hover .log_text,
+  .section_log .log_headline_link:focus-visible .log_text {
+    background-size:
+      100% 100%,
+      100% 100%;
+  }
 }
 .section_log .log_arrow {
   opacity: 0;
@@ -1238,15 +1325,22 @@ fieldset {
     opacity 0.3s,
     transform 0.3s;
 }
-.section_log .log_headline_link:hover .log_arrow,
-.section_log .log_headline_link:focus .log_arrow {
-  opacity: 1;
-  transform: translateX(0);
+@media (hover: hover) {
+  .section_log .log_headline_link:hover .log_arrow,
+  .section_log .log_headline_link:focus-visible .log_arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 .section_log .log_list {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 990px) {
+  .section_log .log_list {
+    margin-top: 10px;
+  }
 }
 .section_log .log_link {
   display: flex;
@@ -1255,7 +1349,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .section_log .log_link {
-    padding: 0 40px;
+    padding: 0 30px;
   }
 }
 @media screen and (min-width: 990px) {
@@ -1335,12 +1429,7 @@ fieldset {
 }
 @media screen and (max-width: 990px) {
   .section_log .thumb_box {
-    position: relative;
-    left: auto;
-    aspect-ratio: auto;
-    width: 100%;
-    height: 200px;
-    opacity: 1;
+    display: none;
   }
   .section_log .thumb_box img {
     opacity: 1;
@@ -1361,6 +1450,7 @@ fieldset {
   .section_log .title {
     font-size: 22px;
     line-height: 1.3;
+    font-weight: 400;
   }
 }
 .section_log .desc_box {
@@ -1454,6 +1544,11 @@ fieldset {
   width: -moz-fit-content;
   width: fit-content;
 }
+@media screen and (max-width: 990px) {
+  .section_about .headline {
+    font-size: 32px;
+  }
+}
 .section_about .headline:after {
   content: attr(data-tooltip);
   position: absolute;
@@ -1469,9 +1564,11 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_about .headline:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_about .headline:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_about .title {
   font-size: 90px;
@@ -1487,7 +1584,7 @@ fieldset {
 }
 @media screen and (max-width: 600px) {
   .section_about .title {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
 .section_about .title .text {
@@ -1508,9 +1605,11 @@ fieldset {
   visibility: hidden;
   transition: opacity 0.3s;
 }
-.section_about .title:hover::after {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .section_about .title:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .section_about .content_box {
   margin-top: 140px;
@@ -1522,6 +1621,7 @@ fieldset {
   .section_about .content_box {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 60px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1595,4 +1695,10 @@ fieldset {
   display: flex;
   flex-direction: column;
   font-family: "Roobert-Regular";
+}
+@media screen and (max-width: 990px) {
+  /* 모바일: 본문이 길어지므로 폰트를 줄여 체감 길이 축소 */
+  .section_about .text_area {
+    font-size: 16px;
+  }
 }

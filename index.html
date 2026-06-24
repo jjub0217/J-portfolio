@@ -74,9 +74,11 @@
     <div class="wrapper">
       <header class="header" id="header">
         <div class="inner">
-          <a href="#" class="logo">
-            <span class="blind">로고</span>
-            Desveloper
+          <a href="#" class="logo" aria-label="Desveloper — Design과 Developer의 합성어">
+            <span class="logo_text" aria-hidden="true">
+              <span class="logo_main"><span class="logo_accent">Des</span>veloper</span>
+              <span class="logo_sub">Design × Developer</span>
+            </span>
             <svg
               version="1.1"
               xmlns="https://www.w3.org/2000/svg"
@@ -281,8 +283,11 @@
               type="button"
               aria-expanded="false"
               aria-controls="nav"
+              aria-label="메뉴 열기"
             >
-              ✦ MENU
+              <span class="burger_line"></span>
+              <span class="burger_line"></span>
+              <span class="burger_line"></span>
             </button>
           </div>
         </div>
@@ -298,10 +303,10 @@
             <div class="desc_wrap">
               <p
                 class="desc"
-                data-tooltip="명확성과 SEO를 위해 정확한 HTML 구조와 반응형 웹 디자인으로 최적의 사용자 경험을 보장하겠습니다."
+                data-tooltip="React와 Next.js로 빠르고 접근성 있는 화면을 만들고, 추측이 아니라 측정으로 성능을 개선합니다."
               >
-                I will ensure optimal user experience with a precise HTML
-                structure and responsive web design for clarity and SEO.
+                Fast, accessible interfaces built with React and Next.js
+                performance improved through measurement, not guesswork.
               </p>
               <a
                 href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
@@ -653,7 +658,10 @@
                     target="_blank"
                   >
                     <div class="thumb_box">
-                      <img src="./assets/images/img_work_item1.png" alt="Wavve" />
+                      <img
+                        src="./assets/images/img_work_item1.png"
+                        alt="Wavve"
+                      />
                     </div>
                     <div class="text_box">
                       <div class="title_box">
@@ -843,19 +851,34 @@
                     <img src="./assets/images/img_github_logo.png" alt="" />
                   </li>
                   <li class="capabilities_item">
-                    <img src="./assets/images/img_nextjs_logo.png" alt="next.js" />
+                    <img
+                      src="./assets/images/img_nextjs_logo.png"
+                      alt="next.js"
+                    />
                   </li>
                   <li class="capabilities_item">
-                    <img src="./assets/images/img_supabase_logo.png" alt="supabase" />
+                    <img
+                      src="./assets/images/img_supabase_logo.png"
+                      alt="supabase"
+                    />
                   </li>
                   <li class="capabilities_item">
-                    <img src="./assets/images/img_vercel_logo.png" alt="vercel" />
+                    <img
+                      src="./assets/images/img_vercel_logo.png"
+                      alt="vercel"
+                    />
                   </li>
                   <li class="capabilities_item">
-                    <img src="./assets/images/img_storybook_logo.png" alt="storybook" />
+                    <img
+                      src="./assets/images/img_storybook_logo.png"
+                      alt="storybook"
+                    />
                   </li>
                   <li class="capabilities_item">
-                    <img src="./assets/images/img_claudecode_logo.png" alt="claude code" />
+                    <img
+                      src="./assets/images/img_claudecode_logo.png"
+                      alt="claude code"
+                    />
                   </li>
                   <li class="capabilities_item">
                     <img src="./assets/images/img_npm_logo.png" alt="npm" />

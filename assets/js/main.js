@@ -233,7 +233,7 @@ if (burgerBtn && gnbNav) {
   const setMenu = (open) => {
     document.body.classList.toggle("is-menu-open", open);
     burgerBtn.setAttribute("aria-expanded", String(open));
-    burgerBtn.textContent = open ? "✕ CLOSE" : "✦ MENU";
+    burgerBtn.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
     document.body.style.overflow = open ? "hidden" : "";
   };
   burgerBtn.addEventListener("click", () => {
