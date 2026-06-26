@@ -44,6 +44,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 img,
@@ -87,6 +88,7 @@ body {
     helvetica,
     sans-serif;
   background-color: #000;
+  overflow-x: hidden;
   color: #fff;
 }
 
@@ -1020,6 +1022,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 
 .section_goals {
   padding-top: 320px;
+  overflow: hidden;
 }
 @media screen and (max-width: 600px) {
   .section_goals {
@@ -1084,6 +1087,15 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media screen and (max-width: 990px) {
+  .section_goals .text_box {
+    flex: 1;
+    min-width: 0;
+  }
+  .section_goals .text_box .goal_box {
+    min-width: 0;
+  }
 }
 @media screen and (max-width: 600px) {
   .section_goals .text_box {
@@ -1181,12 +1193,17 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 @media screen and (max-width: 1200px) {
   .section_goals .title_box {
     width: 280px;
+    height: auto;
+    min-height: 350px;
   }
 }
 @media screen and (max-width: 990px) {
   .section_goals .title_box {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    max-width: none;
     height: auto;
+    min-height: 0;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1372,7 +1389,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   background-color: rgb(62, 57, 62);
 }
 .section_log .log_box {
-  font-size: 60px;
+  font-size: min(3vw, 60px);
   font-weight: 400;
   line-height: 0.95;
   display: flex;
@@ -1399,6 +1416,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   align-items: center;
   justify-content: flex-start;
   flex: 2;
+  min-width: 0;
   height: 200px;
 }
 @media screen and (max-width: 990px) {
@@ -1436,9 +1454,16 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   }
 }
 .section_log .title_box {
-  display: flex;
+  display: block;
   flex: 1;
+  min-width: 0;
   white-space: nowrap;
+  overflow: hidden;
+}
+.section_log .title_box .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media screen and (max-width: 990px) {
   /* 모바일은 hover 펼침이 없으니 제목 줄바꿈 허용.
@@ -1451,6 +1476,11 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
     font-size: 22px;
     line-height: 1.3;
     font-weight: 400;
+  }
+  .section_log .title_box .title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 }
 .section_log .desc_box {
@@ -1700,5 +1730,6 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   /* 모바일: 본문이 길어지므로 폰트를 줄여 체감 길이 축소 */
   .section_about .text_area {
     font-size: 16px;
+    width: 100%;
   }
 }
