@@ -787,6 +787,8 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   width: 88px;
   height: 88px;
   display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -808,21 +810,26 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   color: #111;
   border-color: rgba(255, 255, 255, 0.9);
 }
+.section_work .badge_arrow {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+}
 @media screen and (min-width: 850px) {
-  .section_work .work_link:hover .title {
+  .section_work .work_link:hover:not(:has(.admin_badge:hover)) .title {
     margin-left: 10px;
   }
-  .section_work .work_link:hover .title .title_text {
+  .section_work .work_link:hover:not(:has(.admin_badge:hover)) .title .title_text {
     color: #000;
   }
-  .section_work .work_link:hover .title .title_text::before {
+  .section_work .work_link:hover:not(:has(.admin_badge:hover)) .title .title_text::before {
     background-color: #fff;
     height: 100%;
   }
-  .section_work .work_link:hover .ico_arrow {
+  .section_work .work_link:hover:not(:has(.admin_badge:hover)) .ico_arrow {
     transform: translateX(0);
   }
-  .section_work .work_link:hover .desc {
+  .section_work .work_link:hover:not(:has(.admin_badge:hover)) .desc {
     opacity: 1;
   }
 }
