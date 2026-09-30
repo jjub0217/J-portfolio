@@ -899,6 +899,9 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .section_work .text_box .title {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  min-width: 0;
   gap: 5px;
   font-size: 40px;
   font-family: "Neue-Regular", sans-serif;
