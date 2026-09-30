@@ -927,6 +927,9 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   position: relative;
   z-index: 1;
 }
+.section_work .text_box .title .title_text.title_ko {
+  font-weight: 400;
+}
 .section_work .text_box .title .title_text:before {
   content: "";
   position: absolute;
