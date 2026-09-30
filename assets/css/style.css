@@ -844,6 +844,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .section_work .work_link .thumb_box {
   aspect-ratio: 1/1;
   position: relative;
+  isolation: isolate;
 }
 .section_work .work_link .thumb_box:before {
   content: "";
