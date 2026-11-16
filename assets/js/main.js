@@ -270,10 +270,26 @@ document.addEventListener(
 );
 
 // 포트폴리오 PDF 버튼: 처음 6번 반짝임이 끝나면 is-intro-done을 붙인다.
-// 그 뒤로는 마우스를 올리거나 Tab으로 왔을 때만 한 번 반짝인다(CSS).
+// 그 뒤로는 마우스를 올리거나 Tab으로 왔을 때 is-shining을 붙여 한 번 반짝이고,
+// 빛이 다 지나가면(animationend) 뗀다. 지나가는 중에는 다시 붙이지 않아 반짝임이 겹치지 않는다.
 const pdfLink = document.querySelector(".header .link_pdf");
 if (pdfLink) {
+  const shineOnce = () => {
+    if (!pdfLink.classList.contains("is-intro-done")) return;
+    if (pdfLink.classList.contains("is-shining")) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    pdfLink.classList.add("is-shining");
+  };
   pdfLink.addEventListener("animationend", (e) => {
-    if (e.animationName === "pdf-shine") pdfLink.classList.add("is-intro-done");
+    if (e.animationName !== "pdf-shine") return;
+    if (!pdfLink.classList.contains("is-intro-done")) {
+      pdfLink.classList.add("is-intro-done");
+      return;
+    }
+    pdfLink.classList.remove("is-shining");
+  });
+  pdfLink.addEventListener("mouseenter", shineOnce);
+  pdfLink.addEventListener("focus", () => {
+    if (pdfLink.matches(":focus-visible")) shineOnce();
   });
 }

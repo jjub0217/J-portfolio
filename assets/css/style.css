@@ -374,13 +374,10 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .header .link_pdf:not(.is-intro-done)::after {
   animation: pdf-shine 0.8s ease-in-out 1.5s 6;
 }
-.header .link_pdf.is-intro-done:focus-visible::after {
+/* 마우스를 올리거나 Tab으로 왔을 때의 한 번 반짝임은 main.js가 is-shining을 붙였다 뗀다.
+   한 번 시작하면 끝까지 지나가고, 지나가는 동안에는 다시 시작하지 않는다. */
+.header .link_pdf.is-shining::after {
   animation: pdf-shine 0.8s ease-in-out 1;
-}
-@media (hover: hover) {
-  .header .link_pdf.is-intro-done:hover::after {
-    animation: pdf-shine 0.8s ease-in-out 1;
-  }
 }
 @keyframes pdf-shine {
   0% {
@@ -401,8 +398,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 @media (prefers-reduced-motion: reduce) {
   .header .link_pdf::after,
   .header .link_pdf:not(.is-intro-done)::after,
-  .header .link_pdf.is-intro-done:hover::after,
-  .header .link_pdf.is-intro-done:focus-visible::after {
+  .header .link_pdf.is-shining::after {
     animation: none;
   }
 }
