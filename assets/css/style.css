@@ -350,7 +350,7 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   align-items: center;
   margin-right: 8px;
   padding: 16px 18px;
-  border: 1px solid rgba(210, 255, 133, 0.6);
+  border: 1.5px solid rgba(210, 255, 133, 0.6);
   border-radius: 17px;
   background-color: rgba(41, 41, 41, 0.45);
   font-family: "Roobert-Medium", sans-serif;
@@ -1395,6 +1395,11 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .section_goals .thumb_box {
   height: 1400px;
   width: 940px;
+  /* 화면이 .inner(최대 1600px)보다 넓을 때 영상이 화면 끝보다 안쪽에서 잘려 보였다.
+     폭은 그대로 두고 오른쪽으로 붙인 뒤, 음수 여백으로 화면 오른쪽 끝까지 내보낸다.
+     .section_goals가 overflow: hidden이라 가로 스크롤은 생기지 않는다. */
+  margin-left: auto;
+  margin-right: calc(50% - 50vw);
 }
 @media screen and (max-width: 1200px) {
   .section_goals .thumb_box {
