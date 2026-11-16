@@ -388,11 +388,13 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
     transform: translateX(120%);
   }
 }
+/* 마우스를 올리거나 Tab으로 오면 바탕은 그대로 두고 테두리만 밝힌다.
+   바탕을 연두색으로 채우면 같은 색 빛이 묻히고, 버튼 전체가 켜졌다 꺼져 깜박여 보였다. */
 @media screen and (min-width: 850px) {
   .header .link_pdf:hover,
   .header .link_pdf:focus-visible {
-    background-color: #d2ff85;
-    color: rgb(12, 7, 12);
+    border-color: #d2ff85;
+    background-color: rgba(41, 41, 41, 0.75);
   }
 }
 @media (prefers-reduced-motion: reduce) {
