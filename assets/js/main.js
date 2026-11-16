@@ -250,3 +250,21 @@ if (burgerBtn && gnbNav) {
     }
   });
 }
+
+// 첫 화면(.section_visual)은 position: fixed라, 그 위에서 굴린 휠이 스크롤되지 않는 창(html)으로 간다.
+// 이 사이트는 body가 스크롤되므로, 마우스를 받는 첫 화면 글자와 버튼 위의 휠은 body로 넘긴다.
+document
+  .querySelectorAll(
+    ".section_visual .headline, .section_visual .desc, .section_visual .mail_link"
+  )
+  .forEach((el) => {
+    el.addEventListener(
+      "wheel",
+      (e) => {
+        const unit =
+          e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
+        document.body.scrollBy(e.deltaX * unit, e.deltaY * unit);
+      },
+      { passive: true }
+    );
+  });

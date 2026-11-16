@@ -523,10 +523,16 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .section_visual {
   pointer-events: none;
 }
-.section_visual .headline,
-.section_visual .desc,
 .section_visual .mail_link {
   pointer-events: auto;
+}
+/* 제목과 설명은 tooltip용이라 마우스가 있는 기기에서만 반응하게 한다.
+   (휴대폰에서 손가락 스크롤을 막지 않도록) */
+@media (hover: hover) {
+  .section_visual .headline,
+  .section_visual .desc {
+    pointer-events: auto;
+  }
 }
 .section_visual video {
   position: absolute;
@@ -1094,6 +1100,9 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   }
 }
 .section_goals .headline {
+  /* 제목이 짧아져 tooltip(right: 0)이 화면 오른쪽 끝에 붙지 않도록 글자 폭만큼만 차지 */
+  width: -moz-fit-content;
+  width: fit-content;
   color: rgb(255, 255, 255);
   font-size: 90px;
   font-weight: 400;
