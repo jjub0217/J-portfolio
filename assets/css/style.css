@@ -528,7 +528,9 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   background-color: #d2ff85;
   background-image: linear-gradient(45deg, #b0a3ff 50%, transparent 50%);
   background-repeat: no-repeat;
-  background-size: 300% 300%;
+  /* 200%여야 경계선이 움직이는 0.6초 전체 동안 원 안을 지나간다.
+     300%이면 이동 거리의 가운데 절반에서만 원을 지나가 mail to me보다 빨라 보였다. */
+  background-size: 200% 200%;
   background-position: 100% 0%;
   font-size: 20px;
   text-align: center;
