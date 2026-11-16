@@ -11,7 +11,7 @@ import {
   prepareWithSegments,
   layoutNextLine,
   layout,
-} from "https://esm.sh/@chenglou/pretext";
+} from "https://esm.sh/@chenglou/pretext@0.0.9";
 
 // 공 크기 — init()과 setStageHeight()가 공유 (동기화 위해 한 곳에)
 const BALL_RADIUS = 80;
