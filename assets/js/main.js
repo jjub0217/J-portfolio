@@ -268,3 +268,12 @@ document.addEventListener(
   },
   { passive: true }
 );
+
+// 포트폴리오 PDF 버튼: 처음 6번 반짝임이 끝나면 is-intro-done을 붙인다.
+// 그 뒤로는 마우스를 올리거나 Tab으로 왔을 때만 한 번 반짝인다(CSS).
+const pdfLink = document.querySelector(".header .link_pdf");
+if (pdfLink) {
+  pdfLink.addEventListener("animationend", (e) => {
+    if (e.animationName === "pdf-shine") pdfLink.classList.add("is-intro-done");
+  });
+}

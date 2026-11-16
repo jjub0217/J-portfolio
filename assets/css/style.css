@@ -339,8 +339,10 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
     display: none;
   }
 }
-/* 포트폴리오 PDF 버튼: Contact me 왼쪽. 처음 몇 번만 빛이 지나가고 멈춘다
-   (계속 움직이면 읽기를 방해하고, 움직임 줄이기 설정을 켠 사람에게는 끈다) */
+/* 포트폴리오 PDF 버튼: Contact me 왼쪽.
+   처음에는 0.8초 간격으로 6번(4.8초) 빛이 지나가고 멈춘다. 저절로 움직이는 시간을
+   5초 안으로 둬 WCAG 2.2.2를 지키고, 그 뒤에는 마우스를 올리거나 Tab으로 왔을 때만
+   한 번 지나간다. 움직임 줄이기 설정을 켠 사람에게는 모두 끈다. */
 .header .link_pdf {
   position: relative;
   overflow: hidden;
@@ -367,8 +369,18 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
     transparent 70%
   );
   transform: translateX(-120%);
-  animation: pdf-shine 2.4s ease-in-out 1.5s 4;
   pointer-events: none;
+}
+.header .link_pdf:not(.is-intro-done)::after {
+  animation: pdf-shine 0.8s ease-in-out 1.5s 6;
+}
+.header .link_pdf.is-intro-done:focus-visible::after {
+  animation: pdf-shine 0.8s ease-in-out 1;
+}
+@media (hover: hover) {
+  .header .link_pdf.is-intro-done:hover::after {
+    animation: pdf-shine 0.8s ease-in-out 1;
+  }
 }
 @keyframes pdf-shine {
   0% {
@@ -387,7 +399,10 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .header .link_pdf::after {
+  .header .link_pdf::after,
+  .header .link_pdf:not(.is-intro-done)::after,
+  .header .link_pdf.is-intro-done:hover::after,
+  .header .link_pdf.is-intro-done:focus-visible::after {
     animation: none;
   }
 }
