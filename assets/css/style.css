@@ -339,6 +339,72 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
     display: none;
   }
 }
+/* 포트폴리오 PDF 버튼: Contact me 왼쪽. 처음 몇 번만 빛이 지나가고 멈춘다
+   (계속 움직이면 읽기를 방해하고, 움직임 줄이기 설정을 켠 사람에게는 끈다) */
+.header .link_pdf {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  padding: 16px 18px;
+  border: 1px solid rgba(210, 255, 133, 0.6);
+  border-radius: 17px;
+  background-color: rgba(41, 41, 41, 0.45);
+  font-family: "Roobert-Medium", sans-serif;
+  font-size: 14px;
+  color: #d2ff85;
+  transition: all 0.3s;
+}
+.header .link_pdf::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(210, 255, 133, 0.45) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: pdf-shine 2.4s ease-in-out 1.5s 4;
+  pointer-events: none;
+}
+@keyframes pdf-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+  50%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+@media screen and (min-width: 850px) {
+  .header .link_pdf:hover,
+  .header .link_pdf:focus-visible {
+    background-color: #d2ff85;
+    color: rgb(12, 7, 12);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header .link_pdf::after {
+    animation: none;
+  }
+}
+@media screen and (max-width: 990px) {
+  .header .header_actions .link_pdf {
+    display: none;
+  }
+}
+/* 휴대폰 햄버거 메뉴에서만 보이는 PDF 항목 */
+.header .gnb .nav-item_pdf {
+  display: none;
+}
+@media screen and (max-width: 990px) {
+  .header .gnb .nav-item_pdf {
+    display: block;
+  }
+}
 .header .header_actions .btn_burger {
   display: none;
 }
