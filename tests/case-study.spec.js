@@ -207,3 +207,26 @@ test('case06-limits: 사례 06 한계와 멱등키', async ({ page }) => {
   for (const t of ['토스페이먼츠 테스트 모드', '취소, 환불, 웹훅은 하지 않', 'Idempotency-Key: confirm-']) await expect(card).toContainText(t);
   expect(await card.locator('a[href*="cmarket_api"]').count()).toBe(0);
 });
+
+// 최종 검토에서 나온 문제: dialog가 왼쪽 위에 붙고 닫기 버튼이 화면 위로 나감
+for (const [w, h] of [[375, 700], [1400, 900]]) {
+  test(`lightbox-visible-close: 크게 보기 창이 가운데에 있고 닫기 버튼이 보인다 @ ${w}px`, async ({ page }) => {
+    await page.setViewportSize({ width: w, height: h });
+    await page.goto(URL);
+    await page.locator('.case_zoom').first().click();
+    const box = await page.locator('dialog.case_lightbox[open]').boundingBox();
+    const close = await page.locator('.lightbox_close').boundingBox();
+    expect(Math.abs(box.x + box.width / 2 - w / 2)).toBeLessThanOrEqual(2);
+    expect(close.y).toBeGreaterThanOrEqual(0);
+    expect(close.x + close.width).toBeLessThanOrEqual(w);
+    await page.locator('.lightbox_close').click();
+    await expect(page.locator('dialog.case_lightbox[open]')).toHaveCount(0);
+  });
+}
+
+test('case02-page-code: 사례 02에 7줄짜리 페이지 코드가 보인다', async ({ page }) => {
+  await page.goto(URL);
+  const fig = page.locator('#case-02 .case_code', { hasText: 'AdminProductsPage' });
+  await expect(fig.locator('figcaption')).toHaveText('src/app/(admin)/admin/products/page.tsx');
+  expect((await fig.locator('code').textContent()).split('\n').length).toBe(7);
+});

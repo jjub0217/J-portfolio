@@ -216,6 +216,17 @@
               <button class="code_copy" type="button">복사</button>
             </figure>
             <figure class="case_code">
+              <figcaption>src/app/(admin)/admin/products/page.tsx</figcaption>
+              <pre><code>import ProductsManagement from &#x27;@/features/admin/components/ProductsManagement&#x27;
+
+export const metadata = { title: &#x27;상품 관리 | Admin&#x27; }
+
+export default function AdminProductsPage() {
+  return &lt;ProductsManagement /&gt;
+}</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+            <figure class="case_code">
               <figcaption>src/features/admin/components/ProductsManagement.tsx</figcaption>
               <pre><code>      &lt;AdminTable&lt;AdminProduct&gt;
         config={productTableConfig}

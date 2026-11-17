@@ -406,7 +406,9 @@
   border-color: var(--cs-lime);
   color: var(--cs-lime);
 }
+/* style.css의 * { margin: 0 }이 dialog의 기본 가운데 정렬(margin: auto)을 지우므로 되돌린다 */
 .case_lightbox {
+  margin: auto;
   max-width: min(96vw, 1600px);
   max-height: 94vh;
   padding: 0;
@@ -424,10 +426,13 @@
   height: auto;
   border-radius: 8px;
 }
+/* 닫기 버튼은 화면 오른쪽 위에 고정해 그림 크기와 상관없이 늘 보이게 한다 */
 .lightbox_close {
-  position: absolute;
-  top: -44px;
-  right: 0;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
   width: 36px;
   height: 36px;
   border-radius: 50%;
