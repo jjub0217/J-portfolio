@@ -18,7 +18,7 @@
 - 색: 바탕 검정, 강조 연두 `#d2ff85`, 보조 연보라 `#b0a3ff`. 결과 칸만 연두 강조.
 - 스크롤에 따라 나타나는 효과, 자동 재생, 가로 스크롤 금지. 허용: 목차 부드러운 이동(움직임 줄이기 설정이면 바로 이동), 코드 복사, 그림 크게 보기, 버튼 색 변화.
 - 사실은 원본 HTML(`~/Desktop/채용-맞춤이력서/맞춤이력서/미리디/포트폴리오/portfolio-wide.no-contact.html`)과 Task 4에서 사용자가 확인한 근거 목록에서만 가져온다. 숫자는 PDF 값.
-- "AI 도구와 함께" 표시: 01, 02, 04, 05, 06. 03은 표시하지 않음.
+- "AI 도구와 함께" 표시: 01~06 모두 (2026-11-17 사용자 결정으로 03 추가).
 - 01 결과에는 FCP 0.4초에서 0.9초, CLS 0에서 0.008을 반드시 함께 적는다.
 - 06에는 "토스페이먼츠 테스트 모드", "취소, 환불, 웹훅은 하지 않음"을 적는다.
 - 로컬에서 지워진 `assets/images/img_work_item2.mp4`, `img_work_item8.mp4`, `img_nextjs_logo.png`는 절대 스테이지하지 않는다(`git add`는 파일을 하나씩 지정).
@@ -145,7 +145,7 @@
 - Test: `tests/case-study.spec.js`에 추가
 
 - [ ] **Step 1: 실패하는 테스트 작성**
-  - `case03-before-after`: `#case-03`에 고치기 전 지시문 문장과 바꾼 뒤 지시문 문장(원본 그대로)이 각각 보이고, `.case_ai`가 없다.
+  - `case03-before-after`: `#case-03`에 고치기 전 지시문 문장과 바꾼 뒤 지시문 문장(원본 그대로)이 각각 보이고, `.case_ai`가 있다.
   - `case04-numbers`: `#case-04`에 "136개", "웹 46", "앱 77", "공통 패키지 13"이 보이고, `.case_code figcaption`이 `.github/workflows/gate.yml`이며 `.case_ai`가 있다.
 - [ ] **Step 2: 실패 확인** — Run: `env -u NODE_OPTIONS npx playwright test tests/case-study.spec.js -g "case03|case04"` / Expected: FAIL.
 - [ ] **Step 3: 구현** — 03 근거 칸: 지시문 고치기 전과 후 비교, Escape 키 지적을 직접 확인하고 의도를 밝히는 주석 3줄을 더한 일. 04 근거 칸: 실제 `gate.yml`의 일부(복사해도 실제 파일과 같은 줄), 테스트 파일 수, 고친 줄을 빼 보고 실패하는지 확인한 방법. PR 링크는 Task 4에서 찾은 것만.
