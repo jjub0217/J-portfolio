@@ -121,7 +121,7 @@ test('geul-no-errors: 콘솔 오류가 없다', async ({ page }) => {
 test('geul-chrome: 메인과 같은 헤더와 푸터', async ({ page }) => {
   await page.setViewportSize({ width: 1400, height: 900 });
   await page.goto(URL);
-  await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../index.html');
+  await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../');
   await expect(page.locator('.cs_footer .headline')).toHaveText("Let's work with you.");
   await expect(page.locator('.cs_footer')).toHaveAttribute('lang', 'en');
 });
