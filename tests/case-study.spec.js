@@ -190,7 +190,8 @@ test('case03-before-after: 사례 03 지시문 고치기 전과 후', async ({ p
 test('case04-numbers: 사례 04 테스트 수와 검사 설정 파일', async ({ page }) => {
   await page.goto(URL);
   const card = page.locator('#case-04');
-  for (const t of ['136개', '웹 46', '앱 77', '공통 패키지 13']) await expect(card).toContainText(t);
+  await expect(card).toContainText('테스트 파일 130개 이상');
+  await expect(card).not.toContainText('136개');
   await expect(card.locator('.case_code figcaption')).toHaveText('.github/workflows/gate.yml');
 });
 
@@ -204,7 +205,7 @@ test('case05-flow: 사례 05 고치기 전과 후 흐름', async ({ page }) => {
 test('case06-limits: 사례 06 한계와 멱등키', async ({ page }) => {
   await page.goto(URL);
   const card = page.locator('#case-06');
-  for (const t of ['토스페이먼츠 테스트 모드', '취소, 환불, 웹훅은 하지 않', 'Idempotency-Key: confirm-']) await expect(card).toContainText(t);
+  for (const t of ['토스페이먼츠 테스트 모드', '취소, 환불, 웹훅은 하지 않', 'Idempotency-Key: confirm-', '서버 테스트 10개 이상']) await expect(card).toContainText(t);
   expect(await card.locator('a[href*="cmarket_api"]').count()).toBe(0);
 });
 
@@ -229,4 +230,9 @@ test('case02-page-code: 사례 02에 7줄짜리 페이지 코드가 보인다', 
   const fig = page.locator('#case-02 .case_code', { hasText: 'AdminProductsPage' });
   await expect(fig.locator('figcaption')).toHaveText('src/app/(admin)/admin/products/page.tsx');
   expect((await fig.locator('code').textContent()).split('\n').length).toBe(7);
+});
+
+test('toc-approx-count: 목차의 테스트 개수도 대략으로', async ({ page }) => {
+  await page.goto(URL);
+  await expect(page.locator('.case_toc a[href="#case-04"] .toc_result')).toHaveText('테스트 파일 130개 이상');
 });
