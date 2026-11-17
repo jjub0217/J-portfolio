@@ -129,3 +129,31 @@ for (const w of [1400, 375]) {
     }
   });
 }
+
+// 메인 카드 6개: 호버나 키보드 초점 때만 "자세히 보기" 표시가 썸네일 가운데에 보이고, 썸네일이 흐려진다
+test('card-detail-hint: 카드 6개 모두 호버와 초점 때만 "자세히 보기"가 보인다', async ({ page }) => {
+  await page.setViewportSize({ width: 1400, height: 1000 });
+  await page.goto('/');
+  const cards = page.locator('.section_work a.work_link[href^="./projects/"]');
+  await expect(cards).toHaveCount(6);
+  for (let i = 0; i < 6; i++) {
+    const card = cards.nth(i);
+    const hint = card.locator('.detail_hint');
+    await expect(hint).toHaveText('자세히 보기');
+    await expect(hint).toHaveAttribute('aria-hidden', 'true');
+    await expect(card.locator('.blind')).toHaveText('프로젝트 상세 페이지로 이동');
+    await card.scrollIntoViewIfNeeded();
+    await page.mouse.move(2, 2);
+    await expect.poll(() => hint.evaluate((e) => getComputedStyle(e).opacity)).toBe('0');
+    const box = await card.locator('.thumb_box').boundingBox();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await expect.poll(() => hint.evaluate((e) => getComputedStyle(e).opacity)).toBe('1');
+    const media = card.locator('.thumb_box video, .thumb_box img').first();
+    await expect.poll(() => media.evaluate((e) => getComputedStyle(e).opacity)).toBe('0.6');
+  }
+  await page.mouse.move(2, 2);
+  await cards.first().focus();
+  await page.keyboard.press('Shift+Tab');
+  await page.keyboard.press('Tab');
+  await expect.poll(() => cards.first().locator('.detail_hint').evaluate((e) => getComputedStyle(e).opacity)).toBe('1');
+});
