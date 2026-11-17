@@ -436,3 +436,206 @@
   font-size: 20px;
   line-height: 1;
 }
+
+/* 사례 머리: 위치와 기술, 칩, AI 표시 */
+.case_meta {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--cs-muted);
+}
+.case_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.case_chips li {
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(210, 255, 133, 0.12);
+  color: var(--cs-lime);
+  font-size: 13px;
+}
+.case_ai {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border: 1px solid rgba(176, 163, 255, 0.5);
+  border-radius: 50px;
+  color: var(--cs-purple);
+  font-size: 13px;
+}
+.case_field code,
+.case_compare_note code,
+.case_jobs code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.case_field--result .case_note {
+  margin-top: 8px;
+  color: var(--cs-muted);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* 근거 자료: 표, 수치, 비교, 흐름, 기록 링크 */
+.case_table_wrap {
+  overflow-x: auto;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+}
+.case_steps {
+  width: 100%;
+  font-size: 14px;
+}
+.case_steps caption {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--cs-muted);
+  border-bottom: 1px solid var(--cs-line);
+}
+.case_steps th,
+.case_steps td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--cs-line);
+}
+.case_steps thead th {
+  font-size: 12px;
+  color: var(--cs-muted);
+  font-weight: 400;
+}
+.case_steps tbody th {
+  white-space: nowrap;
+  font-weight: 600;
+}
+.case_steps td:nth-child(2),
+.case_steps td:nth-child(3) {
+  white-space: nowrap;
+}
+.case_steps tr:last-child th,
+.case_steps tr:last-child td {
+  border-bottom: 0;
+}
+.case_steps .is_final th,
+.case_steps .is_final td {
+  color: var(--cs-lime);
+}
+.case_metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.case_metrics > div {
+  padding: 12px 14px;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+}
+.case_metrics dt {
+  font-size: 12px;
+  color: var(--cs-muted);
+}
+.case_metrics dd {
+  font-size: 15px;
+}
+.case_metrics strong {
+  color: var(--cs-lime);
+}
+.case_compare {
+  display: grid;
+  gap: 8px;
+}
+.case_compare_item {
+  padding: 14px 16px;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+  font-size: 14px;
+}
+.case_compare_item.is_after {
+  border-color: rgba(210, 255, 133, 0.5);
+}
+.case_compare_label {
+  font-size: 12px;
+  color: var(--cs-purple);
+  margin-bottom: 6px;
+}
+.case_compare_item blockquote {
+  color: rgba(255, 255, 255, 0.86);
+}
+.case_compare_note {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--cs-muted);
+}
+.case_flow_pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.case_flow {
+  list-style: none;
+  counter-reset: flow;
+  display: grid;
+  gap: 6px;
+}
+.case_flow li {
+  counter-increment: flow;
+  position: relative;
+  padding: 10px 12px 10px 38px;
+  border: 1px solid var(--cs-line);
+  border-radius: 10px;
+  font-size: 14px;
+}
+.case_flow li::before {
+  content: counter(flow);
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+}
+.case_flow li.is_bad {
+  border-color: rgba(255, 120, 120, 0.6);
+}
+.case_flow li.is_good {
+  border-color: rgba(210, 255, 133, 0.6);
+  color: var(--cs-lime);
+}
+.case_flow--row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.case_jobs ul,
+.case_refs ul {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+.case_refs_title {
+  font-size: 12px;
+  color: var(--cs-muted);
+  margin-bottom: 6px;
+}
+.case_refs a {
+  color: var(--cs-lime);
+  word-break: break-all;
+}
+.case_refs a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 600px) {
+  .case_flow_pair,
+  .case_flow--row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

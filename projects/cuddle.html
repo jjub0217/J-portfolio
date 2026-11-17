@@ -119,16 +119,54 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">01</span> 성능</p>
           <h2 id="case-01-title" class="case_title">첫 HTML에서 빠진 이미지를 찾아 홈 화면 로딩 줄이기</h2>
+          <p class="case_meta">홈 화면 | Next.js 서버 컴포넌트, Lighthouse, DebugBear</p>
+          <ul class="case_chips"><li>측정</li><li>서버 컴포넌트</li><li>시도와 되돌리기</li></ul>
+          <p class="case_ai">AI 도구로 수정안을 만들고, 채택과 되돌리기는 직접 측정해 정함</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>홈 화면 LCP(가장 큰 요소가 보이기까지의 시간)가 1.3초였습니다. 그중 0.9초는 브라우저가 이미지 주소를 찾기까지 기다린 시간이었습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>홈은 <code>useSearchParams()</code> 때문에 <code>Suspense</code>로 감싸져 있었고, 서버는 이미지 주소가 없는 로딩 중 화면만 먼저 보냈습니다. 그래서 첫 HTML에 이미지가 하나도 없었고, 화면 코드가 실행된 뒤에야 이미지를 찾기 시작했습니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>로딩 중 화면을 실제 상품 데이터를 가진 서버 컴포넌트로 바꿔 첫 HTML에 이미지가 담기게 했습니다. 60초마다 페이지를 다시 만드는 방식은 그대로 두었습니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>시도할 때마다 Lighthouse와 DebugBear로 다시 측정해 채택할지 되돌릴지 정했습니다. 바꾸기 전과 후의 첫 HTML에서 이미지 태그 수도 셌습니다(0개에서 22개).</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>LCP 1.3초 → 1.0초 (약 23% 단축), 성능 점수 94점 유지</p><p class="case_note">함께 늘어난 값도 있습니다. FCP(첫 콘텐츠가 보이는 시간)는 0.4초에서 0.9초로, CLS(화면 흔들림)는 0에서 0.008로 늘었습니다. 첫 HTML이 커져 첫 화면을 그리기까지 시간이 늘었고, 서버 화면이 실제 화면으로 바뀔 때 작은 흔들림이 생겼습니다.</p>
+            </section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <div class="case_table_wrap">
+              <table class="case_steps">
+                <caption>시도한 순서</caption>
+                <thead><tr><th scope="col">단계</th><th scope="col">LCP</th><th scope="col">점수</th><th scope="col">한 일</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">시도 1</th><td>1.3초</td><td>94</td><td>서버에서 상품 데이터를 미리 받아 넘김. 변화 없음</td></tr>
+                  <tr><th scope="row">시도 2</th><td>1.2초</td><td>91</td><td>이미지 미리 받기. 빨라졌지만 점수가 떨어짐</td></tr>
+                  <tr><th scope="row">시도 3</th><td>-</td><td>83</td><td>로딩 처리를 걷어 냄. 점수가 더 떨어져 바로 되돌림</td></tr>
+                  <tr class="is_final"><th scope="row">해결</th><td>1.0초</td><td>94</td><td>로딩 중 화면을 서버 컴포넌트로 바꿈</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <dl class="case_metrics">
+              <div><dt>LCP</dt><dd>1.3초 → <strong>1.0초</strong></dd></div>
+              <div><dt>성능 점수</dt><dd>94 → <strong>94</strong></dd></div>
+              <div><dt>FCP</dt><dd>0.4초 → 0.9초</dd></div>
+              <div><dt>CLS</dt><dd>0 → 0.008</dd></div>
+            </dl>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/262" target="_blank" rel="noopener">PR #262 서버에서 초기 데이터 받기 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/263" target="_blank" rel="noopener">PR #263 이미지 미리 받기 전략 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/265" target="_blank" rel="noopener">PR #265 서버 컴포넌트로 교체 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/blob/main/docs/lighthouse-optimization-log.md" target="_blank" rel="noopener">측정 기록 문서 ↗</a></li></ul></div>
+          </div>
         </div>
       </article>
 
@@ -136,19 +174,38 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">02</span> 관리 화면</p>
           <h2 id="case-02-title" class="case_title">관리 화면 8개를 설정 파일 하나로 만드는 공통 테이블</h2>
+          <p class="case_meta">관리자 화면 | React, TypeScript, React Query</p>
+          <ul class="case_chips"><li>설정 파일</li><li>공통 훅</li><li>재사용</li></ul>
+          <p class="case_ai">AI 도구와 함께 구현</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>회원, 탈퇴, 상품, 커뮤니티 글, 신고 4종까지 관리 화면이 8개였고, 화면마다 표와 필터, 정렬, 페이지 처리가 필요했습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>같은 표 기능을 화면마다 따로 만들면 같은 코드를 8번 반복하게 됩니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>화면을 설정 파일로 정의하는 공통 테이블과 커스텀 훅(<code>useAdminTable</code>)을 만들어 8개 화면을 하나의 구조로 묶었습니다. 열은 글자, 숫자, 금액, 배지, 날짜, 이미지 6종으로 나눴고, 새 화면은 설정 파일 하나와 짧은 페이지 코드로 만듭니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>8개 화면을 데모 데이터로 띄워 표, 검색, 정렬, 페이지 이동이 같은 방식으로 동작하는지 직접 확인했습니다.</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>관리 화면 8개가 공통 테이블과 훅 646줄을 함께 쓰고, 새 화면의 페이지 코드는 7줄입니다.</p><p class="case_note">화면별 설정 파일은 52~124줄입니다.</p>
+            </section>
           </div>
           <div class="case_evidence" aria-label="근거 자료">
             <button class="case_zoom" type="button" aria-label="상품 관리 화면(데모 데이터) 크게 보기">
               <img src="../assets/images/cuddle/admin-products.jpg" alt="관리자 상품 관리 화면 (데모 데이터)" width="1600" height="933" loading="lazy" />
             </button>
+            <p class="case_caption">상품 관리 화면 (데모 데이터)</p>
             <figure class="case_code">
               <figcaption>src/features/admin/configs/productTableConfig.ts</figcaption>
               <pre><code>export const productTableConfig: TableConfig&lt;AdminProduct&gt; = {
@@ -158,6 +215,17 @@
   searchPlaceholder: &#x27;상품명 검색...&#x27;,</code></pre>
               <button class="code_copy" type="button">복사</button>
             </figure>
+            <figure class="case_code">
+              <figcaption>src/features/admin/components/ProductsManagement.tsx</figcaption>
+              <pre><code>      &lt;AdminTable&lt;AdminProduct&gt;
+        config={productTableConfig}
+        queryKey=&quot;admin-products&quot;
+        fetchFn={fetchAdminProducts}
+        onRowClick={(product) =&gt; setSelectedProductId(product.id)}
+      /&gt;</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/384" target="_blank" rel="noopener">PR #384 관리자 기초 구조 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/386" target="_blank" rel="noopener">PR #386 설정 파일 기반 테이블 코어 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/389" target="_blank" rel="noopener">PR #389 유저 관리 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/392" target="_blank" rel="noopener">PR #392 커뮤니티 관리 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/393" target="_blank" rel="noopener">PR #393 신고 관리 4종 ↗</a></li></ul></div>
           </div>
         </div>
       </article>
@@ -166,16 +234,54 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">03</span> 검증</p>
           <h2 id="case-03-title" class="case_title">AI 코드 리뷰가 실제 버그만 짚도록 지시문 좁히기</h2>
+          <p class="case_meta">PR 자동 리뷰 | GitHub Actions, Kimi K2</p>
+          <ul class="case_chips"><li>지시문</li><li>잘못된 지적 확인</li><li>주석</li></ul>
+          <p class="case_ai">AI 도구와 함께 지시문을 고침, 지적은 직접 동작을 확인해 판단</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>PR마다 도는 AI 코드 리뷰가 일어나기 어려운 예외 상황과 과한 방어 코드까지 지적해, 리뷰가 길기만 하고 읽히지 않았습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>처음 지시문이 코드 품질, 버그, 성능, 보안, 모범 사례를 모두 보게 해서, 실제로 고칠 지적과 그렇지 않은 지적이 섞였습니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>실제 버그, 명백한 성능 문제, Next.js와 React에서 피해야 할 작성 방식만 보게 지시문을 좁히고, 문제가 없으면 짧게 끝내게 했습니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>리뷰가 드롭다운에 Escape 키 처리가 빠졌다고 짚었을 때 직접 동작을 확인했습니다. 방향키는 여는 단추가, Escape는 문서 전체의 키 입력 감지가 따로 잡고 있어 리뷰가 잘못 본 것이었습니다.</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>리뷰가 헷갈린 곳은 사람도 헷갈린다고 보고, 코드는 그대로 둔 채 의도를 밝히는 주석 3줄을 더했습니다.</p>
+            </section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <div class="case_compare">
+              <div class="case_compare_item">
+                <p class="case_compare_label">처음 지시문</p>
+                <blockquote>"코드 품질, 잠재적 버그, 성능 이슈, 보안 취약점, 그리고 Next.js/React 모범 사례를 확인해주세요."</blockquote>
+                <p class="case_compare_note">모든 것을 보게 해서 지적이 길기만 함</p>
+              </div>
+              <div class="case_compare_item is_after">
+                <p class="case_compare_label">바꾼 지시문</p>
+                <blockquote>"중점 확인 사항: 실제 버그나 런타임 에러 가능성, 명백한 성능 문제, Next.js/React 안티패턴"<br />"이론적으로만 가능한 엣지 케이스는 무시 / 과도한 에러 핸들링이나 방어 코딩을 제안하지 마세요 / 문제가 없으면 특이사항 없음으로 짧게 마무리하세요"</blockquote>
+              </div>
+            </div>
+            <figure class="case_code">
+              <figcaption>src/components/commons/select/SelectDropdown.tsx</figcaption>
+              <pre><code>   * ⚠️ **`Escape` 는 여기 없다.** 아래 `document` 의 `keydown` 리스너(`handleEscape`)가
+   *    잡는다 — 초점이 어디에 있든 닫아야 해서 단추 전용인 이 함수로는 못 잡는다.
+   *    (#1070 kimi 리뷰가 여기서 빠졌다고 봤는데, 실제로는 아래에 있다.)</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/269" target="_blank" rel="noopener">PR #269 리뷰 지시문 변경 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/1070" target="_blank" rel="noopener">PR #1070 Escape 지적이 나온 PR ↗</a></li></ul></div>
+          </div>
         </div>
       </article>
 
@@ -183,16 +289,53 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">04</span> 검증</p>
           <h2 id="case-04-title" class="case_title">모든 PR에서 타입 검사, 린트, 테스트, 빌드가 돌게 하기</h2>
+          <p class="case_meta">CI | GitHub Actions, Vitest, Jest</p>
+          <ul class="case_chips"><li>PR 검사</li><li>나란히 돌리기</li><li>테스트 검증</li></ul>
+          <p class="case_ai">AI 도구와 함께 구현</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>워크플로가 셋 있었지만 그 안에 타입 검사, 린트, 테스트, 빌드가 없어서, 테스트를 깨뜨린 PR도 병합될 수 있었습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>검사는 사람이 손으로 돌리는 것뿐이어서, 잊으면 그대로 통과했습니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>PR마다 공통 패키지, 앱, 웹 세 작업이 나란히 타입 검사, 린트, 테스트, 빌드를 돌게 했습니다. 한 작업에서 순서대로 돌리면 앞이 깨질 때 뒤를 못 보고 시간도 셋의 합이 되기 때문입니다. 문서만 바뀐 PR은 검사를 건너뛰게 했습니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>고친 줄을 일부러 빼 보고 테스트가 실패하는지 확인해, 그 테스트가 정말 그 코드를 지키는지 검증했습니다.</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>테스트 파일 136개(웹 46, 앱 77, 공통 패키지 13)가 모든 PR에서 돕니다.</p>
+            </section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <figure class="case_code">
+              <figcaption>.github/workflows/gate.yml</figcaption>
+              <pre><code>on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+            <div class="case_jobs">
+              <p class="case_refs_title">나란히 도는 작업 3개</p>
+              <ul>
+                <li><code>shared (vitest)</code> 공통 패키지</li>
+                <li><code>앱 (tsc · lint · jest)</code></li>
+                <li><code>웹 (tsc · lint · vitest · build)</code></li>
+              </ul>
+            </div>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/1018" target="_blank" rel="noopener">PR #1018 CI에서 검사를 돌리게 함 ↗</a></li></ul></div>
+          </div>
         </div>
       </article>
 
@@ -200,16 +343,63 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">05</span> 실시간과 결제</p>
           <h2 id="case-05-title" class="case_title">다시 연결된 뒤 앱 화면에 메시지가 안 보이던 문제 고치기</h2>
+          <p class="case_meta">채팅 | WebSocket (STOMP), React Native, Next.js</p>
+          <ul class="case_chips"><li>재연결</li><li>구독</li><li>직접 시험</li></ul>
+          <p class="case_ai">AI 도구와 함께 고침, 문제는 직접 시험하다 발견</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>휴대폰 앱과 웹을 오가며 직접 시험하다가, 연결이 끊겼다 다시 이어진 뒤 앱에서 보낸 메시지가 웹에는 가지만 앱 화면에는 보이지 않는 문제를 발견했습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>다시 연결되면 예전 구독은 끊긴 연결에 남은 빈 껍데기인데, 코드는 구독이 이미 있다고 보고 건너뛰었습니다. 그래서 새 연결에는 구독이 없었고, 보내기는 잘 되는데 받기만 오류 없이 멈췄습니다. 웹에서는 다시 연결될 때마다 화면의 실시간 메시지를 비우는 코드가 함께 실행돼 메시지가 사라졌습니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>다시 연결될 때 보던 채팅방을 다시 구독하도록 앱과 웹을 고치고, 연결이 끊기는 것을 받아 상태에 반영했습니다. 실시간 메시지는 방이 바뀔 때만 비우게 했습니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>고친 파일만 되돌려 테스트가 먼저 실패하는 것을 확인한 뒤 고쳤고, 같은 순서로 앱과 웹을 오가며 다시 시험했습니다.</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>다시 연결된 뒤에도 앱과 웹 모두 메시지를 받습니다.</p>
+            </section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <div class="case_flow_pair">
+              <div>
+                <p class="case_compare_label">고치기 전</p>
+                <ol class="case_flow">
+                  <li>연결이 끊김</li>
+                  <li>다시 연결됨</li>
+                  <li>예전 구독이 남아 있어 다시 구독하지 않음</li>
+                  <li class="is_bad">보내기는 되고 받기만 멈춤</li>
+                </ol>
+              </div>
+              <div>
+                <p class="case_compare_label">고친 뒤</p>
+                <ol class="case_flow">
+                  <li>연결이 끊김, 끊김을 상태에 반영</li>
+                  <li>다시 연결됨</li>
+                  <li>보던 채팅방을 다시 구독</li>
+                  <li class="is_good">보내기와 받기 모두 동작</li>
+                </ol>
+              </div>
+            </div>
+            <div class="case_jobs">
+              <p class="case_refs_title">더한 테스트 일부 (앱)</p>
+              <ul>
+                <li>다시 붙으면 걸어 둔 구독을 다시 건다</li>
+                <li>다시 붙어도 푼 구독은 안 살아난다</li>
+              </ul>
+            </div>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/883" target="_blank" rel="noopener">PR #883 앱: 다시 연결되면 구독도 다시 걸기 ↗</a></li><li><a href="https://github.com/jjub0217/cuddle-market/pull/885" target="_blank" rel="noopener">PR #885 웹: 방 구독 다시 걸기 ↗</a></li></ul></div>
+          </div>
         </div>
       </article>
 
@@ -217,16 +407,58 @@
         <header class="case_head">
           <p class="case_kicker"><span class="case_num">06</span> 실시간과 결제</p>
           <h2 id="case-06-title" class="case_title">테스트 결제에서 금액 조작과 두 번 승인을 막기</h2>
+          <p class="case_meta">예약과 결제 | Next.js, Spring Boot, 토스페이먼츠 테스트 모드</p>
+          <ul class="case_chips"><li>금액 대조</li><li>멱등키</li><li>예약자 확인</li></ul>
+          <p class="case_ai">AI 도구와 함께 서버와 웹을 구현</p>
         </header>
         <div class="case_body">
           <div class="case_text">
-            <section class="case_field" data-field="problem"><h3>문제</h3></section>
-            <section class="case_field" data-field="cause"><h3>원인</h3></section>
-            <section class="case_field" data-field="solution"><h3>해결</h3></section>
-            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
-            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+            <section class="case_field" data-field="problem">
+              <h3>문제</h3>
+              <p>"예약중"은 상품에 붙는 표시일 뿐이었습니다. 서버는 누구와 예약했는지 몰랐고, 예약된 상품에도 누구나 새 채팅을 걸 수 있었으며, 결제 기능은 없었습니다.</p>
+            </section>
+            <section class="case_field" data-field="cause">
+              <h3>원인</h3>
+              <p>결제를 붙이면 브라우저가 보낸 금액은 화면을 조작해 바꿀 수 있고, 결과 화면을 새로고침하면 같은 승인 요청이 다시 갈 수 있습니다.</p>
+            </section>
+            <section class="case_field" data-field="solution">
+              <h3>해결</h3>
+              <p>판매자가 그 상품으로 채팅한 상대 중 한 명을 골라 예약하면, 예약자만 채팅방에서 결제하게 했습니다(토스페이먼츠 테스트 모드). 결제 금액은 브라우저가 보낸 값을 믿지 않고 서버가 저장한 금액, 지금 상품 가격과 대조합니다. 주문마다 같은 멱등키를 붙이고 주문을 잠가 두 번 승인되지 않게 했습니다.</p>
+            </section>
+            <section class="case_field" data-field="verification">
+              <h3>확인한 방법</h3>
+              <p>서버 테스트 12개로 금액이 다를 때, 상품 가격이 바뀌었을 때, 예약이 풀렸을 때, 남의 주문일 때 승인을 거절하는지, 이미 끝난 주문은 결제사를 다시 부르지 않고 같은 결과를 돌려주는지 확인했습니다. 웹은 결과 화면이 확정 요청을 한 번만 보내는지 테스트했습니다.</p>
+            </section>
+            <section class="case_field case_field--result" data-field="result">
+              <h3>결과</h3>
+              <p>금액이 다르거나 예약자가 아니면 승인하지 않고, 결과 화면을 새로고침해도 다시 승인하지 않습니다.</p><p class="case_note">취소, 환불, 웹훅은 하지 않았습니다.</p>
+            </section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <ol class="case_flow case_flow--row">
+              <li>판매자가 채팅한 상대 중 예약자 선택</li>
+              <li>예약자만 채팅방에서 결제</li>
+              <li class="is_good">판매 완료, 채팅방 닫힘</li>
+            </ol>
+            <div class="case_compare">
+              <div class="case_compare_item">
+                <p class="case_compare_label">믿지 않는 값</p>
+                <p>브라우저가 보낸 결제 금액</p>
+                <p class="case_compare_note">화면을 조작하면 바뀔 수 있음</p>
+              </div>
+              <div class="case_compare_item is_after">
+                <p class="case_compare_label">확정 조건</p>
+                <p>받은 금액 = 저장한 금액 = 지금 상품 가격, 아직 이 사람으로 예약중</p>
+                <p class="case_compare_note">같은 주문은 같은 멱등키로 승인 요청: <code>Idempotency-Key: confirm-주문번호</code></p>
+              </div>
+            </div>
+            <figure class="case_code">
+              <figcaption>TossPaymentGateway.java (서버, 결제 승인 요청)</figcaption>
+              <pre><code>headers.set(&quot;Idempotency-Key&quot;, &quot;confirm-&quot; + orderId);</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+            <div class="case_refs"><p class="case_refs_title">기록</p><ul><li><a href="https://github.com/jjub0217/cuddle-market/pull/1127" target="_blank" rel="noopener">PR #1127 예약과 테스트 결제 ↗</a></li></ul></div>
+          </div>
         </div>
       </article>
 

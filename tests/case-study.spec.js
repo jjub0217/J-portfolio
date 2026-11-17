@@ -141,3 +141,69 @@ test('lightbox-keyboard: Enter로 열고 Esc로 닫으면 초점이 돌아온다
   await expect(page.locator('dialog.case_lightbox[open]')).toHaveCount(0);
   expect(await zoom.evaluate((el) => el === document.activeElement)).toBe(true);
 });
+
+// Task 5~7: 사례 내용
+const fieldsFilled = async (page, id) =>
+  page.locator(`${id} .case_field`).evaluateAll((fs) =>
+    fs.map((f) => [...f.children].filter((c) => c.tagName !== 'H3').map((c) => c.textContent.trim()).join(''))
+  );
+
+test('case01-numbers: 사례 01 숫자와 시도 순서 표', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-01');
+  for (const t of ['1.3초', '1.0초', '94', '0.4초', '0.9초', '0.008']) await expect(card).toContainText(t);
+  await expect(card.locator('.case_steps tbody tr')).toHaveCount(4);
+});
+
+test('case02-numbers: 사례 02 숫자와 그림', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-02');
+  for (const t of ['8개', '646줄', '52~124줄', '7줄']) await expect(card).toContainText(t);
+  const img = card.locator('.case_zoom img');
+  await img.scrollIntoViewIfNeeded();
+  await expect(img).toHaveAttribute('src', /admin-products\.jpg$/);
+  await expect.poll(() => img.evaluate((el) => el.naturalWidth)).toBeGreaterThan(0);
+});
+
+test('ai-label: 사례 6개 모두 AI 도구 표시', async ({ page }) => {
+  await page.goto(URL);
+  for (const n of [1, 2, 3, 4, 5, 6]) await expect(page.locator(`#case-0${n} .case_ai`)).toHaveCount(1);
+});
+
+test('fields-filled: 사례 6개의 다섯 칸이 모두 채워져 있다', async ({ page }) => {
+  await page.goto(URL);
+  for (const n of [1, 2, 3, 4, 5, 6]) {
+    const texts = await fieldsFilled(page, `#case-0${n}`);
+    expect(texts.length).toBe(5);
+    texts.forEach((t, i) => expect(t.length, `사례 0${n} 칸 ${i + 1}`).toBeGreaterThan(0));
+  }
+});
+
+test('case03-before-after: 사례 03 지시문 고치기 전과 후', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-03');
+  await expect(card).toContainText('코드 품질, 잠재적 버그, 성능 이슈, 보안 취약점, 그리고 Next.js/React 모범 사례를 확인해주세요.');
+  await expect(card).toContainText('실제 버그나 런타임 에러 가능성');
+  await expect(card).toContainText('이론적으로만 가능한 엣지 케이스는 무시');
+});
+
+test('case04-numbers: 사례 04 테스트 수와 검사 설정 파일', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-04');
+  for (const t of ['136개', '웹 46', '앱 77', '공통 패키지 13']) await expect(card).toContainText(t);
+  await expect(card.locator('.case_code figcaption')).toHaveText('.github/workflows/gate.yml');
+});
+
+test('case05-flow: 사례 05 고치기 전과 후 흐름', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-05');
+  await expect(card.locator('.case_flow')).toHaveCount(2);
+  await expect(card).toContainText('방이 바뀔 때만');
+});
+
+test('case06-limits: 사례 06 한계와 멱등키', async ({ page }) => {
+  await page.goto(URL);
+  const card = page.locator('#case-06');
+  for (const t of ['토스페이먼츠 테스트 모드', '취소, 환불, 웹훅은 하지 않', 'Idempotency-Key: confirm-']) await expect(card).toContainText(t);
+  expect(await card.locator('a[href*="cmarket_api"]').count()).toBe(0);
+});
