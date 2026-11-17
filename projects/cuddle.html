@@ -145,7 +145,20 @@
             <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
             <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
           </div>
-          <div class="case_evidence" aria-label="근거 자료"></div>
+          <div class="case_evidence" aria-label="근거 자료">
+            <button class="case_zoom" type="button" aria-label="상품 관리 화면(데모 데이터) 크게 보기">
+              <img src="../assets/images/cuddle/admin-products.jpg" alt="관리자 상품 관리 화면 (데모 데이터)" width="1600" height="933" loading="lazy" />
+            </button>
+            <figure class="case_code">
+              <figcaption>src/features/admin/configs/productTableConfig.ts</figcaption>
+              <pre><code>export const productTableConfig: TableConfig&lt;AdminProduct&gt; = {
+  title: &#x27;상품 관리&#x27;,
+  rowKey: &#x27;id&#x27;,
+  searchable: true,
+  searchPlaceholder: &#x27;상품명 검색...&#x27;,</code></pre>
+              <button class="code_copy" type="button">복사</button>
+            </figure>
+          </div>
         </div>
       </article>
 
@@ -236,5 +249,10 @@
         <a href="../index.html" class="cs_back">← Back to portfolio</a>
       </div>
     </footer>
+
+    <dialog class="case_lightbox" aria-label="그림 크게 보기">
+      <button class="lightbox_close" type="button" aria-label="닫기">×</button>
+      <img alt="" />
+    </dialog>
   </body>
 </html>

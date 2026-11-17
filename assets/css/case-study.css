@@ -343,3 +343,96 @@
   min-width: 0;
   color: rgba(255, 255, 255, 0.86);
 }
+
+/* 근거 자료: 그림, 코드, 크게 보기 */
+.case_evidence > * + * {
+  margin-top: 16px;
+}
+.case_zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.case_zoom img {
+  width: 100%;
+  height: auto;
+}
+.case_caption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--cs-muted);
+}
+.case_code {
+  position: relative;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+  background: #050505;
+  min-width: 0;
+}
+.case_code figcaption {
+  padding: 10px 76px 10px 14px;
+  border-bottom: 1px solid var(--cs-line);
+  font-size: 12px;
+  color: var(--cs-muted);
+  word-break: break-all;
+}
+.case_code pre {
+  margin: 0;
+  padding: 14px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.case_code code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre;
+}
+.code_copy {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--cs-line);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+}
+.code_copy:hover {
+  border-color: var(--cs-lime);
+  color: var(--cs-lime);
+}
+.case_lightbox {
+  max-width: min(96vw, 1600px);
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+.case_lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+.case_lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+.lightbox_close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+}

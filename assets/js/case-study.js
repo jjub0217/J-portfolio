@@ -1,4 +1,4 @@
-// 프로젝트 상세 페이지 전용 스크립트: 목차 이동 (Task 3에서 코드 복사, 그림 크게 보기 추가)
+// 프로젝트 상세 페이지 전용 스크립트: 목차 이동, 코드 복사, 그림 크게 보기
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -18,4 +18,48 @@ function initTocScroll() {
   });
 }
 
+// 복사 버튼: 같은 블록의 코드 글자를 클립보드에 넣고 2초 동안 결과를 보여 준다.
+function initCodeCopy() {
+  document.querySelectorAll(".case_code").forEach((fig) => {
+    const btn = fig.querySelector(".code_copy");
+    const code = fig.querySelector("code");
+    if (!btn || !code) return;
+    let timer;
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(code.textContent);
+        btn.textContent = "복사됨";
+      } catch {
+        btn.textContent = "복사 실패";
+      }
+      clearTimeout(timer);
+      timer = setTimeout(() => (btn.textContent = "복사"), 2000);
+    });
+  });
+}
+
+// 그림 크게 보기: dialog로 띄우고, 닫히면 연 버튼으로 초점을 돌린다. Esc와 배경 클릭으로 닫힌다.
+function initLightbox() {
+  const dialog = document.querySelector(".case_lightbox");
+  if (!dialog) return;
+  const img = dialog.querySelector("img");
+  let opener = null;
+  document.querySelectorAll(".case_zoom").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = btn.querySelector("img");
+      img.src = src.getAttribute("src");
+      img.alt = src.alt;
+      opener = btn;
+      dialog.showModal();
+    });
+  });
+  dialog.querySelector(".lightbox_close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => opener && opener.focus());
+}
+
 initTocScroll();
+initCodeCopy();
+initLightbox();

@@ -107,3 +107,37 @@ test('no-main-js: main.js를 불러오지 않고 콘솔 오류가 없다', async
   expect(scripts.some((u) => u.endsWith('/main.js'))).toBe(false);
   expect(errors).toEqual([]);
 });
+
+// Task 3: 코드 복사, 그림 크게 보기
+test('code-copy: 복사 버튼이 코드 글자를 클립보드에 넣고 상태를 알린다', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.goto(URL);
+  const fig = page.locator('.case_code').first();
+  const btn = fig.locator('.code_copy');
+  await btn.click();
+  const clip = await page.evaluate(() => navigator.clipboard.readText());
+  expect(clip).toBe(await fig.locator('code').textContent());
+  await expect(btn).toHaveText('복사됨');
+  await expect(btn).toHaveText('복사', { timeout: 3000 });
+});
+
+test('lightbox-open: 그림을 누르면 크게 보인다', async ({ page }) => {
+  await page.goto(URL);
+  const zoom = page.locator('.case_zoom').first();
+  const src = await zoom.locator('img').getAttribute('src');
+  await zoom.click();
+  const dlg = page.locator('dialog.case_lightbox[open]');
+  await expect(dlg).toHaveCount(1);
+  await expect(dlg.locator('img')).toHaveAttribute('src', src);
+});
+
+test('lightbox-keyboard: Enter로 열고 Esc로 닫으면 초점이 돌아온다', async ({ page }) => {
+  await page.goto(URL);
+  const zoom = page.locator('.case_zoom').first();
+  await zoom.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('dialog.case_lightbox[open]')).toHaveCount(1);
+  await page.keyboard.press('Escape');
+  await expect(page.locator('dialog.case_lightbox[open]')).toHaveCount(0);
+  expect(await zoom.evaluate((el) => el === document.activeElement)).toBe(true);
+});
