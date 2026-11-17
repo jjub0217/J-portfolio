@@ -1,0 +1,345 @@
+/* 프로젝트 상세 페이지(projects/*.html) 전용 스타일.
+   style.css의 글꼴, 초기화, 검정 바탕을 그대로 쓰고 이 페이지에 필요한 것만 더한다.
+   스크롤에 따라 나타나는 효과는 넣지 않는다. */
+.case_page {
+  --cs-lime: #d2ff85;
+  --cs-purple: #b0a3ff;
+  --cs-line: rgba(255, 255, 255, 0.14);
+  --cs-card: #0d0d0d;
+  --cs-muted: rgba(255, 255, 255, 0.62);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", NotoSans,
+    "Malgun Gothic", sans-serif;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.case_page :focus-visible {
+  outline: 2px solid var(--cs-lime);
+  outline-offset: 3px;
+}
+.cs_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media screen and (max-width: 600px) {
+  .cs_inner {
+    padding: 0 16px;
+  }
+}
+.cs_skip {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 10;
+  padding: 8px 12px;
+  background: var(--cs-lime);
+  color: #000;
+}
+.cs_skip:focus {
+  top: 16px;
+}
+
+/* 헤더와 푸터 */
+.cs_header {
+  border-bottom: 1px solid var(--cs-line);
+}
+.cs_header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.cs_logo {
+  font-family: "LibreBaskerville-Regular", serif;
+  font-size: 24px;
+}
+.cs_logo .logo_accent {
+  color: var(--cs-lime);
+}
+.cs_back {
+  font-family: "Roobert-Medium", sans-serif;
+  font-size: 15px;
+  color: var(--cs-muted);
+  transition: color 0.2s;
+}
+.cs_back:hover {
+  color: #fff;
+}
+.cs_footer {
+  border-top: 1px solid var(--cs-line);
+  padding: 32px 0 48px;
+}
+
+/* 맨 위 */
+.case_hero {
+  padding: 72px 0 48px;
+}
+.case_eyebrow {
+  font-family: "Roobert-Medium", sans-serif;
+  color: var(--cs-lime);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+.case_hero_title {
+  font-family: "Roobert-Regular", sans-serif;
+  font-weight: 400;
+  font-size: clamp(36px, 7vw, 64px);
+  line-height: 1.15;
+  margin-top: 8px;
+}
+.case_hero_cate {
+  font-size: 0.4em;
+  color: var(--cs-muted);
+}
+.case_hero_summary {
+  max-width: 760px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.86);
+}
+.case_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.case_links a,
+.case_pdf {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(210, 255, 133, 0.6);
+  color: var(--cs-lime);
+  font-family: "Roobert-Medium", sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.case_links a:hover,
+.case_pdf:hover {
+  border-color: var(--cs-lime);
+  background-color: rgba(41, 41, 41, 0.75);
+}
+.case_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 40px;
+  border: 1px solid var(--cs-line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--cs-line);
+}
+.case_info_item {
+  background: #000;
+  padding: 20px 24px;
+  min-width: 0;
+}
+.case_info dt {
+  font-size: 13px;
+  color: var(--cs-purple);
+  margin-bottom: 6px;
+}
+.case_info dd {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.86);
+}
+.case_info_list li {
+  position: relative;
+  padding-left: 12px;
+}
+.case_info_list li + li {
+  margin-top: 6px;
+}
+.case_info_list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cs-muted);
+}
+.case_info_sub {
+  display: block;
+  margin-top: 6px;
+  color: var(--cs-muted);
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .case_info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 빠른 목차 */
+.case_toc {
+  padding: 32px;
+  border: 1px solid var(--cs-line);
+  border-radius: 16px;
+  background: var(--cs-card);
+}
+.case_toc_title {
+  font-family: "Roobert-Medium", sans-serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.case_toc_group {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--cs-line);
+}
+.case_toc_group_name {
+  color: var(--cs-purple);
+  font-size: 14px;
+  padding-top: 2px;
+}
+.case_toc ol {
+  list-style: none;
+  min-width: 0;
+}
+.case_toc a {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+.case_toc a:hover .toc_title {
+  color: var(--cs-lime);
+}
+.toc_num {
+  color: var(--cs-muted);
+  font-size: 14px;
+}
+.toc_title {
+  min-width: 0;
+}
+.toc_result {
+  color: var(--cs-lime);
+  font-size: 14px;
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .case_toc {
+    padding: 24px 20px;
+  }
+  .case_toc_group {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .case_toc a {
+    grid-template-columns: 28px 1fr;
+  }
+  .toc_result {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+/* 사례 카드 */
+.case {
+  margin-top: 40px;
+  padding: 40px;
+  border: 1px solid var(--cs-line);
+  border-radius: 20px;
+  background: var(--cs-card);
+  scroll-margin-top: 24px;
+}
+.case_kicker {
+  font-size: 14px;
+  color: var(--cs-muted);
+}
+.case_num {
+  color: var(--cs-lime);
+  font-family: "Roobert-Medium", sans-serif;
+  margin-right: 4px;
+}
+.case_title {
+  font-size: clamp(22px, 3.2vw, 30px);
+  line-height: 1.35;
+  margin-top: 6px;
+}
+.case_body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  margin-top: 28px;
+}
+.case_text,
+.case_evidence {
+  min-width: 0;
+}
+.case_evidence {
+  min-height: 1px;
+}
+.case_field + .case_field {
+  margin-top: 20px;
+}
+.case_field h3 {
+  position: relative;
+  padding-left: 12px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.case_field h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 3px;
+  height: 1em;
+  background: #fff;
+}
+.case_field p,
+.case_field li {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.case_field--result h3::before {
+  background: var(--cs-lime);
+}
+.case_field--result p,
+.case_field--result li {
+  color: var(--cs-lime);
+  font-weight: 600;
+}
+@media screen and (max-width: 990px) {
+  .case {
+    padding: 28px 24px;
+  }
+  .case_body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .case {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+}
+
+/* 맨 아래 */
+.case_end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 56px 0 72px;
+  padding: 28px 32px;
+  border: 1px solid var(--cs-line);
+  border-radius: 16px;
+}
+/* style.css가 모든 요소에 flex-shrink: 0을 주므로, 글이 줄바꿈되도록 다시 줄어들게 한다 */
+.case_end_text {
+  flex: 1 1 260px;
+  min-width: 0;
+  color: rgba(255, 255, 255, 0.86);
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuddle Market 사례 | 강주현 포트폴리오</title>
+    <meta
+      name="description"
+      content="반려동물 중고거래 서비스 Cuddle Market에서 문제를 찾고 판단해 고친 사례 6가지"
+    />
+    <link rel="canonical" href="https://jjub0217.github.io/J-portfolio/projects/cuddle.html" />
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" sizes="16x16" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/case-study.css" />
+    <script src="../assets/js/case-study.js" defer></script>
+  </head>
+
+  <body class="case_page">
+    <a class="cs_skip" href="#case-main">본문 바로가기</a>
+
+    <header class="cs_header">
+      <div class="cs_inner cs_header_inner">
+        <a href="../index.html" class="cs_logo" aria-label="Desveloper 메인으로">
+          <span class="logo_main"><span class="logo_accent">Des</span>veloper</span>
+        </a>
+        <a href="../index.html#work" class="cs_back">← All projects</a>
+      </div>
+    </header>
+
+    <main id="case-main" class="cs_inner">
+      <!-- 맨 위: 제목, 한 줄 요약, 링크, 개요 -->
+      <section class="case_hero" aria-labelledby="case-hero-title">
+        <p class="case_eyebrow">Case Study</p>
+        <h1 id="case-hero-title" class="case_hero_title">
+          Cuddle Market <span class="case_hero_cate">(Team → Solo)</span>
+        </h1>
+        <p class="case_hero_summary">
+          반려동물 용품을 중고로 사고파는 서비스입니다. 상품 등록과 검색, 실시간 채팅과 알림,
+          커뮤니티, 관리자 화면을 갖췄고, 웹은 운영 중이며 Android 앱은 비공개 테스트 중입니다.
+        </p>
+        <div class="case_links">
+          <a href="https://cuddle-market.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a
+            href="https://cuddle-market-git-feature-admin-demo-mode-jjub0217s-projects.vercel.app/admin"
+            target="_blank"
+            rel="noopener"
+            >Admin Demo ↗</a
+          >
+          <a href="https://github.com/jjub0217/cuddle-market" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+
+        <dl class="case_info">
+          <div class="case_info_item">
+            <dt>개요</dt>
+            <dd>
+              협업 프로젝트(프론트엔드 4명, 백엔드 3명)로 시작했고, 팀에 완성을 제안해 함께 이어 가다가
+              이후 혼자 맡아 끝까지 완성했습니다. 지금은 Next.js 웹과 React Native 앱이 공통 코드를 나눠
+              씁니다.
+            </dd>
+          </div>
+          <div class="case_info_item">
+            <dt>기간</dt>
+            <dd>개발 2025. 08 ~ 2026. 11</dd>
+          </div>
+          <div class="case_info_item">
+            <dt>역할</dt>
+            <dd>
+              <ul class="case_info_list">
+                <li>V1 (Vite, 2025.08 ~ 2026.01): 중간에 프론트엔드 팀장을 맡아 커밋과 PR 규칙, 코드 리뷰 방식을 팀과 함께 정함. 팀원이 떠난 뒤 혼자 완성해 배포</li>
+                <li>V2 (Next.js + Expo, 2026.02 ~ 2026.09): Next.js App Router로 옮겨 배포하고 운영. 관리자 화면, 서버 감시 장치, Android 앱, 웹과 앱의 공통 패키지, CI를 만듦</li>
+                <li>백엔드: 현직 백엔드 개발자가 만든 서버 기본 구조 위에 AI 도구와 함께 지도 장소 API, 로그인, 상품, 알림, 채팅 기능을 더함</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="case_info_item">
+            <dt>기술</dt>
+            <dd>
+              Next.js 16, React 19, TypeScript, React Native (Expo), Zustand, React Query,
+              WebSocket (STOMP), SSE, pnpm 모노레포, Vitest, GitHub Actions, Vercel
+              <span class="case_info_sub">백엔드 (AI와 함께 구현): Java 21, Spring Boot 3, Spring Data JPA, Spring Security (OAuth2), WebSocket (STOMP), Redis, MySQL</span>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- 빠른 목차 -->
+      <nav class="case_toc" aria-labelledby="case-toc-title">
+        <h2 id="case-toc-title" class="case_toc_title">사례 6가지</h2>
+        <div class="case_toc_group">
+          <p class="case_toc_group_name">성능</p>
+          <ol>
+            <li><a href="#case-01"><span class="toc_num">01</span><span class="toc_title">첫 HTML에서 빠진 이미지를 찾아 홈 화면 로딩 줄이기</span><span class="toc_result">1.3초 → 1.0초</span></a></li>
+          </ol>
+        </div>
+        <div class="case_toc_group">
+          <p class="case_toc_group_name">관리 화면</p>
+          <ol>
+            <li><a href="#case-02"><span class="toc_num">02</span><span class="toc_title">관리 화면 8개를 설정 파일 하나로 만드는 공통 테이블</span><span class="toc_result">새 화면 페이지 코드 7줄</span></a></li>
+          </ol>
+        </div>
+        <div class="case_toc_group">
+          <p class="case_toc_group_name">검증</p>
+          <ol>
+            <li><a href="#case-03"><span class="toc_num">03</span><span class="toc_title">AI 코드 리뷰가 실제 버그만 짚도록 지시문 좁히기</span><span class="toc_result">지적 범위를 실제 버그로</span></a></li>
+            <li><a href="#case-04"><span class="toc_num">04</span><span class="toc_title">모든 PR에서 타입 검사, 린트, 테스트, 빌드가 돌게 하기</span><span class="toc_result">테스트 파일 136개</span></a></li>
+          </ol>
+        </div>
+        <div class="case_toc_group">
+          <p class="case_toc_group_name">실시간과 결제</p>
+          <ol>
+            <li><a href="#case-05"><span class="toc_num">05</span><span class="toc_title">다시 연결된 뒤 앱 화면에 메시지가 안 보이던 문제 고치기</span><span class="toc_result">재연결 후 다시 구독</span></a></li>
+            <li><a href="#case-06"><span class="toc_num">06</span><span class="toc_title">테스트 결제에서 금액 조작과 두 번 승인을 막기</span><span class="toc_result">서버 금액 대조, 멱등키</span></a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 사례 카드 6개: 내용은 근거 목록 확인 뒤 채움 -->
+      <article class="case" id="case-01" aria-labelledby="case-01-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">01</span> 성능</p>
+          <h2 id="case-01-title" class="case_title">첫 HTML에서 빠진 이미지를 찾아 홈 화면 로딩 줄이기</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <article class="case" id="case-02" aria-labelledby="case-02-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">02</span> 관리 화면</p>
+          <h2 id="case-02-title" class="case_title">관리 화면 8개를 설정 파일 하나로 만드는 공통 테이블</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <article class="case" id="case-03" aria-labelledby="case-03-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">03</span> 검증</p>
+          <h2 id="case-03-title" class="case_title">AI 코드 리뷰가 실제 버그만 짚도록 지시문 좁히기</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <article class="case" id="case-04" aria-labelledby="case-04-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">04</span> 검증</p>
+          <h2 id="case-04-title" class="case_title">모든 PR에서 타입 검사, 린트, 테스트, 빌드가 돌게 하기</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <article class="case" id="case-05" aria-labelledby="case-05-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">05</span> 실시간과 결제</p>
+          <h2 id="case-05-title" class="case_title">다시 연결된 뒤 앱 화면에 메시지가 안 보이던 문제 고치기</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <article class="case" id="case-06" aria-labelledby="case-06-title">
+        <header class="case_head">
+          <p class="case_kicker"><span class="case_num">06</span> 실시간과 결제</p>
+          <h2 id="case-06-title" class="case_title">테스트 결제에서 금액 조작과 두 번 승인을 막기</h2>
+        </header>
+        <div class="case_body">
+          <div class="case_text">
+            <section class="case_field" data-field="problem"><h3>문제</h3></section>
+            <section class="case_field" data-field="cause"><h3>원인</h3></section>
+            <section class="case_field" data-field="solution"><h3>해결</h3></section>
+            <section class="case_field" data-field="verification"><h3>확인한 방법</h3></section>
+            <section class="case_field case_field--result" data-field="result"><h3>결과</h3></section>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료"></div>
+        </div>
+      </article>
+
+      <!-- 맨 아래: PDF -->
+      <section class="case_end" aria-label="포트폴리오 PDF">
+        <p class="case_end_text">다른 프로젝트까지 담은 전체 포트폴리오는 PDF로 볼 수 있습니다.</p>
+        <a
+          class="case_pdf"
+          href="../assets/files/kang-joohyun-portfolio.pdf"
+          target="_blank"
+          rel="noopener"
+          aria-label="포트폴리오 PDF 새 탭에서 열기"
+          >Portfolio PDF ↗</a
+        >
+      </section>
+    </main>
+
+    <footer class="cs_footer">
+      <div class="cs_inner">
+        <a href="../index.html" class="cs_back">← Back to portfolio</a>
+      </div>
+    </footer>
+  </body>
+</html>
