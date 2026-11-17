@@ -42,11 +42,13 @@ function initCodeCopy() {
 function initLightbox() {
   const dialog = document.querySelector(".case_lightbox");
   if (!dialog) return;
-  const img = dialog.querySelector("img");
+  // 큰 그림은 처음 열 때 만든다. 빈 <img>를 미리 두면 깨진 그림으로 읽히기 때문이다.
+  let img = null;
   let opener = null;
   document.querySelectorAll(".case_zoom").forEach((btn) => {
     btn.addEventListener("click", () => {
       const src = btn.querySelector("img");
+      if (!img) img = dialog.appendChild(document.createElement("img"));
       img.src = src.getAttribute("src");
       img.alt = src.alt;
       opener = btn;
@@ -60,6 +62,27 @@ function initLightbox() {
   dialog.addEventListener("close", () => opener && opener.focus());
 }
 
+// 휴대폰 메뉴 버튼: 메인 페이지와 같은 햄버거 메뉴를 연다. Esc와 메뉴 링크로 닫는다.
+function initBurger() {
+  const btn = document.querySelector(".cs_header .btn_burger");
+  const nav = document.getElementById("nav");
+  if (!btn || !nav) return;
+  const set = (open) => {
+    document.body.classList.toggle("is-menu-open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+  };
+  btn.addEventListener("click", () => set(!document.body.classList.contains("is-menu-open")));
+  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("is-menu-open")) {
+      set(false);
+      btn.focus();
+    }
+  });
+}
+
 initTocScroll();
+initBurger();
 initCodeCopy();
 initLightbox();

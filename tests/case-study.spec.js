@@ -42,8 +42,10 @@ test('toc-smooth-scroll: 목차를 누르면 해당 사례로 이동한다', asy
   await page.setViewportSize({ width: 1400, height: 900 });
   await page.goto(URL);
   await page.locator('.case_toc a[href="#case-04"]').click();
-  await expect.poll(() => topOf(page, '#case-04'), { timeout: 1500 }).toBeLessThanOrEqual(120);
-  expect(await topOf(page, '#case-04')).toBeGreaterThanOrEqual(0);
+  // 리디자인으로 페이지가 길어져 부드러운 이동이 1초 넘게 걸림: 도착 위치는 그대로 검사하고 기다리는 시간만 늘림
+  await expect.poll(() => topOf(page, '#case-04'), { timeout: 3000, intervals: [100] }).toBeLessThanOrEqual(120);
+  // 브라우저는 정수 픽셀로만 스크롤하므로 소수점 위치(-0.5px)까지 허용
+  expect(await topOf(page, '#case-04')).toBeGreaterThanOrEqual(-1);
 });
 
 test('toc-reduced-motion: 움직임 줄이기 설정이면 바로 이동한다', async ({ page }) => {
@@ -53,7 +55,8 @@ test('toc-reduced-motion: 움직임 줄이기 설정이면 바로 이동한다',
   await page.locator('.case_toc a[href="#case-04"]').click();
   await page.waitForTimeout(100);
   const top = await topOf(page, '#case-04');
-  expect(top).toBeGreaterThanOrEqual(0);
+  // 정수 픽셀 스크롤로 생기는 소수점 차이(-0.5px)까지 허용
+  expect(top).toBeGreaterThanOrEqual(-1);
   expect(top).toBeLessThanOrEqual(120);
 });
 
@@ -235,4 +238,36 @@ test('case02-page-code: 사례 02에 7줄짜리 페이지 코드가 보인다', 
 test('toc-approx-count: 목차의 테스트 개수도 대략으로', async ({ page }) => {
   await page.goto(URL);
   await expect(page.locator('.case_toc a[href="#case-04"] .toc_result')).toHaveText('테스트 파일 130개 이상');
+});
+
+// 메인과 같은 헤더, 푸터
+test('chrome-header-links: 헤더 메뉴는 메인 페이지 각 구역으로 간다', async ({ page }) => {
+  await page.setViewportSize({ width: 1400, height: 900 });
+  await page.goto(URL);
+  const hrefs = await page.locator('.cs_header .gnb .nav-item_title').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+  expect(hrefs.slice(0, 5)).toEqual(['../index.html#about', '../index.html#work', '../index.html#capabilities', '../index.html#goals', '../index.html#log']);
+  await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../index.html');
+  await expect(page.locator('.cs_header .header_actions .link_pdf')).toBeVisible();
+  await expect(page.locator('.cs_header .header_actions .link_mail')).toBeVisible();
+});
+
+test('chrome-footer: 푸터에 메인과 같은 연락처, 경력, 교육이 있다', async ({ page }) => {
+  await page.goto(URL);
+  const f = page.locator('.cs_footer');
+  await expect(f.locator('.headline')).toHaveText("Let's work with you.");
+  for (const t of ['Profile', 'Career', 'Education', '2021 11 - 2023 02']) await expect(f).toContainText(t);
+  await expect(f.locator('.link_pdf')).toHaveAttribute('href', '../assets/files/kang-joohyun-portfolio.pdf');
+});
+
+test('chrome-burger: 휴대폰 메뉴가 열리고 Esc로 닫힌다', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto(URL);
+  const btn = page.locator('.cs_header .btn_burger');
+  await expect(page.locator('#nav')).toBeHidden();
+  await btn.click();
+  await expect(page.locator('#nav')).toBeVisible();
+  await expect(btn).toHaveAttribute('aria-expanded', 'true');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#nav')).toBeHidden();
+  await expect(btn).toHaveAttribute('aria-expanded', 'false');
 });

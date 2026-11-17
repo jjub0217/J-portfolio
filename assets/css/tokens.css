@@ -1,0 +1,68 @@
+/* 상세 페이지 색, 글꼴, 간격 변수 (frontend-design 계획, 2026-11-17).
+   흰 바탕에 초록 하나: 초록은 "결과"와 "고친 뒤", 빨강은 "고치기 전" 값에만 쓴다.
+   한글은 Pretendard(포트폴리오 PDF와 같은 글꼴), 영어 큰 제목과 큰 숫자는 사이트 글꼴 Roobert. */
+@font-face {
+  font-family: "Roobert";
+  src: url("../fonts/Roobert-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roobert";
+  src: url("../fonts/Roobert-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibreBaskerville-Regular";
+  src: url("../fonts/LibreBaskerville-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5rem; --text-2xl: 2rem; --text-3xl: 2.5rem;
+  --text-display: clamp(3rem, 5vw + 1rem, 5.5rem);
+  --text-case: clamp(1.75rem, 1.4vw + 1.2rem, 2.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 180ms;
+  --container: 1200px; --gutter: 48px; --gap-columns: 40px;
+  --z-raised: 10; --z-toast: 500;
+
+  --color-paper: #ffffff;
+  --color-ink: #1f2328;
+  --color-ink-2: #3a4049;
+  --color-muted: #5b6270;
+  --color-surface: #f4f5f7;
+  --color-surface-2: #e9ebef;
+  --color-line: #e3e6ea;
+  --color-green: #0b7a4b;
+  --color-green-ink: #ffffff;
+  --color-green-soft: #e7f5ee;
+  --color-green-strong: #075c38;
+  --color-red: #c2412d;
+  --color-red-soft: #fbece9;
+  --color-focus: #0b7a4b;
+  --color-scrim: rgb(31 35 40 / 0.88);
+  --shadow-phone: -14px 18px 40px rgb(31 35 40 / 0.32), -2px 3px 8px rgb(31 35 40 / 0.16);
+
+  /* base.css가 읽는 이름 */
+  --color-paper-2: var(--color-surface);
+  --color-paper-3: var(--color-surface-2);
+  --color-accent: var(--color-green);
+  --color-accent-ink: var(--color-green-ink);
+  --color-rule: var(--color-line);
+
+  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: var(--font-body);
+  --font-latin-display: "Roobert", "Pretendard", -apple-system, sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-wordmark: "LibreBaskerville-Regular", Georgia, serif;
+  /* 메인 푸터와 똑같이: 메인은 등록되지 않은 이름 "Libre Baskerville"을 써서 보는 사람의 브라우저 기본 글꼴로 보인다.
+     로고용 글꼴을 메인과 같은 이름(LibreBaskerville-Regular)으로 등록해, 이 이름도 상세 페이지에서 등록되지 않게 했다. */
+  --font-footer: "Libre Baskerville";
+  --radius-lg: 16px; --radius-md: 12px; --radius-sm: 8px;
+  --tracking-display: -0.02em; --display-weight: 700;
+}
