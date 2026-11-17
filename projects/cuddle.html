@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuddle Market 사례 | 강주현 포트폴리오</title>
+    <meta
+      name="description"
+      content="반려동물 중고거래 서비스 Cuddle Market에서 문제를 찾고 판단해 고친 사례 6가지"
+    />
+    <link rel="canonical" href="https://jjub0217.github.io/J-portfolio/projects/cuddle.html" />
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" sizes="16x16" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="../assets/css/case-study.css" />
+    <script src="../assets/js/case-study.js" defer></script>
+  </head>
+
+  <body class="case_page">
+    <a class="cs_skip" href="#case-main">본문 바로가기</a>
+    <span id="newtab-note" hidden>새 탭에서 열림</span>
+
+    <header class="header cs_header" id="header">
+        <div class="inner">
+          <a href="../index.html" class="logo" aria-label="Desveloper — Design과 Developer의 합성어">
+            <span class="logo_text" aria-hidden="true">
+              <span class="logo_main"><span class="logo_accent">Des</span>veloper</span>
+              <span class="logo_sub">Design × Developer</span>
+            </span>
+            <svg
+              version="1.1"
+              xmlns="https://www.w3.org/2000/svg"
+              xmlns:xlink="https://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="100%"
+              viewBox="0 0 736 736"
+              enable-background="new 0 0 736 736"
+              xml:space="preserve"
+            >
+              <path
+                d="M239.191620,693.069580
+                C218.239182,682.811340 198.135727,671.785706 179.596298,658.226929
+                C160.782822,644.467773 143.643753,628.810242 128.058029,611.392273
+                C115.852295,597.751770 104.417564,583.527832 94.448929,568.238037
+                C70.483795,531.480652 53.244179,491.871979 44.460865,448.667816
+                C40.407990,428.732086 38.546391,408.732025 38.564919,388.409302
+                C38.590691,360.148163 38.038448,331.889618 44.659046,304.128540
+                C49.941303,281.979370 56.308357,260.214020 65.667000,239.344742
+                C73.436195,222.019852 81.794823,205.042603 92.468597,189.339966
+                C104.042015,172.313828 116.728577,156.184692 130.679428,140.942520
+                C150.098007,119.726501 171.943161,101.490326 195.802155,85.717560
+                C223.100830,67.670860 252.420532,53.726242 283.876648,44.219658
+                C302.992645,38.442471 322.369995,34.302986 342.125275,31.790728
+                C347.707214,31.080877 353.368103,30.749525 358.996979,30.697845
+                C374.661377,30.554033 390.327972,30.639011 405.993683,30.650610
+                C430.020111,30.668398 453.372131,35.085823 476.498932,41.217342
+                C500.046814,47.460491 522.522888,56.390751 544.120056,67.570900
+                C565.718872,78.751884 585.754761,92.327049 604.822754,107.398811
+                C613.704468,114.419083 622.135742,122.025017 629.966980,130.064682
+                C640.001038,140.365845 650.007141,150.795776 658.729858,162.357239
+                C667.727844,174.283569 676.564636,186.300171 684.198059,199.149323
+                C702.810181,230.478561 716.114136,263.934418 724.334900,299.441376
+                C727.065125,311.233704 728.611450,323.195862 730.487793,335.128906
+                C734.450134,360.327545 732.401794,385.650726 731.874451,410.839600
+                C731.588684,424.488739 728.308716,438.321686 725.320618,451.916626
+                C719.087769,480.274384 709.423157,507.410004 696.255188,533.208740
+                C683.165466,558.854065 667.991760,583.234436 648.388062,604.544434
+                C642.761047,610.661255 639.910461,610.840088 633.788452,605.339172
+                C630.984314,602.819458 627.864929,600.759033 624.581726,598.021912
+                C685.274475,528.777039 714.987061,448.073517 709.064575,356.341278
+                C703.468994,269.672729 668.283569,195.549072 603.462463,136.936569
+                C486.041107,30.761879 319.570221,27.512157 201.921753,109.541000
+                C66.552605,203.925339 28.336061,368.528229 86.203156,503.612335
+                C125.856956,596.179626 194.806198,658.911316 291.622437,687.931335
+                C388.222168,716.886414 479.638702,701.320557 564.813477,648.751221
+                C568.068848,651.877563 563.303406,653.166687 564.346191,656.312439
+                C565.673584,660.317017 568.893250,662.478943 570.766052,665.811462
+                C572.479309,668.860229 572.571411,670.673828 569.692200,672.329529
+                C558.043518,679.028320 546.579529,686.023621 534.265198,691.556763
+                C521.238403,697.410095 508.271332,703.336731 494.645660,707.700684
+                C473.003448,714.632080 450.980652,719.574829 428.401886,722.610046
+                C402.476349,726.095093 376.441345,725.158875 350.667297,723.767029
+                C329.035400,722.598816 307.520081,717.371460 286.513153,710.927063
+                C270.448303,705.998718 254.915848,699.873596 239.191620,693.069580 z"
+                fill="#fff"
+              />
+              <path
+                d="
+                M292.039917,119.601501
+                C267.330200,128.438095 244.754227,140.583405 223.612885,155.505966
+                C203.387894,169.781708 185.418472,186.645935 169.793335,205.642548
+                C154.955154,223.682358 142.333817,243.367432 132.814529,264.967407
+                C124.230820,284.444519 116.582726,304.148071 112.956573,325.185242
+                C110.625488,338.709045 108.251381,352.190674 107.106689,365.951630
+                C105.199707,388.876343 108.246201,411.184814 111.989845,433.640350
+                C115.592384,455.249512 122.401512,475.701263 131.249512,495.610382
+                C133.016205,499.585663 133.683258,503.653259 129.153549,506.509369
+                C126.766953,505.901154 129.031448,504.102142 128.343262,503.464233
+                C122.924919,504.890900 117.194077,505.872314 117.015289,513.782776
+                C112.039757,510.384369 110.598976,505.773438 108.952393,501.690552
+                C101.261002,482.619019 94.273796,463.276031 90.385597,443.005432
+                C88.142769,431.312714 86.505913,419.538513 85.480629,407.633667
+                C84.477119,395.981720 84.604256,384.363831 84.729530,372.740631
+                C85.076035,340.590057 91.343903,309.538513 102.327492,279.330231
+                C111.243958,254.807159 123.278534,231.950012 137.780899,210.343765
+                C145.390640,199.006470 154.633926,189.012573 163.707962,178.840164
+                C179.752304,160.853714 198.089478,145.595276 217.899200,132.093887
+                C239.414062,117.430382 262.591370,105.835800 287.220184,97.381218
+                C306.372894,90.806480 326.011536,86.136215 346.160248,83.518745
+                C360.011322,81.719391 373.930786,80.583778 387.809845,80.824646
+                C423.193207,81.438698 457.574524,87.787102 490.842163,100.253891
+                C521.161804,111.615929 548.757385,127.682831 573.921021,147.791595
+                C590.542480,161.074173 605.323853,176.384415 619.121399,192.679031
+                C633.499939,209.659760 644.785156,228.538010 655.062744,248.095703
+                C667.586060,271.926941 674.461304,297.699829 680.260559,323.777618
+                C685.784180,348.615753 686.021301,373.900513 685.194580,399.132080
+                C684.537476,419.189240 680.983765,438.890198 675.987549,458.408203
+                C671.072266,477.610046 664.821228,496.258820 655.871887,513.877197
+                C645.102539,535.078552 632.319519,555.011475 616.950867,573.301514
+                C608.152039,583.772888 598.851440,593.725159 588.921692,603.046509
+                C572.308167,618.642090 554.056274,632.128662 534.169312,643.328552
+                C520.125244,651.237915 505.896454,658.676697 490.522308,663.855652
+                C469.599854,670.903870 448.458984,676.666992 426.486389,679.562378
+                C408.806335,681.892212 391.097015,683.162354 373.362091,682.244263
+                C348.027649,680.932861 323.039246,677.233459 298.581024,669.935730
+                C276.659241,663.394836 255.656998,654.946167 235.929504,643.390869
+                C229.677811,639.728943 223.153442,636.414429 217.670944,631.244507
+                C218.705032,628.943115 219.367783,627.421326 222.570343,627.444458
+                C226.687164,627.474365 230.485229,625.250366 232.676331,621.577820
+                C235.157227,617.419373 237.895706,617.999878 241.280792,620.133850
+                C254.798843,628.655640 269.105865,635.745239 283.989258,641.394531
+                C302.412811,648.387451 321.447601,653.267029 340.910492,656.872925
+                C364.095245,661.168335 387.381683,659.933655 410.554810,659.238342
+                C424.951080,658.806274 439.390137,655.672668 453.544922,651.883911
+                C473.670685,646.496887 493.123901,639.440857 511.636597,629.994080
+                C532.712219,619.239563 552.091431,605.953613 569.809998,590.144104
+                C585.010864,576.581055 598.074768,561.295532 610.140747,544.954102
+                C620.837280,530.467468 630.208374,515.191528 637.815430,498.978088
+                C646.915100,479.583252 653.315613,459.242523 657.742981,438.148590
+                C662.593506,415.038635 664.230408,391.852142 663.694153,368.361115
+                C663.397278,355.355499 660.617615,342.751038 658.472351,330.015808
+                C654.506775,306.474762 646.697449,284.180939 636.828552,262.599243
+                C629.926880,247.506393 621.190918,233.406555 611.623291,219.820190
+                C593.427795,193.981949 570.386475,173.027664 545.115295,154.497238
+                C518.637756,135.082275 489.005524,121.927261 457.519592,112.927597
+                C442.531189,108.643448 427.134033,105.659538 411.670868,104.716362
+                C396.004303,103.760788 380.194366,103.932793 364.441376,104.697380
+                C339.631104,105.901566 315.739990,111.403587 292.039917,119.601501
+                z"
+                fill="#fff"
+              />
+              <path
+                d="M396.662537,390.999939
+                C396.663513,349.336670 396.668518,308.173462 396.662598,267.010223
+                C396.661407,258.769501 391.903259,254.557297 383.824829,253.189011
+                C368.818359,250.647324 355.365997,243.539734 350.544586,228.750534
+                C345.092651,212.027374 352.743256,194.118774 373.825348,193.802643
+                C411.313751,193.240448 448.841736,192.823639 486.303955,193.962982
+                C507.941742,194.621063 516.243042,205.599289 514.131958,227.296371
+                C513.354980,235.281403 508.756775,240.155502 502.609314,245.208908
+                C495.194794,251.303879 487.589203,253.541885 478.445557,253.460098
+                C471.016632,253.393646 464.358948,260.941071 464.356567,268.684998
+                C464.337982,329.179932 464.226868,389.675262 464.438568,450.169464
+                C464.480957,462.280945 460.075897,472.688171 453.374451,481.994537
+                C445.369537,493.111053 436.061279,503.296112 425.264404,511.870941
+                C414.259216,520.611145 400.979431,523.952454 387.470093,525.135803
+                C374.610535,526.262268 361.662903,525.609619 348.974701,521.800720
+                C343.875549,520.270020 338.203003,520.388550 332.798096,519.613831
+                C323.809753,518.325562 317.189178,511.714569 308.578918,509.625885
+                C304.433197,508.620209 300.714844,506.053650 296.409882,505.348114
+                C293.682953,504.901245 292.857697,502.377411 291.447998,500.725372
+                C286.200134,494.575317 279.347626,492.987885 271.757538,492.295410
+                C264.289398,491.614044 259.733582,485.855164 259.622223,478.363220
+                C259.555603,473.880829 260.018311,469.391449 259.225189,464.901123
+                C258.987946,463.557953 259.590332,461.940765 260.162659,460.600555
+                C264.118500,451.337555 267.483795,441.710419 274.770416,434.323212
+                C281.390503,427.611786 286.989899,419.700195 296.087341,415.834808
+                C298.381500,414.860046 300.637604,413.777588 303.197327,413.673187
+                C307.837433,413.483978 311.207855,416.444733 311.308289,421.098114
+                C311.434113,426.928314 311.527405,432.770935 311.278351,438.592926
+                C311.138763,441.855774 312.238220,444.472565 314.186249,446.802460
+                C319.340515,452.967072 325.388092,458.210083 332.638031,461.630829
+                C342.731384,466.393188 353.677948,466.767395 364.631317,466.661530
+                C368.620697,466.622986 372.377991,466.630768 376.041473,464.148499
+                C387.087311,456.664185 394.663116,447.398590 395.739777,433.389008
+                C396.813263,419.420959 396.551514,405.465912 396.662537,390.999939
+                z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+          <nav class="gnb" id="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="../index.html#about" class="nav-item_title">
+                  <span>About me</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../index.html#work" class="nav-item_title">
+                  <span>Work</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../index.html#capabilities" class="nav-item_title">
+                  <span>Capabilities</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../index.html#goals" class="nav-item_title">
+                  <span>Goals</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../index.html#log" class="nav-item_title">
+                  <span>Dev log</span>
+                </a>
+              </li>
+              <li class="nav-item nav-item_pdf">
+                <a
+                  href="../assets/files/kang-joohyun-portfolio.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="nav-item_title"
+                  aria-label="포트폴리오 PDF 새 탭에서 열기"
+                  >Portfolio PDF ↗</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header_actions">
+            <a
+              href="../assets/files/kang-joohyun-portfolio.pdf"
+              target="_blank"
+              rel="noopener"
+              class="link_pdf"
+              aria-label="포트폴리오 PDF 새 탭에서 열기"
+              >Portfolio PDF ↗</a
+            >
+            <a
+              href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
+              target="_blank"
+              class="link_mail"
+              >✦ Contact me</a
+            >
+            <button
+              class="btn_burger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="nav"
+              aria-label="메뉴 열기"
+            >
+              <span class="burger_line"></span>
+              <span class="burger_line"></span>
+              <span class="burger_line"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+    <main id="case-main">
+      <section class="case_hero" aria-labelledby="case-hero-title">
+        <div class="container case_hero_grid">
+        <div class="case_hero_text">
+          <h1 id="case-hero-title" class="case_hero_title">Cuddle Market</h1>
+          <p class="case_hero_summary">반려동물 용품을 중고로 사고파는 서비스입니다.</p>
+          <div class="case_links">
+            <a class="btn btn--primary" href="https://cuddle-market.vercel.app/" target="_blank" rel="noopener" aria-describedby="newtab-note">Live <span class="ext" aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://cuddle-market-git-feature-admin-demo-mode-jjub0217s-projects.vercel.app/admin" target="_blank" rel="noopener" aria-describedby="newtab-note">Admin Demo <span class="ext" aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://github.com/jjub0217/cuddle-market" target="_blank" rel="noopener" aria-describedby="newtab-note">GitHub <span class="ext" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="case_hero_shot">
+          <img src="../assets/images/cuddle/home-desktop.jpg" alt="운영 중인 Cuddle Market 홈 화면" width="2000" height="1250" />
+          <figcaption class="case_period"><span class="case_period_label">기간</span> 개발 2025. 08 ~ 2026. 11</figcaption>
+        </figure>
+        </div>
+      </section>
+
+      <section class="case_overview" aria-labelledby="case-overview-title">
+        <div class="container">
+          <h2 id="case-overview-title" class="visually-hidden">프로젝트 개요</h2>
+          <div class="case_overview_grid">
+          <dl class="case_info">
+            <div class="case_info_item">
+              <dt>개요</dt>
+              <dd>
+                <p>상품 등록과 검색, 실시간 채팅과 알림, 커뮤니티, 관리자 화면을 갖췄고, 웹은 운영 중이며 Android 앱은 비공개 테스트 중입니다.</p>
+                <p>협업 프로젝트(프론트엔드 4명, 백엔드 3명)로 시작했고, 팀에 완성을 제안해 함께 이어 가다가 이후 혼자 맡아 끝까지 완성했습니다(Team → Solo). 지금은 Next.js 웹과 React Native 앱이 공통 코드를 나눠 씁니다.</p>
+              </dd>
+            </div>
+            <div class="case_info_item">
+              <dt>역할</dt>
+              <dd>
+                <ul class="case_info_list">
+                  <li>V1 (Vite, 2025.08 ~ 2026.01): 중간에 프론트엔드 팀장을 맡아 커밋과 PR 규칙, 코드 리뷰 방식을 팀과 함께 정함. 팀원이 떠난 뒤 혼자 완성해 배포</li>
+                  <li>V2 (Next.js + Expo, 2026.02 ~ 2026.09): Next.js App Router로 옮겨 배포하고 운영. 관리자 화면, 서버 감시 장치, Android 앱, 웹과 앱의 공통 패키지, CI를 만듦</li>
+                  <li>백엔드: 현직 백엔드 개발자가 만든 서버 기본 구조 위에 AI 도구와 함께 지도 장소 <abbr title="Application Programming Interface">API</abbr>, 로그인, 상품, 알림, 채팅 기능을 더함</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="case_info_item">
+              <dt>기술</dt>
+              <dd>
+                <p>Next.js 16, React 19, TypeScript, React Native (Expo), Zustand, React Query, WebSocket (STOMP), SSE, pnpm 모노레포, Vitest, GitHub Actions, Vercel</p>
+                <p class="case_info_sub">백엔드 (AI와 함께 구현): Java 21, Spring Boot 3, Spring Data JPA, Spring Security (OAuth2), WebSocket (STOMP), Redis, MySQL</p>
+              </dd>
+            </div>
+          </dl>
+          <div class="case_phones" role="group" aria-label="Cuddle Market 휴대폰 화면 3장">
+            <img class="phone phone--1" src="../assets/images/cuddle/map-phone.jpg" alt="Cuddle Market 휴대폰 화면: 동물병원, 카페 등을 지도로 찾는 플레이스" width="780" height="1688" loading="lazy" />
+            <img class="phone phone--2" src="../assets/images/cuddle/community-phone.jpg" alt="Cuddle Market 휴대폰 화면: 커뮤니티 행사 소식 목록" width="780" height="1688" loading="lazy" />
+            <img class="phone phone--3" src="../assets/images/cuddle/home-phone.jpg" alt="Cuddle Market 휴대폰 화면: 홈" width="780" height="1688" loading="lazy" />
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case_toc" aria-labelledby="case-toc-title">
+        <div class="container">
+          <h2 id="case-toc-title" class="case_toc_title">Cuddle Market 주요 개선 사례</h2>
+          <ol class="toc_list">
+            <li><a href="#case-01"><span class="toc_head"><span class="toc_num">01</span><span class="toc_group">홈 로딩</span></span><span class="toc_title">첫 HTML에서 빠진 이미지를 찾아 홈 화면 로딩 줄이기</span><span class="toc_result">1.3초 → 1.0초</span></a></li>
+            <li><a href="#case-02"><span class="toc_head"><span class="toc_num">02</span><span class="toc_group">관리 화면</span></span><span class="toc_title">관리 화면 8개를 설정 파일 하나로 만드는 공통 테이블</span><span class="toc_result">새 화면은 페이지 코드 7줄</span></a></li>
+            <li><a href="#case-03"><span class="toc_head"><span class="toc_num">03</span><span class="toc_group">AI 코드 리뷰</span></span><span class="toc_title">AI 코드 리뷰가 실제 버그만 짚도록 지시문 좁히기</span><span class="toc_result">리뷰를 실제 버그 중심으로</span></a></li>
+            <li><a href="#case-04"><span class="toc_head"><span class="toc_num">04</span><span class="toc_group">PR 자동 검사</span></span><span class="toc_title">모든 PR에서 타입 검사, 린트, 테스트, 빌드가 돌게 하기</span><span class="toc_result">테스트 파일 130개 이상</span></a></li>
+            <li><a href="#case-05"><span class="toc_head"><span class="toc_num">05</span><span class="toc_group">채팅 재연결</span></span><span class="toc_title">다시 연결된 뒤 앱 화면에 메시지가 안 보이던 문제 고치기</span><span class="toc_result">끊겨도 메시지를 받음</span></a></li>
+            <li><a href="#case-06"><span class="toc_head"><span class="toc_num">06</span><span class="toc_group">결제 검증</span></span><span class="toc_title">테스트 결제에서 금액 조작과 두 번 승인을 막기</span><span class="toc_result">금액 대조와 중복 승인 방지</span></a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <article class="case" id="case-01" aria-labelledby="case-01-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">01</span> 홈 로딩</p>
+            <h2 id="case-01-title" class="case_title">첫 HTML에서 빠진 이미지를 찾아 홈 화면 로딩 줄이기</h2>
+              <p class="case_source"><a href="https://github.com/jjub0217/cuddle-market/blob/main/docs/lighthouse-optimization-log.md" target="_blank" rel="noopener" aria-describedby="newtab-note">측정 기록 문서 보기 <span class="ext" aria-hidden="true">↗</span></a></p>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>홈 화면 LCP(가장 큰 요소가 보이기까지의 시간)가 1.3초였습니다. 그중 0.9초는 브라우저가 이미지 주소를 찾기까지 기다린 시간이었습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>홈은 <code>useSearchParams()</code> 때문에 <code>Suspense</code>로 감싸져 있었고, 서버는 이미지 주소가 없는 로딩 중 화면만 먼저 보냈습니다. 그래서 첫 HTML에 이미지가 하나도 없었고, 화면 코드가 실행된 뒤에야 이미지를 찾기 시작했습니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p>로딩 중 화면을 실제 상품 데이터를 가진 서버 컴포넌트로 바꿔 첫 HTML에 이미지가 담기게 했습니다. 60초마다 페이지를 다시 만드는 방식은 그대로 두었습니다.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p><span class="case_ai">AI 도구로 수정안을 만들고,</span> 시도할 때마다 Lighthouse와 DebugBear로 다시 측정해 채택할지 되돌릴지 정했습니다. 바꾸기 전과 후의 첫 HTML에서 이미지 태그 수도 셌습니다(0개에서 22개).</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>LCP 1.3초 → 1.0초 (약 23% 단축), 성능 점수 94점 유지</p><p class="case_note">함께 늘어난 값도 있습니다. <abbr title="First Contentful Paint">FCP</abbr>(첫 콘텐츠가 보이는 시간)는 0.4초에서 0.9초로, <abbr title="Cumulative Layout Shift">CLS</abbr>(화면 흔들림)는 0에서 0.008로 늘었습니다. 첫 HTML이 커져 첫 화면을 그리기까지 시간이 늘었고, 서버 화면이 실제 화면으로 바뀔 때 작은 흔들림이 생겼습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <div class="ev_big">
+                <p class="ev_big_label">홈 화면 LCP</p>
+                <p class="ev_big_value"><s>1.3초</s> <span>1.0초</span></p>
+                <p class="ev_big_note">성능 점수 94점 유지</p>
+              </div>
+              <div class="ev_panel">
+                <table class="case_steps">
+                  <caption>시도한 순서</caption>
+                  <thead><tr><th scope="col">단계</th><th scope="col">LCP</th><th scope="col">점수</th><th scope="col">한 일</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">시도 1</th><td>1.3초</td><td>94</td><td>서버에서 상품 데이터를 미리 받아 넘김. 변화 없음</td></tr>
+                    <tr><th scope="row">시도 2</th><td>1.2초</td><td>91</td><td>이미지 미리 받기. 빨라졌지만 점수가 떨어짐</td></tr>
+                    <tr class="row--minus"><th scope="row">시도 3</th><td>-</td><td>83</td><td>로딩 처리를 걷어 냄. 점수가 더 떨어져 바로 되돌림</td></tr>
+                    <tr class="row--plus"><th scope="row">해결</th><td>1.0초</td><td>94</td><td>로딩 중 화면을 서버 컴포넌트로 바꿈</td></tr>
+                  </tbody>
+                </table>
+                <dl class="ev_readings">
+                  <div><dt>FCP</dt><dd><s>0.4초</s> 0.9초</dd></div>
+                  <div><dt>CLS</dt><dd><s>0</s> 0.008</dd></div>
+                </dl>
+              </div>
+              
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-02" aria-labelledby="case-02-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">02</span> 관리 화면</p>
+            <h2 id="case-02-title" class="case_title">관리 화면 8개를 설정 파일 하나로 만드는 공통 테이블</h2>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>회원, 탈퇴, 상품, 커뮤니티 글, 신고 4종까지 관리 화면이 8개였고, 화면마다 표와 필터, 정렬, 페이지 처리가 필요했습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>같은 표 기능을 화면마다 따로 만들면 같은 코드를 8번 반복하게 됩니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p><span class="case_ai">AI 도구와 함께</span> 화면을 설정 파일로 정의하는 공통 테이블과 커스텀 훅(<code>useAdminTable</code>)을 만들어 8개 화면을 하나의 구조로 묶었습니다. 열은 글자, 숫자, 금액, 배지, 날짜, 이미지 6종으로 나눴고, 새 화면은 설정 파일 하나와 짧은 페이지 코드로 만듭니다.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p>8개 화면을 데모 데이터로 띄워 표, 검색, 정렬, 페이지 이동이 같은 방식으로 동작하는지 직접 확인했습니다.</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>관리 화면 8개가 공통 테이블과 훅 646줄을 함께 쓰고, 새 화면의 페이지 코드는 7줄입니다.</p><p class="case_note">화면별 설정 파일은 52~124줄입니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <figure class="ev_shot">
+                <button class="case_zoom" type="button" aria-label="관리자 상품 관리 화면 (데모 데이터) 크게 보기">
+                  <img src="../assets/images/cuddle/admin-products.jpg" alt="관리자 상품 관리 화면 (데모 데이터)" width="2000" height="1250" loading="lazy" />
+                </button>
+                <figcaption>상품 관리 화면 (데모 데이터)</figcaption>
+              </figure>
+              <figure class="case_code">
+                <figcaption>src/app/(admin)/admin/products/page.tsx</figcaption>
+                <pre tabindex="0"><code>import ProductsManagement from &#x27;@/features/admin/components/ProductsManagement&#x27;
+
+export const metadata = { title: &#x27;상품 관리 | Admin&#x27; }
+
+export default function AdminProductsPage() {
+  return &lt;ProductsManagement /&gt;
+}</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              <figure class="case_code">
+                <figcaption>src/features/admin/configs/productTableConfig.ts</figcaption>
+                <pre tabindex="0"><code>export const productTableConfig: TableConfig&lt;AdminProduct&gt; = {
+  title: &#x27;상품 관리&#x27;,
+  rowKey: &#x27;id&#x27;,
+  searchable: true,
+  searchPlaceholder: &#x27;상품명 검색...&#x27;,</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              <figure class="case_code">
+                <figcaption>src/features/admin/components/ProductsManagement.tsx</figcaption>
+                <pre tabindex="0"><code>      &lt;AdminTable&lt;AdminProduct&gt;
+        config={productTableConfig}
+        queryKey=&quot;admin-products&quot;
+        fetchFn={fetchAdminProducts}
+        onRowClick={(product) =&gt; setSelectedProductId(product.id)}
+      /&gt;</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-03" aria-labelledby="case-03-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">03</span> AI 코드 리뷰</p>
+            <h2 id="case-03-title" class="case_title">AI 코드 리뷰가 실제 버그만 짚도록 지시문 좁히기</h2>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>PR마다 도는 AI 코드 리뷰(Kimi K2)가 일어나기 어려운 예외 상황과 과한 방어 코드까지 지적해, 리뷰가 길기만 하고 읽히지 않았습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>처음 지시문이 코드 품질, 버그, 성능, 보안, 모범 사례를 모두 보게 해서, 실제로 고칠 지적과 그렇지 않은 지적이 섞였습니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p>실제 버그, 명백한 성능 문제, Next.js와 React에서 피해야 할 작성 방식만 보게 지시문을 좁히고, 문제가 없으면 짧게 끝내게 했습니다<span class="case_ai">(지시문은 AI 도구와 함께 고침)</span>.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p>리뷰가 드롭다운에 Escape 키 처리가 빠졌다고 짚었을 때 직접 동작을 확인했습니다. 방향키는 여는 단추가, Escape는 문서 전체의 키 입력 감지가 따로 잡고 있어 리뷰가 잘못 본 것이었습니다.</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>리뷰가 헷갈린 곳은 사람도 헷갈린다고 보고, 코드는 그대로 둔 채 의도를 밝히는 주석 3줄을 더했습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <div class="ev_panel ev_diff" role="group" aria-label="리뷰 지시문 고치기 전과 후">
+                <div class="row--minus"><p class="ev_label">처음 지시문</p><blockquote>"코드 품질, 잠재적 버그, 성능 이슈, 보안 취약점, 그리고 Next.js/React 모범 사례를 확인해주세요."</blockquote><p class="ev_note">모든 것을 보게 해서 지적이 길기만 함</p></div>
+                <div class="row--plus"><p class="ev_label">바꾼 지시문</p><blockquote>"중점 확인 사항: 실제 버그나 런타임 에러 가능성, 명백한 성능 문제, Next.js/React 안티패턴"</blockquote><blockquote>"이론적으로만 가능한 엣지 케이스는 무시 / 과도한 에러 핸들링이나 방어 코딩을 제안하지 마세요 / 문제가 없으면 특이사항 없음으로 짧게 마무리하세요"</blockquote></div>
+              </div>
+              <figure class="case_code">
+                <figcaption>src/components/commons/select/SelectDropdown.tsx</figcaption>
+                <pre tabindex="0"><code>   * ⚠️ **`Escape` 는 여기 없다.** 아래 `document` 의 `keydown` 리스너(`handleEscape`)가
+   *    잡는다 — 초점이 어디에 있든 닫아야 해서 단추 전용인 이 함수로는 못 잡는다.
+   *    (#1070 kimi 리뷰가 여기서 빠졌다고 봤는데, 실제로는 아래에 있다.)</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-04" aria-labelledby="case-04-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">04</span> PR 자동 검사</p>
+            <h2 id="case-04-title" class="case_title">모든 PR에서 타입 검사, 린트, 테스트, 빌드가 돌게 하기</h2>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>워크플로가 셋 있었지만 그 안에 타입 검사, 린트, 테스트, 빌드가 없어서, 테스트를 깨뜨린 PR도 병합될 수 있었습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>검사는 사람이 손으로 돌리는 것뿐이어서, 잊으면 그대로 통과했습니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p>PR마다 공통 패키지, 앱, 웹 세 작업이 나란히 타입 검사, 린트, 테스트, 빌드를 돌게 했습니다<span class="case_ai">(설정은 AI 도구와 함께 작성)</span>. 한 작업에서 순서대로 돌리면 앞이 깨질 때 뒤를 못 보고 시간도 셋의 합이 되기 때문입니다. 문서만 바뀐 PR은 검사를 건너뛰게 했습니다.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p>고친 줄을 일부러 빼 보고 테스트가 실패하는지 확인해, 그 테스트가 정말 그 코드를 지키는지 검증했습니다.</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>테스트 파일 130개 이상(웹, 앱, 공통 패키지)이 모든 PR에서 돕니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <figure class="case_code">
+                <figcaption>.github/workflows/gate.yml</figcaption>
+                <pre tabindex="0"><code>on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              <div class="ev_lanes" role="group" aria-label="PR마다 나란히 도는 작업 3개">
+                <div><p class="ev_lane_name">공통 패키지</p><p>vitest</p></div>
+                <div><p class="ev_lane_name">앱</p><p>tsc, lint, jest</p></div>
+                <div><p class="ev_lane_name">웹</p><p>tsc, lint, vitest, build</p></div>
+              </div>
+              
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-05" aria-labelledby="case-05-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">05</span> 채팅 재연결</p>
+            <h2 id="case-05-title" class="case_title">다시 연결된 뒤 앱 화면에 메시지가 안 보이던 문제 고치기</h2>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>휴대폰 앱과 웹을 오가며 직접 시험하다가, 연결이 끊겼다 다시 이어진 뒤 앱에서 보낸 메시지가 웹에는 가지만 앱 화면에는 보이지 않는 문제를 발견했습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>다시 연결되면 예전 구독(서버의 실시간 메시지를 받겠다고 등록한 것)은 끊긴 연결에 묶여 더는 동작하지 않는데, 코드는 구독이 이미 있다고 보고 건너뛰었습니다. 그래서 새 연결에는 구독이 없었고, 보내기는 잘 되는데 받기만 오류 없이 멈췄습니다. 웹에서는 다시 연결될 때마다 화면의 실시간 메시지를 비우는 코드가 함께 실행돼 메시지가 사라졌습니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p><span class="case_ai">AI 도구와 함께</span> 다시 연결될 때 보던 채팅방을 다시 구독하도록 앱과 웹을 고치고, 연결이 끊기는 것을 받아 상태에 반영했습니다. 실시간 메시지는 방이 바뀔 때만 비우게 했습니다.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p>고친 파일만 되돌려 테스트가 먼저 실패하는 것을 확인한 뒤 고쳤고, 같은 순서로 앱과 웹을 오가며 다시 시험했습니다.</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>다시 연결된 뒤에도 앱과 웹 모두 메시지를 받습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <div class="ev_panel ev_trails">
+                <div>
+                  <p class="ev_label">고치기 전</p>
+                  <ol class="case_flow">
+                    <li>연결이 끊김</li>
+                    <li>다시 연결됨</li>
+                    <li>예전 구독이 남아 있어 다시 구독하지 않음</li>
+                    <li class="is_bad">보내기는 되고 받기만 멈춤</li>
+                  </ol>
+                </div>
+                <div>
+                  <p class="ev_label">고친 뒤</p>
+                  <ol class="case_flow">
+                    <li>연결이 끊김, 끊김을 상태에 반영</li>
+                    <li>다시 연결됨</li>
+                    <li>보던 채팅방을 다시 구독</li>
+                    <li class="is_good">보내기와 받기 모두 동작</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="ev_panel">
+                <p class="ev_label">더한 테스트 일부 (앱)</p>
+                <ul class="ev_list ev_list--m">
+                  <li>다시 붙으면 걸어 둔 구독을 다시 건다</li>
+                  <li>다시 붙어도 푼 구독은 안 살아난다</li>
+                </ul>
+              </div>
+              
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="case-06" aria-labelledby="case-06-title">
+        <div class="container case_body">
+          <header class="case_head">
+            <p class="case_kicker"><span class="case_num">06</span> 결제 검증</p>
+            <h2 id="case-06-title" class="case_title">테스트 결제에서 금액 조작과 두 번 승인을 막기</h2>
+          </header>
+          <div class="case_pane">
+            <div class="case_text">
+              <div class="case_field" data-field="problem">
+                <h3>문제</h3>
+                <p>"예약중"은 상품에 붙는 표시일 뿐이었습니다. 서버는 누구와 예약했는지 몰랐고, 예약된 상품에도 누구나 새 채팅을 걸 수 있었으며, 결제 기능은 없었습니다.</p>
+              </div>
+              <div class="case_field" data-field="cause">
+                <h3>원인</h3>
+                <p>결제를 붙이면 브라우저가 보낸 금액은 화면을 조작해 바꿀 수 있고, 결과 화면을 새로고침하면 같은 승인 요청이 다시 갈 수 있습니다.</p>
+              </div>
+              <div class="case_field" data-field="solution">
+                <h3>해결</h3>
+                <p>판매자가 그 상품으로 채팅한 상대 중 한 명을 골라 예약하면, 예약자만 채팅방에서 결제하도록 <span class="case_ai">서버와 웹을 AI 도구와 함께 만들었습니다</span>(토스페이먼츠 테스트 모드). 결제 금액은 브라우저가 보낸 값을 믿지 않고 서버가 저장한 금액, 지금 상품 가격과 대조합니다. 주문마다 같은 멱등키(같은 요청이 두 번 와도 한 번만 처리하게 하는 표시)를 붙이고 주문을 잠가 두 번 승인되지 않게 했습니다.</p>
+              </div>
+              <div class="case_field" data-field="verification">
+                <h3>확인한 방법</h3>
+                <p>서버 테스트 10개 이상으로 금액이 다를 때, 상품 가격이 바뀌었을 때, 예약이 풀렸을 때, 남의 주문일 때 승인을 거절하는지, 이미 끝난 주문은 결제사를 다시 부르지 않고 같은 결과를 돌려주는지 확인했습니다. 웹은 결과 화면이 확정 요청을 한 번만 보내는지 테스트했습니다.</p>
+              </div>
+              <div class="case_field case_field--result" data-field="result">
+                <h3>결과</h3>
+                <p>금액이 다르거나 예약자가 아니면 승인하지 않고, 결과 화면을 새로고침해도 다시 승인하지 않습니다.</p><p class="case_note">취소, 환불, 웹훅은 하지 않았습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case_evidence" aria-label="근거 자료">
+              <div class="ev_panel">
+                <p class="ev_label">예약에서 판매 완료까지</p>
+                <ol class="case_flow case_flow--row">
+                  <li>판매자가 채팅한 상대 중 예약자 선택</li>
+                  <li>예약자만 채팅방에서 결제</li>
+                  <li class="is_good">판매 완료, 채팅방 닫힘</li>
+                </ol>
+              </div>
+              <div class="ev_panel ev_diff" role="group" aria-label="결제 확정 전에 서버가 확인하는 것">
+                <div class="row--minus"><p class="ev_label">믿지 않는 값</p><p>브라우저가 보낸 결제 금액</p><p class="ev_note">화면을 조작하면 바뀔 수 있음</p></div>
+                <div class="row--plus"><p class="ev_label">확정 조건</p><p>받은 금액 = 저장한 금액 = 지금 상품 가격, 아직 이 사람으로 예약중</p><p class="ev_note">같은 주문은 같은 멱등키로 승인 요청: <code>Idempotency-Key: confirm-주문번호</code></p></div>
+              </div>
+              <figure class="case_code">
+                <figcaption>TossPaymentGateway.java (서버, 결제 승인 요청)</figcaption>
+                <pre tabindex="0"><code>headers.set(&quot;Idempotency-Key&quot;, &quot;confirm-&quot; + orderId);</code></pre>
+                <button class="code_copy" type="button">복사</button>
+              </figure>
+              
+          </div>
+        </div>
+      </article>
+
+      <section class="case_end" aria-label="포트폴리오 PDF">
+        <div class="container case_end_inner">
+          <p class="case_end_text">다른 프로젝트까지 담은 전체 포트폴리오는 PDF로 볼 수 있습니다.</p>
+          <a class="case_pdf btn btn--primary" href="../assets/files/kang-joohyun-portfolio.pdf" target="_blank" rel="noopener" aria-label="포트폴리오 PDF 새 탭에서 열기">Portfolio PDF <span class="ext" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer cs_footer" lang="en">
+        <div class="inner">
+          <div class="heading_area">
+            <h2 class="headline">Let's work with you.</h2>
+            <div class="footer_actions">
+              <a
+                href="mailto:devel.jjub@gmail.com?body=안녕하세요.강주현입니다."
+                class="link_mail"
+                target="_blank"
+              >
+                <span class="contact_text">mail to me</span>
+              </a>
+              <a
+                href="../assets/files/kang-joohyun-portfolio.pdf"
+                class="link_pdf"
+                target="_blank"
+                rel="noopener"
+                aria-label="포트폴리오 PDF 새 탭에서 열기"
+              >
+                <span class="contact_text">Portfolio PDF</span>
+              </a>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="text-box">
+              <p class="title">Profile</p>
+              <p class="paragraph">
+                <span class="cate">Name</span>
+                <span class="content">강주현</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Mail</span>
+                <span class="content">devel.jjub@gmail.com</span>
+              </p>
+            </div>
+            <div class="text-box">
+              <p class="title">Career</p>
+              <p class="paragraph">
+                <span class="cate">Frontend</span>
+                <span class="content">2021 11 - 2023 02</span>
+              </p>
+            </div>
+            <div class="text-box">
+              <p class="title">Education</p>
+              <p class="paragraph">
+                <span class="cate">Web Fullstack online Bootcamp</span>
+                <span class="content">2025 04 - 2025 10</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Frontend UI 1:1 Tutoring</span>
+                <span class="content">2023 06 - 2024 06</span>
+              </p>
+              <p class="paragraph">
+                <span class="cate">Frontend Boot Camp</span>
+                <span class="content">2021 04 - 2021 09</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer_logo_area">
+          <span class="footer_logo" aria-hidden="true">
+            <svg
+              version="1.1"
+              xmlns="https://www.w3.org/2000/svg"
+              xmlns:xlink="https://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="100%"
+              viewBox="0 0 736 736"
+              enable-background="new 0 0 736 736"
+              xml:space="preserve"
+            >
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M239.191620,693.069580 
+          C218.239182,682.811340 198.135727,671.785706 179.596298,658.226929 
+          C160.782822,644.467773 143.643753,628.810242 128.058029,611.392273 
+          C115.852295,597.751770 104.417564,583.527832 94.448929,568.238037 
+          C70.483795,531.480652 53.244179,491.871979 44.460865,448.667816 
+          C40.407990,428.732086 38.546391,408.732025 38.564919,388.409302 
+          C38.590691,360.148163 38.038448,331.889618 44.659046,304.128540 
+          C49.941303,281.979370 56.308357,260.214020 65.667000,239.344742 
+          C73.436195,222.019852 81.794823,205.042603 92.468597,189.339966 
+          C104.042015,172.313828 116.728577,156.184692 130.679428,140.942520 
+          C150.098007,119.726501 171.943161,101.490326 195.802155,85.717560 
+          C223.100830,67.670860 252.420532,53.726242 283.876648,44.219658 
+          C302.992645,38.442471 322.369995,34.302986 342.125275,31.790728 
+          C347.707214,31.080877 353.368103,30.749525 358.996979,30.697845 
+          C374.661377,30.554033 390.327972,30.639011 405.993683,30.650610 
+          C430.020111,30.668398 453.372131,35.085823 476.498932,41.217342 
+          C500.046814,47.460491 522.522888,56.390751 544.120056,67.570900 
+          C565.718872,78.751884 585.754761,92.327049 604.822754,107.398811 
+          C613.704468,114.419083 622.135742,122.025017 629.966980,130.064682 
+          C640.001038,140.365845 650.007141,150.795776 658.729858,162.357239 
+          C667.727844,174.283569 676.564636,186.300171 684.198059,199.149323 
+          C702.810181,230.478561 716.114136,263.934418 724.334900,299.441376 
+          C727.065125,311.233704 728.611450,323.195862 730.487793,335.128906 
+          C734.450134,360.327545 732.401794,385.650726 731.874451,410.839600 
+          C731.588684,424.488739 728.308716,438.321686 725.320618,451.916626 
+          C719.087769,480.274384 709.423157,507.410004 696.255188,533.208740 
+          C683.165466,558.854065 667.991760,583.234436 648.388062,604.544434 
+          C642.761047,610.661255 639.910461,610.840088 633.788452,605.339172 
+          C630.984314,602.819458 627.864929,600.759033 624.581726,598.021912 
+          C685.274475,528.777039 714.987061,448.073517 709.064575,356.341278 
+          C703.468994,269.672729 668.283569,195.549072 603.462463,136.936569 
+          C486.041107,30.761879 319.570221,27.512157 201.921753,109.541000 
+          C66.552605,203.925339 28.336061,368.528229 86.203156,503.612335 
+          C125.856956,596.179626 194.806198,658.911316 291.622437,687.931335 
+          C388.222168,716.886414 479.638702,701.320557 564.813477,648.751221 
+          C568.068848,651.877563 563.303406,653.166687 564.346191,656.312439 
+          C565.673584,660.317017 568.893250,662.478943 570.766052,665.811462 
+          C572.479309,668.860229 572.571411,670.673828 569.692200,672.329529 
+          C558.043518,679.028320 546.579529,686.023621 534.265198,691.556763 
+          C521.238403,697.410095 508.271332,703.336731 494.645660,707.700684 
+          C473.003448,714.632080 450.980652,719.574829 428.401886,722.610046 
+          C402.476349,726.095093 376.441345,725.158875 350.667297,723.767029 
+          C329.035400,722.598816 307.520081,717.371460 286.513153,710.927063 
+          C270.448303,705.998718 254.915848,699.873596 239.191620,693.069580 
+          z"
+              />
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M292.039917,119.601501 
+          C267.330200,128.438095 244.754227,140.583405 223.612885,155.505966 
+          C203.387894,169.781708 185.418472,186.645935 169.793335,205.642548 
+          C154.955154,223.682358 142.333817,243.367432 132.814529,264.967407 
+          C124.230820,284.444519 116.582726,304.148071 112.956573,325.185242 
+          C110.625488,338.709045 108.251381,352.190674 107.106689,365.951630 
+          C105.199707,388.876343 108.246201,411.184814 111.989845,433.640350 
+          C115.592384,455.249512 122.401512,475.701263 131.249512,495.610382 
+          C133.016205,499.585663 133.683258,503.653259 129.153549,506.509369 
+          C126.766953,505.901154 129.031448,504.102142 128.343262,503.464233 
+          C122.924919,504.890900 117.194077,505.872314 117.015289,513.782776 
+          C112.039757,510.384369 110.598976,505.773438 108.952393,501.690552 
+          C101.261002,482.619019 94.273796,463.276031 90.385597,443.005432 
+          C88.142769,431.312714 86.505913,419.538513 85.480629,407.633667 
+          C84.477119,395.981720 84.604256,384.363831 84.729530,372.740631 
+          C85.076035,340.590057 91.343903,309.538513 102.327492,279.330231 
+          C111.243958,254.807159 123.278534,231.950012 137.780899,210.343765 
+          C145.390640,199.006470 154.633926,189.012573 163.707962,178.840164 
+          C179.752304,160.853714 198.089478,145.595276 217.899200,132.093887 
+          C239.414062,117.430382 262.591370,105.835800 287.220184,97.381218 
+          C306.372894,90.806480 326.011536,86.136215 346.160248,83.518745 
+          C360.011322,81.719391 373.930786,80.583778 387.809845,80.824646 
+          C423.193207,81.438698 457.574524,87.787102 490.842163,100.253891 
+          C521.161804,111.615929 548.757385,127.682831 573.921021,147.791595 
+          C590.542480,161.074173 605.323853,176.384415 619.121399,192.679031 
+          C633.499939,209.659760 644.785156,228.538010 655.062744,248.095703 
+          C667.586060,271.926941 674.461304,297.699829 680.260559,323.777618 
+          C685.784180,348.615753 686.021301,373.900513 685.194580,399.132080 
+          C684.537476,419.189240 680.983765,438.890198 675.987549,458.408203 
+          C671.072266,477.610046 664.821228,496.258820 655.871887,513.877197 
+          C645.102539,535.078552 632.319519,555.011475 616.950867,573.301514 
+          C608.152039,583.772888 598.851440,593.725159 588.921692,603.046509 
+          C572.308167,618.642090 554.056274,632.128662 534.169312,643.328552 
+          C520.125244,651.237915 505.896454,658.676697 490.522308,663.855652 
+          C469.599854,670.903870 448.458984,676.666992 426.486389,679.562378 
+          C408.806335,681.892212 391.097015,683.162354 373.362091,682.244263 
+          C348.027649,680.932861 323.039246,677.233459 298.581024,669.935730 
+          C276.659241,663.394836 255.656998,654.946167 235.929504,643.390869 
+          C229.677811,639.728943 223.153442,636.414429 217.670944,631.244507 
+          C218.705032,628.943115 219.367783,627.421326 222.570343,627.444458 
+          C226.687164,627.474365 230.485229,625.250366 232.676331,621.577820 
+          C235.157227,617.419373 237.895706,617.999878 241.280792,620.133850 
+          C254.798843,628.655640 269.105865,635.745239 283.989258,641.394531 
+          C302.412811,648.387451 321.447601,653.267029 340.910492,656.872925 
+          C364.095245,661.168335 387.381683,659.933655 410.554810,659.238342 
+          C424.951080,658.806274 439.390137,655.672668 453.544922,651.883911 
+          C473.670685,646.496887 493.123901,639.440857 511.636597,629.994080 
+          C532.712219,619.239563 552.091431,605.953613 569.809998,590.144104 
+          C585.010864,576.581055 598.074768,561.295532 610.140747,544.954102 
+          C620.837280,530.467468 630.208374,515.191528 637.815430,498.978088 
+          C646.915100,479.583252 653.315613,459.242523 657.742981,438.148590 
+          C662.593506,415.038635 664.230408,391.852142 663.694153,368.361115 
+          C663.397278,355.355499 660.617615,342.751038 658.472351,330.015808 
+          C654.506775,306.474762 646.697449,284.180939 636.828552,262.599243 
+          C629.926880,247.506393 621.190918,233.406555 611.623291,219.820190 
+          C593.427795,193.981949 570.386475,173.027664 545.115295,154.497238 
+          C518.637756,135.082275 489.005524,121.927261 457.519592,112.927597 
+          C442.531189,108.643448 427.134033,105.659538 411.670868,104.716362 
+          C396.004303,103.760788 380.194366,103.932793 364.441376,104.697380 
+          C339.631104,105.901566 315.739990,111.403587 292.039917,119.601501 
+        z"
+              />
+              <path
+                fill="#fff"
+                opacity="1.000000"
+                stroke="none"
+                d="M396.662537,390.999939 
+          C396.663513,349.336670 396.668518,308.173462 396.662598,267.010223 
+          C396.661407,258.769501 391.903259,254.557297 383.824829,253.189011 
+          C368.818359,250.647324 355.365997,243.539734 350.544586,228.750534 
+          C345.092651,212.027374 352.743256,194.118774 373.825348,193.802643 
+          C411.313751,193.240448 448.841736,192.823639 486.303955,193.962982 
+          C507.941742,194.621063 516.243042,205.599289 514.131958,227.296371 
+          C513.354980,235.281403 508.756775,240.155502 502.609314,245.208908 
+          C495.194794,251.303879 487.589203,253.541885 478.445557,253.460098 
+          C471.016632,253.393646 464.358948,260.941071 464.356567,268.684998 
+          C464.337982,329.179932 464.226868,389.675262 464.438568,450.169464 
+          C464.480957,462.280945 460.075897,472.688171 453.374451,481.994537 
+          C445.369537,493.111053 436.061279,503.296112 425.264404,511.870941 
+          C414.259216,520.611145 400.979431,523.952454 387.470093,525.135803 
+          C374.610535,526.262268 361.662903,525.609619 348.974701,521.800720 
+          C343.875549,520.270020 338.203003,520.388550 332.798096,519.613831 
+          C323.809753,518.325562 317.189178,511.714569 308.578918,509.625885 
+          C304.433197,508.620209 300.714844,506.053650 296.409882,505.348114 
+          C293.682953,504.901245 292.857697,502.377411 291.447998,500.725372 
+          C286.200134,494.575317 279.347626,492.987885 271.757538,492.295410 
+          C264.289398,491.614044 259.733582,485.855164 259.622223,478.363220 
+          C259.555603,473.880829 260.018311,469.391449 259.225189,464.901123 
+          C258.987946,463.557953 259.590332,461.940765 260.162659,460.600555 
+          C264.118500,451.337555 267.483795,441.710419 274.770416,434.323212 
+          C281.390503,427.611786 286.989899,419.700195 296.087341,415.834808 
+          C298.381500,414.860046 300.637604,413.777588 303.197327,413.673187 
+          C307.837433,413.483978 311.207855,416.444733 311.308289,421.098114 
+          C311.434113,426.928314 311.527405,432.770935 311.278351,438.592926 
+          C311.138763,441.855774 312.238220,444.472565 314.186249,446.802460 
+          C319.340515,452.967072 325.388092,458.210083 332.638031,461.630829 
+          C342.731384,466.393188 353.677948,466.767395 364.631317,466.661530 
+          C368.620697,466.622986 372.377991,466.630768 376.041473,464.148499 
+          C387.087311,456.664185 394.663116,447.398590 395.739777,433.389008 
+          C396.813263,419.420959 396.551514,405.465912 396.662537,390.999939 
+        z"
+              />
+            </svg>
+          </span>
+          <span class="text">
+            <img
+              src="../assets/images/img_footer_logo.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
+          </span>
+        </div>
+      </footer>
+
+    <dialog class="case_lightbox" aria-label="그림 크게 보기">
+      <button class="lightbox_close" type="button" aria-label="닫기">×</button>
+    </dialog>
+  </body>
+</html>

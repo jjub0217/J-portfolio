@@ -951,6 +951,24 @@ body.is-menu-open .header .btn_burger .burger_line:nth-child(3) {
 .section_work .works_box:nth-child(1) .work_link:nth-child(1) {
   flex: 1.5;
 }
+/* Cuddle 카드: 카드 링크와 관리자 데모 배지를 감싸는 상자.
+   상자가 대표작 자리(1.5배)를 차지하고, 배지는 썸네일(정사각형) 오른쪽 아래에 겹친다. */
+.section_work .work_item {
+  position: relative;
+  flex: 1.5;
+  display: flex;
+}
+.section_work .work_item .work_link {
+  flex: 1;
+}
+/* 썸네일은 카드 폭과 같은 정사각형이라, 위에서 (카드 폭 - 16px - 배지 88px)만큼 내리면
+   예전처럼 썸네일 오른쪽 아래 16px 자리에 온다. margin-top의 %는 부모 폭 기준이다. */
+.section_work .work_item > .admin_badge {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  margin-top: calc(100% - 104px);
+}
 .section_work .work_link {
   flex: 1;
 }

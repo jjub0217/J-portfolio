@@ -380,10 +380,12 @@
               </h2>
               <div class="works_area">
                 <div class="works_box">
+                  <!-- Cuddle은 상세 페이지로 연결. 관리자 데모 배지는 링크 안 링크가 되지 않도록
+                       카드 링크 밖의 형제 링크로 두고 썸네일 위에 겹쳐 놓는다. -->
+                  <div class="work_item">
                   <a
-                    href="https://cuddle-market.vercel.app/"
+                    href="./projects/cuddle.html"
                     class="work_link"
-                    target="_blank"
                   >
                     <div class="thumb_box thumb_video">
                       <video
@@ -395,12 +397,6 @@
                         muted
                         loop
                       ></video>
-                      <span
-                        class="admin_badge"
-                        role="link"
-                        tabindex="0"
-                        onclick="event.preventDefault();event.stopPropagation();window.open('https://cuddle-market-git-feature-admin-demo-mode-jjub0217s-projects.vercel.app/admin','_blank');"
-                      >Admin Demo<span class="badge_arrow" aria-hidden="true">↗</span></span>
                     </div>
                     <div class="text_box">
                       <div class="title_box">
@@ -440,6 +436,14 @@
                       </p>
                     </div>
                   </a>
+                  <a
+                    href="https://cuddle-market-git-feature-admin-demo-mode-jjub0217s-projects.vercel.app/admin"
+                    class="admin_badge"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Cuddle Market 관리자 데모 새 탭에서 열기"
+                  >Admin Demo<span class="badge_arrow" aria-hidden="true">↗</span></a>
+                  </div>
                   <a
                     href="https://geulmoheom-web-six.vercel.app/parents/login"
                     class="work_link"
