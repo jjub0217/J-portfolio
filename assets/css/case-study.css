@@ -172,6 +172,53 @@
   z-index: 3;
 }
 
+/* 글모험: 개요 오른쪽에 휴대폰 화면 대신 가로 화면 한 장 */
+.case_overview_shot {
+  margin: 0;
+}
+.case_overview_shot img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-phone);
+}
+.case_overview_shot figcaption {
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+}
+
+/* 개요 옆에 둘 그림이 없는 페이지: 한 단으로 */
+.case_overview_grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+/* 짧은 페이지(작은 프로젝트): 사례 구역이 한 화면을 다 쓰지 않게 */
+.case_page--short .case,
+.case_page--short .case_overview {
+  min-height: auto;
+}
+/* 맨 위 그림 자리에 코드 목록을 둘 때 (claude-code-skills) */
+.case_hero_shot .case_code {
+  margin: 0;
+}
+
+/* jjub-headless-ui: 개요 옆에 컴포넌트 이름 목록 */
+.ev_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ev_chips li {
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: 999px;
+  background: var(--color-paper);
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+}
+
 /* 개요, 역할, 기술: 위에서 아래로 */
 .case_info {
   margin: 0;
@@ -224,6 +271,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-sm);
+}
+/* 글모험: 사례가 4개라 3단이면 한 칸만 남으므로 2단(2×2) */
+.toc_list--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .toc_list a {
   display: grid;
@@ -578,6 +629,13 @@ html {
 }
 .ev_diff p {
   font-size: var(--text-sm);
+}
+/* 글모험 사례 03: 접속 코드 표시처럼 글자 모양 자체가 근거일 때 */
+.ev_diff .ev_code_big {
+  font-family: var(--font-code);
+  font-size: var(--text-2xl);
+  letter-spacing: 0;
+  color: var(--color-ink);
 }
 .ev_diff code {
   font-size: 0.9em;
