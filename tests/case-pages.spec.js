@@ -97,7 +97,7 @@ for (const p of PAGES) {
 
     test('chrome-and-pdf: 메인과 같은 헤더와 푸터, PDF 버튼', async ({ page }) => {
       await page.goto(p.url);
-      await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../index.html');
+      await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../');
       await expect(page.locator('.cs_footer')).toHaveAttribute('lang', 'en');
       await expect(page.locator('a.case_pdf')).toHaveAttribute('href', '../assets/files/kang-joohyun-portfolio.pdf');
     });
@@ -156,4 +156,15 @@ test('card-detail-hint: 카드 6개 모두 호버와 초점 때만 "자세히 �
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
   await expect.poll(() => cards.first().locator('.detail_hint').evaluate((e) => getComputedStyle(e).opacity)).toBe('1');
+});
+
+// 상세 페이지 헤더 로고를 누르면 주소 끝에 index.html이 붙지 않고 사이트 첫 주소로 간다
+test('logo-goes-to-site-root: 로고를 누르면 index.html 없이 메인으로 간다', async ({ page }) => {
+  await page.setViewportSize({ width: 1400, height: 900 });
+  for (const slug of ['cuddle', 'geul', 'trovely', 'wavve', 'headless-ui', 'claude-code-skills']) {
+    await page.goto(`/projects/${slug}.html`);
+    await Promise.all([page.waitForURL((u) => !u.pathname.includes('/projects/')), page.locator('.cs_header .logo').click()]);
+    const u = new URL(page.url());
+    expect(u.pathname, slug).toBe('/');
+  }
 });

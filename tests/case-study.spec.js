@@ -245,8 +245,8 @@ test('chrome-header-links: 헤더 메뉴는 메인 페이지 각 구역으로 �
   await page.setViewportSize({ width: 1400, height: 900 });
   await page.goto(URL);
   const hrefs = await page.locator('.cs_header .gnb .nav-item_title').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
-  expect(hrefs.slice(0, 5)).toEqual(['../index.html#about', '../index.html#work', '../index.html#capabilities', '../index.html#goals', '../index.html#log']);
-  await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../index.html');
+  expect(hrefs.slice(0, 5)).toEqual(['../#about', '../#work', '../#capabilities', '../#goals', '../#log']);
+  await expect(page.locator('.cs_header .logo')).toHaveAttribute('href', '../');
   await expect(page.locator('.cs_header .header_actions .link_pdf')).toBeVisible();
   await expect(page.locator('.cs_header .header_actions .link_mail')).toBeVisible();
 });
